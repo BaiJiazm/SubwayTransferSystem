@@ -1,0 +1,17 @@
+INDEX VERSION 1.126+D:\Going\DsApplication2\.metadata\.plugins\org.eclipse.jdt.core
+3539310384.index
+3606991057.index
+3588035836.index
+1866674446.index
+2474981518.index
+438507180.index
+3374721421.index
+1156239990.index
+4286418470.index
+460804896.index
+964725985.index
+295960617.index
+1793786523.index
+1261171628.index
+1275168300.index
+2482499669.index
