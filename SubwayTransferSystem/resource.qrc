@@ -3,4 +3,11 @@
         <file>icon/enlarge.png</file>
         <file>icon/shrink.png</file>
     </qresource>
+    <qresource prefix="/images">
+        <file>images/transfer.png</file>
+        <file>images/transfer1.png</file>
+    </qresource>
+    <qresource prefix="/data">
+        <file>data/outLine.txt</file>
+    </qresource>
 </RCC>

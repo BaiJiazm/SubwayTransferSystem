@@ -25,13 +25,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    graphics_view_zoom.cpp \
+    station.cpp \
+    line.cpp \
+    subwaygraph.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    graphics_view_zoom.h \
+    station.h \
+    line.h \
+    subwaygraph.h
 
 FORMS += \
-        mainwindow.ui
+       mainwindow.ui
 
 RESOURCES += \
     resource.qrc
