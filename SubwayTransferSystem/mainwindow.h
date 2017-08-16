@@ -3,6 +3,8 @@
 
 #include "graphics_view_zoom.h"
 #include "subwaygraph.h"
+#include "managelines.h"
+#include "querytransfer.h"
 
 #include <QMainWindow>
 #include <QGraphicsScene>
@@ -25,11 +27,33 @@ private slots:
 
     void on_toolShrink_triggered();
 
+    void on_actionAddAll_triggered();
+
+    void on_actionAddLine_triggered();
+
+    void on_actionAddStation_triggered();
+
+    void on_actionAddConnect_triggered();
+
+    void on_actionAddByText_triggered();
+
+    void tabWidgetCurrentChanged(int index);
+    void addLine();
+    void addStation();
+    void addConnection();
+    void addByText();
+    void transferStartLineChanged(QString lineName);
+    void transferDstLineChanged(QString lineNames);
+
+    void on_actionTransfer_triggered();
+
 protected:
     Ui::MainWindow *ui;
     Graphics_view_zoom *myView;
     QGraphicsScene *scene;
-    SubwayGraph subwayGraph;
+    SubwayGraph* subwayGraph;
+    ManageLines* manageLines;
+    QueryTransfer* queryTransfer;
 
     void test();
     QColor getLinesColor(const QList<int>& linesList);
@@ -37,6 +61,7 @@ protected:
     QPointF transferCoord(QPointF coord);
     void drawEdges (const QList<Edge>& edgesList);
     void drawStations (const QList<int>& stationsList);
+    void myConnect();
 };
 
 #define LINE_INFO_WIDTH 100

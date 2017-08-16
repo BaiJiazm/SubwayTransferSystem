@@ -29,17 +29,23 @@ SOURCES += \
     graphics_view_zoom.cpp \
     station.cpp \
     line.cpp \
-    subwaygraph.cpp
+    subwaygraph.cpp \
+    managelines.cpp \
+    querytransfer.cpp
 
 HEADERS += \
         mainwindow.h \
     graphics_view_zoom.h \
     station.h \
     line.h \
-    subwaygraph.h
+    subwaygraph.h \
+    managelines.h \
+    querytransfer.h
 
 FORMS += \
-       mainwindow.ui
+       mainwindow.ui \
+    managelines.ui \
+    querytransfer.ui
 
 RESOURCES += \
     resource.qrc

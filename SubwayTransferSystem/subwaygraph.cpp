@@ -47,8 +47,6 @@ bool SubwayGraph::readFileData(QString fileName)
 
         QString longlat;
         QStringList strList;
-        QChar qch;
-        double d1=0, d2=0;
         for (int i=0; !in.atEnd()&&i<total; ++i)
         {
             in>>station.id>>station.name>>longlat;
@@ -99,8 +97,11 @@ bool SubwayGraph::readFileData(QString fileName)
         }
         in.readLine();
     }
+    file.close();
+
     updateMinMaxLongiLati();
     makeGraph();
+
     return true;
 }
 
@@ -165,6 +166,16 @@ void SubwayGraph::getGraph(QList<int>&stationsList, QList<Edge>&edgesList)
     return ;
 }
 
+QList<QString> SubwayGraph::getLinesNameList()
+{
+    QList<QString> linesNameList;
+    for (auto a:lines)
+    {
+        linesNameList.push_back(a.name);
+    }
+    return linesNameList;
+}
+
 bool SubwayGraph::insertEdge(int n1, int n2)
 {
     if (edges.contains(Edge(n1, n2)) || edges.contains(Edge(n2, n1)))
@@ -217,4 +228,71 @@ QPointF SubwayGraph::getStationCoord(int s)
 QList<int> SubwayGraph::getStationLinesInfo(int s)
 {
     return stations[s].linesInfo.toList();
+}
+
+int SubwayGraph::getLineHash(QString lineName)
+{
+    if(linesHash.contains(lineName))
+    {
+        return linesHash[lineName];
+    }
+    return -1;
+}
+
+QList<int> SubwayGraph::getLinesHash(QList<QString> linesList)
+{
+    QList<int> hashList;
+    for (auto &a:linesList)
+    {
+        hashList.push_back(getLineHash(a));
+    }
+    return hashList;
+}
+
+int SubwayGraph::getStationHash(QString stationName)
+{
+    if(stationsHash.contains(stationName))
+    {
+        return stationsHash[stationName];
+    }
+    return -1;
+}
+
+QList<QString> SubwayGraph::getStationsNameList()
+{
+    QList<QString> list;
+    for (auto &a: stations)
+    {
+        list.push_back(a.name);
+    }
+    return list;
+}
+
+void SubwayGraph::addLine(QString lineName, QColor color)
+{
+    linesHash[lineName]=lines.size();
+    lines.push_back(Line(lineName,color));
+}
+
+void SubwayGraph::addStation(Station s)
+{
+    stationsHash[s.name]=stations.size();
+    stations.push_back(s);
+}
+
+void SubwayGraph::addConnection(int s1, int s2, int l)
+{
+    insertEdge(s1,s2);
+    lines[l].edges.insert(Edge(s1,s2));
+    lines[l].edges.insert(Edge(s2,s1));
+}
+
+QList<QString> SubwayGraph::getLineStationsList(int l)
+{
+    QList<QString> stationsList;
+    for (auto &a:lines[l].stationsSet)
+    {
+        stationsList.push_back(stations[a].name);
+    }
+    return stationsList;
 }

@@ -20,6 +20,7 @@ protected:
 
 public:
     Station();
+    Station(QString nameStr, double longi, double lati, QList<int> linesList);
 
 protected:
     int distance(Station other);

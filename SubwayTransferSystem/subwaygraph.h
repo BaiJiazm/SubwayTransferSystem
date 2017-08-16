@@ -31,19 +31,29 @@ protected:
 public:
     SubwayGraph();
     bool readFileData(QString fileName);
-    void getGraph(QList<int>&stationsList, QList<Edge>&edgesList);
-    bool insertEdge(int n1, int n2);
-    QList<int> getCommonLines(int s1, int s2);
-    QColor getLineColor(int l);
-    QString getLineName(int l);
 
-    QPointF getMinCoord();
-    QPointF getMaxCoord();
+    QString getLineName(int l);
+    QColor getLineColor(int l);
+    int getLineHash(QString lineName);
+    QList<int> getLinesHash(QList<QString> linesList);
+    QList<QString> getLinesNameList();
+    QList<QString> getLineStationsList(int l);
 
     QString getStationName(int s);
     QPointF getStationCoord(int s);
+    QPointF getMinCoord();
+    QPointF getMaxCoord();
     QList<int> getStationLinesInfo(int s);
+    QList<int> getCommonLines(int s1, int s2);
+    int getStationHash(QString stationName);
+    QList<QString> getStationsNameList();
 
+    void getGraph(QList<int>&stationsList, QList<Edge>&edgesList);
+
+    void addLine(QString lineName, QColor color);
+    void addStation(Station s);
+    void addConnection(int s1, int s2, int l);
+    bool insertEdge(int s1, int s2);
     void debug();
 
 private:

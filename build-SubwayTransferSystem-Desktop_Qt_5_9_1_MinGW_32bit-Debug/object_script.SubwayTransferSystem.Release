@@ -1,0 +1,15 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\graphics_view_zoom.o
+./release\station.o
+./release\line.o
+./release\subwaygraph.o
+./release\managelines.o
+./release\querytransfer.o
+./release\qrc_resource.o
+./release\moc_mainwindow.o
+./release\moc_graphics_view_zoom.o
+./release\moc_managelines.o
+./release\moc_querytransfer.o
+);

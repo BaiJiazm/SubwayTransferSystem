@@ -1,0 +1,15 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\graphics_view_zoom.o
+./debug\station.o
+./debug\line.o
+./debug\subwaygraph.o
+./debug\managelines.o
+./debug\querytransfer.o
+./debug\qrc_resource.o
+./debug\moc_mainwindow.o
+./debug\moc_graphics_view_zoom.o
+./debug\moc_managelines.o
+./debug\moc_querytransfer.o
+);

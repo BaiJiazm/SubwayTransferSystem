@@ -1,7 +1,11 @@
-#include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "ui_managelines.h"
+#include "ui_querytransfer.h"
+#include "mainwindow.h"
+
 #include <QGraphicsItem>
 #include <QMessageBox>
+#include <QColorDialog>
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -19,7 +23,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->graphicsView->setScene(scene);
     ui->graphicsView->setDragMode(QGraphicsView::ScrollHandDrag);
 
-    bool flag = subwayGraph.readFileData(":/data/data/outLine.txt");
+    manageLines=new ManageLines;
+    subwayGraph=new SubwayGraph;
+    queryTransfer=new QueryTransfer;
+
+    bool flag = subwayGraph->readFileData(":/data/data/outLine.txt");
     if (!flag)
     {
         QMessageBox box;
@@ -33,9 +41,11 @@ MainWindow::MainWindow(QWidget *parent) :
         }
     }
 
+    myConnect();
+
     QList<int> stationsList;
     QList<Edge> edgesList;
-    subwayGraph.getGraph(stationsList,edgesList);
+    subwayGraph->getGraph(stationsList,edgesList);
 
 //    qDebug()<<"stations.size()="<<stationsList.size()<<" edges.size()="<<edgesList.size();
 
@@ -46,6 +56,19 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::myConnect()
+{
+    connect(manageLines->ui->tabWidget, SIGNAL(currentChanged(int)), this, SLOT(tabWidgetCurrentChanged(int)));
+    connect(manageLines->ui->pushButtonAddLine, SIGNAL(clicked()), this, SLOT(addLine()));
+    connect(manageLines->ui->pushButtonAddStation, SIGNAL(clicked()), this, SLOT(addStation()));
+    connect(manageLines->ui->pushButtonConnect, SIGNAL(clicked()), this, SLOT(addConnection()));
+    connect(manageLines->ui->pushButtonAddByText, SIGNAL(clicked()), this, SLOT(addByText()));
+    connect(queryTransfer->ui->comboBoxStartLine, SIGNAL(currentIndexChanged(QString)),
+            this, SLOT(transferStartLineChanged(QString)));
+    connect(queryTransfer->ui->comboBoxDstLine, SIGNAL(currentIndexChanged(QString)),
+            this, SLOT(transferDstLineChanged(QString)));
 }
 
 void MainWindow::test()
@@ -107,7 +130,7 @@ QColor MainWindow::getLinesColor(const QList<int>& linesList)
     QColor color2;
     for (int i=0; i<linesList.size(); ++i)
     {
-        color2=subwayGraph.getLineColor(linesList[i]);
+        color2=subwayGraph->getLineColor(linesList[i]);
         color1.setRed(color1.red()*color2.red()/255);
         color1.setGreen(color1.green()*color2.green()/255);
         color1.setBlue(color1.blue()*color2.blue()/255);
@@ -121,7 +144,7 @@ QString MainWindow::getLinesName(const QList<int>& linesList)
     for (int i=0; i<linesList.size(); ++i)
     {
         str+=" ";
-        str+=subwayGraph.getLineName(linesList[i]);
+        str+=subwayGraph->getLineName(linesList[i]);
     }
 //    qDebug()<<"tip="<<str<<"\n";
     return str;
@@ -129,8 +152,8 @@ QString MainWindow::getLinesName(const QList<int>& linesList)
 
 QPointF MainWindow::transferCoord(QPointF coord)
 {
-    QPointF minCoord=subwayGraph.getMinCoord();
-    QPointF maxCoord=subwayGraph.getMaxCoord();
+    QPointF minCoord=subwayGraph->getMinCoord();
+    QPointF maxCoord=subwayGraph->getMaxCoord();
     double x = (coord.x()-minCoord.x())/(maxCoord.x()-minCoord.x())*NET_WIDTH+MARGIN;
     double y = (maxCoord.y()-coord.y())/(maxCoord.y()-minCoord.y())*NET_HEIGHT+MARGIN;
     return QPointF(x,y);
@@ -143,12 +166,12 @@ void MainWindow::drawEdges(const QList<Edge>& edgesList)
         int s1=edgesList[i].first;
         int s2=edgesList[i].second;
 
-        QList<int> linesList=subwayGraph.getCommonLines(s1, s2);
+        QList<int> linesList=subwayGraph->getCommonLines(s1, s2);
         QColor color=getLinesColor(linesList);
-        QString tip="途经： "+subwayGraph.getStationName(s1)+"--"+subwayGraph.getStationName(s2)+"\n线路：";
+        QString tip="途经： "+subwayGraph->getStationName(s1)+"--"+subwayGraph->getStationName(s2)+"\n线路：";
         tip+=getLinesName(linesList);
-        QPointF s1Pos=transferCoord(subwayGraph.getStationCoord(s1));
-        QPointF s2Pos=transferCoord(subwayGraph.getStationCoord(s2));
+        QPointF s1Pos=transferCoord(subwayGraph->getStationCoord(s1));
+        QPointF s2Pos=transferCoord(subwayGraph->getStationCoord(s2));
 
         QGraphicsLineItem* edgeItem=new QGraphicsLineItem;
         edgeItem->setPen(QPen(color, EDGE_PEN_WIDTH));
@@ -165,11 +188,11 @@ void MainWindow::drawStations (const QList<int>& stationsList)
     for (int i=0; i<stationsList.size(); ++i)
     {
         int s=stationsList[i];
-        QString name=subwayGraph.getStationName(s);
-        QList<int> linesList=subwayGraph.getStationLinesInfo(s);
+        QString name=subwayGraph->getStationName(s);
+        QList<int> linesList=subwayGraph->getStationLinesInfo(s);
         QString tip="站名： "+name+"\n线路："+getLinesName(linesList);
         QColor color=getLinesColor(linesList);
-        QPointF coord=transferCoord(subwayGraph.getStationCoord(s));
+        QPointF coord=transferCoord(subwayGraph->getStationCoord(s));
 
         QGraphicsEllipseItem* stationItem=new QGraphicsEllipseItem;
         stationItem->setRect(-NODE_HALF_WIDTH, -NODE_HALF_WIDTH, NODE_HALF_WIDTH<<1, NODE_HALF_WIDTH<<1);
@@ -205,4 +228,224 @@ void MainWindow::on_toolEnlarge_triggered()
 void MainWindow::on_toolShrink_triggered()
 {
     ui->graphicsView->scale(2.0/3,2.0/3);
+}
+
+void MainWindow::on_actionAddAll_triggered()
+{
+    manageLines->setAllVisible();
+    manageLines->show();
+}
+
+void MainWindow::on_actionAddLine_triggered()
+{
+    manageLines->setAddLineVisible();
+    manageLines->show();
+}
+
+void MainWindow::on_actionAddStation_triggered()
+{
+    manageLines->setAddStationVisible();
+    manageLines->show();
+}
+
+void MainWindow::on_actionAddConnect_triggered()
+{
+    manageLines->setAddConnectionVisible();
+    manageLines->show();
+}
+
+void MainWindow::on_actionAddByText_triggered()
+{
+    manageLines->setAddByTextVisible();
+    manageLines->show();
+}
+
+void MainWindow::on_actionTransfer_triggered()
+{
+    QComboBox* comboL1=queryTransfer->ui->comboBoxStartLine;
+    QComboBox* comboL2=queryTransfer->ui->comboBoxDstLine;
+
+    QList<QString> linesList=subwayGraph->getLinesNameList();
+    for(auto &a:linesList)
+    {
+        comboL1->addItem(a);
+        comboL2->addItem(a);
+    }
+    transferStartLineChanged(comboL1->itemText(0));
+    transferDstLineChanged(comboL2->itemText(0));
+    queryTransfer->show();
+}
+
+void MainWindow::transferStartLineChanged(QString lineName)
+{
+    QComboBox* comboS1=queryTransfer->ui->comboBoxStartStation;
+    comboS1->clear();
+
+    int lineHash=subwayGraph->getLineHash(lineName);
+    if(lineHash==-1)
+    {
+        return ;
+    }
+
+    QList<QString> stationsList=subwayGraph->getLineStationsList(lineHash);
+    for(auto &a:stationsList)
+    {
+        comboS1->addItem(a);
+    }
+}
+
+void MainWindow::transferDstLineChanged(QString lineName)
+{
+    QComboBox* comboS2=queryTransfer->ui->comboBoxDstStation;
+    comboS2->clear();
+
+    int lineHash=subwayGraph->getLineHash(lineName);
+    if(lineHash==-1)
+    {
+        return ;
+    }
+
+    QList<QString> stationsList=subwayGraph->getLineStationsList(lineHash);
+    for(auto &a:stationsList)
+    {
+        comboS2->addItem(a);
+    }
+}
+
+void MainWindow::tabWidgetCurrentChanged(int index)
+{
+    QWidget* widget=manageLines->ui->tabWidget->currentWidget();
+
+    if(widget==manageLines->tabWigetsVector[1])
+    {
+        manageLines->linesNameList=subwayGraph->getLinesNameList();
+        manageLines->updateLinesListWidget();
+    }
+    else if(widget==manageLines->tabWigetsVector[2])
+    {
+        manageLines->linesNameList=subwayGraph->getLinesNameList();
+        manageLines->stationsNameList=subwayGraph->getStationsNameList();
+        manageLines->updateComboBox();
+        manageLines->ui->comboBoxConnectStation1->setMaxCount(manageLines->stationsNameList.size());
+        manageLines->ui->comboBoxConnectStation2->setMaxCount(manageLines->stationsNameList.size());
+        manageLines->ui->comboBoxConnectLine->setMaxCount(manageLines->linesNameList.size());
+    }
+}
+
+void MainWindow::addLine()
+{
+    QMessageBox box;
+    box.setWindowTitle(tr("添加线路"));
+    box.setWindowIcon(QIcon(":/icon/icon/subway.png"));
+
+    if(manageLines->lineName.isEmpty())
+    {
+        box.setIcon(QMessageBox::Warning);
+        box.setText(tr("请输入线路名称！"));
+    }
+    else if(subwayGraph->getLineHash(manageLines->lineName)==-1)
+    {
+        box.setIcon(QMessageBox::Information);
+        box.setText(tr("线路：")+manageLines->lineName+tr(" 添加成功！"));
+        subwayGraph->addLine(manageLines->lineName, manageLines->lineColor);
+    }
+    else
+    {
+        box.setIcon(QMessageBox::Critical);
+        box.setText(tr("添加失败！\n错误原因：线路名已存在！"));
+    }
+
+    box.addButton(tr("确定"),QMessageBox::AcceptRole);
+    if(box.exec()==QMessageBox::Accepted)
+    {
+        box.close();
+    }
+}
+
+void MainWindow::addStation()
+{
+    QMessageBox box;
+    box.setWindowTitle(tr("添加站点"));
+    box.setWindowIcon(QIcon(":/icon/icon/station.png"));
+
+    if(manageLines->stationName.isEmpty())
+    {
+        box.setIcon(QMessageBox::Warning);
+        box.setText(tr("请输入站点名称！"));
+    }
+    else if(manageLines->linesSelected.isEmpty())
+    {
+        box.setIcon(QMessageBox::Warning);
+        box.setText(tr("请选择站点所属线路！"));
+    }
+    else
+    {
+        if(subwayGraph->getStationHash(manageLines->stationName)!=-1)
+        {
+            box.setIcon(QMessageBox::Critical);
+            box.setText(tr("添加失败！\n错误原因：站点已存在！"));
+        }
+        else
+        {
+            Station s(manageLines->stationName, manageLines->longitude, manageLines->latitude,
+                      subwayGraph->getLinesHash(manageLines->linesNameList));
+            subwayGraph->addStation(s);
+            box.setText(tr("站点：")+manageLines->stationName+tr(" 添加成功！"));
+        }
+    }
+
+    box.addButton(tr("确定"),QMessageBox::AcceptRole);
+    if(box.exec()==QMessageBox::Accepted)
+    {
+        box.close();
+    }
+}
+
+void MainWindow::addConnection()
+{
+    QString station1=manageLines->ui->comboBoxConnectStation1->currentText();
+    QString station2=manageLines->ui->comboBoxConnectStation2->currentText();
+    int s1=subwayGraph->getStationHash(station1);
+    int s2=subwayGraph->getStationHash(station2);
+    int l=subwayGraph->getLineHash(manageLines->ui->comboBoxConnectLine->currentText());
+
+    QMessageBox box;
+    box.setWindowTitle(tr("添加连接"));
+    box.setWindowIcon(QIcon(":/icon/icon/connect.png"));
+
+    if(s1==-1||s2==-1||l==-1)
+    {
+        box.setIcon(QMessageBox::Warning);
+        box.setText(tr("请选择已有的站点和线路！"));
+    }
+    else if(s1==s2)
+    {
+        box.setIcon(QMessageBox::Warning);
+        box.setText(tr("同一站点不需要连接！"));
+    }
+    else if(!subwayGraph->getStationLinesInfo(s1).contains(l))
+    {
+        box.setIcon(QMessageBox::Critical);
+        box.setText(tr("连接失败！\n错误原因：所属线路不包含站点1"));
+    }
+    else if(!subwayGraph->getStationLinesInfo(s2).contains(l))
+    {
+        box.setIcon(QMessageBox::Critical);
+        box.setText(tr("连接失败！\n错误原因：所属线路不包含站点2"));
+    }
+    else
+    {
+        box.setIcon(QMessageBox::Information);
+        box.setText(tr("添加连接成功！"));
+        subwayGraph->addConnection(s1,s2,l);
+    }
+    if(box.exec()==QMessageBox::Accepted)
+    {
+        box.close();
+    }
+}
+
+void MainWindow::addByText()
+{
+
 }

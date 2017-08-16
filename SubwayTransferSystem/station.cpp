@@ -33,6 +33,12 @@ Station::Station()
 
 }
 
+Station::Station(QString nameStr, double longi, double lati, QList<int> linesList):
+    name(nameStr), longitude(longi), latitude(lati)
+{
+    linesInfo=linesList.toSet();
+}
+
 int Station::distance(Station other)
 {
     return calcuDistance(latitude, longitude, other.latitude, other.longitude);

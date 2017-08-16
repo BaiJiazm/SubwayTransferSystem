@@ -24,6 +24,8 @@ protected:
 
 public:
     Line();
+    Line(QString lineName, QColor lineColor):name(lineName), color(lineColor)
+    {};
 
     friend class SubwayGraph;
     friend class QTextStream;
