@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[21];
-    char stringdata0[385];
+    char stringdata0[380];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,18 +40,18 @@ QT_MOC_LITERAL(5, 87, 26), // "on_actionAddLine_triggered"
 QT_MOC_LITERAL(6, 114, 29), // "on_actionAddStation_triggered"
 QT_MOC_LITERAL(7, 144, 29), // "on_actionAddConnect_triggered"
 QT_MOC_LITERAL(8, 174, 28), // "on_actionAddByText_triggered"
-QT_MOC_LITERAL(9, 203, 27), // "on_actionTransfer_triggered"
-QT_MOC_LITERAL(10, 231, 23), // "tabWidgetCurrentChanged"
-QT_MOC_LITERAL(11, 255, 5), // "index"
-QT_MOC_LITERAL(12, 261, 7), // "addLine"
-QT_MOC_LITERAL(13, 269, 10), // "addStation"
-QT_MOC_LITERAL(14, 280, 13), // "addConnection"
-QT_MOC_LITERAL(15, 294, 9), // "addByText"
-QT_MOC_LITERAL(16, 304, 24), // "transferStartLineChanged"
-QT_MOC_LITERAL(17, 329, 8), // "lineName"
-QT_MOC_LITERAL(18, 338, 22), // "transferDstLineChanged"
-QT_MOC_LITERAL(19, 361, 9), // "lineNames"
-QT_MOC_LITERAL(20, 371, 13) // "transferQuery"
+QT_MOC_LITERAL(9, 203, 23), // "tabWidgetCurrentChanged"
+QT_MOC_LITERAL(10, 227, 5), // "index"
+QT_MOC_LITERAL(11, 233, 7), // "addLine"
+QT_MOC_LITERAL(12, 241, 10), // "addStation"
+QT_MOC_LITERAL(13, 252, 13), // "addConnection"
+QT_MOC_LITERAL(14, 266, 9), // "addByText"
+QT_MOC_LITERAL(15, 276, 22), // "updateTranserQueryInfo"
+QT_MOC_LITERAL(16, 299, 24), // "transferStartLineChanged"
+QT_MOC_LITERAL(17, 324, 8), // "lineName"
+QT_MOC_LITERAL(18, 333, 22), // "transferDstLineChanged"
+QT_MOC_LITERAL(19, 356, 9), // "lineNames"
+QT_MOC_LITERAL(20, 366, 13) // "transferQuery"
 
     },
     "MainWindow\0on_toolEnlarge_triggered\0"
@@ -61,12 +61,11 @@ QT_MOC_LITERAL(20, 371, 13) // "transferQuery"
     "on_actionAddStation_triggered\0"
     "on_actionAddConnect_triggered\0"
     "on_actionAddByText_triggered\0"
-    "on_actionTransfer_triggered\0"
     "tabWidgetCurrentChanged\0index\0addLine\0"
     "addStation\0addConnection\0addByText\0"
-    "transferStartLineChanged\0lineName\0"
-    "transferDstLineChanged\0lineNames\0"
-    "transferQuery"
+    "updateTranserQueryInfo\0transferStartLineChanged\0"
+    "lineName\0transferDstLineChanged\0"
+    "lineNames\0transferQuery"
 };
 #undef QT_MOC_LITERAL
 
@@ -91,8 +90,8 @@ static const uint qt_meta_data_MainWindow[] = {
        6,    0,   98,    2, 0x08 /* Private */,
        7,    0,   99,    2, 0x08 /* Private */,
        8,    0,  100,    2, 0x08 /* Private */,
-       9,    0,  101,    2, 0x08 /* Private */,
-      10,    1,  102,    2, 0x08 /* Private */,
+       9,    1,  101,    2, 0x08 /* Private */,
+      11,    0,  104,    2, 0x08 /* Private */,
       12,    0,  105,    2, 0x08 /* Private */,
       13,    0,  106,    2, 0x08 /* Private */,
       14,    0,  107,    2, 0x08 /* Private */,
@@ -109,8 +108,8 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   10,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   11,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -135,12 +134,12 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 4: _t->on_actionAddStation_triggered(); break;
         case 5: _t->on_actionAddConnect_triggered(); break;
         case 6: _t->on_actionAddByText_triggered(); break;
-        case 7: _t->on_actionTransfer_triggered(); break;
-        case 8: _t->tabWidgetCurrentChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 9: _t->addLine(); break;
-        case 10: _t->addStation(); break;
-        case 11: _t->addConnection(); break;
-        case 12: _t->addByText(); break;
+        case 7: _t->tabWidgetCurrentChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 8: _t->addLine(); break;
+        case 9: _t->addStation(); break;
+        case 10: _t->addConnection(); break;
+        case 11: _t->addByText(); break;
+        case 12: _t->updateTranserQueryInfo(); break;
         case 13: _t->transferStartLineChanged((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 14: _t->transferDstLineChanged((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 15: _t->transferQuery(); break;

@@ -306,11 +306,18 @@ QList<QString> SubwayGraph::getLineStationsList(int l)
     return stationsList;
 }
 
-void SubwayGraph::queryTransferMinTime(int s1, int s2, QList<int>&stationsList, QList<Edge>&edgesList)
+bool SubwayGraph::queryTransferMinTime(int s1, int s2, QList<int>&stationsList, QList<Edge>&edgesList)
 {
 #define INF 999999999
     stationsList.clear();
     edgesList.clear();
+
+    if(s1==s2)
+    {
+        stationsList.push_back(s2);
+        stationsList.push_back(s1);
+        return true;
+    }
     makeGraph();
 
     std::vector<int> path(stations.size(), -1);
@@ -341,9 +348,7 @@ void SubwayGraph::queryTransferMinTime(int s1, int s2, QList<int>&stationsList, 
 
     if(path[s2]==-1)
     {
-        stationsList.push_back(s2);
-        stationsList.push_back(s1);
-        return ;
+        return false;
     }
     int p=s2;
     while(path[p]!=-1)
@@ -355,10 +360,10 @@ void SubwayGraph::queryTransferMinTime(int s1, int s2, QList<int>&stationsList, 
     stationsList.push_back(s1);
 
     qDebug()<<"s1="<<s1<<" s2="<<s2<<" size= "<<stationsList.size()<<" "<<edgesList.size()<<"\n";
-    return ;
+    return true;
 }
 
-void SubwayGraph::queryTransferMinTransfer(int s1, int s2, QList<int>&stationsList, QList<Edge>&edgesList)
+bool SubwayGraph::queryTransferMinTransfer(int s1, int s2, QList<int>&stationsList, QList<Edge>&edgesList)
 {
-
+return true;
 }

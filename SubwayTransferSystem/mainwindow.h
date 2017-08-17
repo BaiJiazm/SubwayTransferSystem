@@ -37,13 +37,12 @@ private slots:
 
     void on_actionAddByText_triggered();
 
-    void on_actionTransfer_triggered();
-
     void tabWidgetCurrentChanged(int index);
     void addLine();
     void addStation();
     void addConnection();
     void addByText();
+    void updateTranserQueryInfo();
     void transferStartLineChanged(QString lineName);
     void transferDstLineChanged(QString lineNames);
     void transferQuery();

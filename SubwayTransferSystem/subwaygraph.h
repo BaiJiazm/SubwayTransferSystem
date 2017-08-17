@@ -59,8 +59,8 @@ public:
     bool insertEdge(int s1, int s2);
 
     void getGraph(QList<int>&stationsList, QList<Edge>&edgesList);
-    void queryTransferMinTime(int s1, int s2, QList<int>&stationsList, QList<Edge>&edgesList);
-    void queryTransferMinTransfer(int s1, int s2, QList<int>&stationsList, QList<Edge>&edgesList);
+    bool queryTransferMinTime(int s1, int s2, QList<int>&stationsList, QList<Edge>&edgesList);
+    bool queryTransferMinTransfer(int s1, int s2, QList<int>&stationsList, QList<Edge>&edgesList);
 
     void debug();
 
