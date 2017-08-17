@@ -79,6 +79,7 @@ public:
         radioButtonMinTime->setGeometry(QRect(0, 20, 180, 16));
         radioButtonMinTime->setMinimumSize(QSize(0, 0));
         radioButtonMinTime->setFont(font1);
+        radioButtonMinTime->setChecked(true);
         radioButtonMinTransfer = new QRadioButton(groupBox);
         radioButtonMinTransfer->setObjectName(QStringLiteral("radioButtonMinTransfer"));
         radioButtonMinTransfer->setGeometry(QRect(0, 40, 180, 20));
@@ -121,6 +122,7 @@ public:
 
         retranslateUi(QueryTransfer);
 
+        pushButtonTransfer->setDefault(true);
         comboBoxDstLine->setCurrentIndex(0);
         comboBoxDstStation->setCurrentIndex(-1);
         comboBoxStartLine->setCurrentIndex(0);

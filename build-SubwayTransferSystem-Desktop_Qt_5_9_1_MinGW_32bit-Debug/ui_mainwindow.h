@@ -14,13 +14,11 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
-#include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -50,24 +48,14 @@ public:
     QAction *actionAddByText;
     QAction *actiontoolBar;
     QAction *actionstatusBar;
+    QAction *actionLineMap;
     QWidget *centralWidget;
-    QHBoxLayout *horizontalLayout_7;
+    QHBoxLayout *horizontalLayout;
     QGraphicsView *graphicsView;
-    QVBoxLayout *verticalLayout1;
+    QVBoxLayout *verticalLayout_2;
     QLabel *labelAdd;
-    QHBoxLayout *horizontalLayout1;
-    QPushButton *pushButtonAddLine;
-    QLineEdit *lineEditAddLine;
-    QSpacerItem *horizontalSpacer;
-    QHBoxLayout *horizontalLayout2;
-    QPushButton *pushButtonAddStation;
-    QComboBox *comboBoxAddLine;
-    QLineEdit *lineEditAddStation;
-    QHBoxLayout *horizontalLayout3;
-    QLabel *labelLatitude;
-    QDoubleSpinBox *doubleSpinBoxLatitude;
-    QLabel *labelLongitude;
-    QDoubleSpinBox *doubleSpinBoxLongitude;
+    QLabel *labelTransferRoute_2;
+    QSpacerItem *verticalSpacer;
     QLabel *labelTransfer;
     QHBoxLayout *horizontalLayout4;
     QLabel *labelStart;
@@ -102,7 +90,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->setEnabled(true);
-        MainWindow->resize(1030, 695);
+        MainWindow->resize(1030, 699);
         MainWindow->setMinimumSize(QSize(1030, 695));
         MainWindow->setIconSize(QSize(24, 24));
         actionOpen = new QAction(MainWindow);
@@ -154,23 +142,28 @@ public:
         actiontoolBar->setObjectName(QStringLiteral("actiontoolBar"));
         actionstatusBar = new QAction(MainWindow);
         actionstatusBar->setObjectName(QStringLiteral("actionstatusBar"));
+        actionLineMap = new QAction(MainWindow);
+        actionLineMap->setObjectName(QStringLiteral("actionLineMap"));
+        QIcon icon8;
+        icon8.addFile(QStringLiteral(":/icon/icon/map.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionLineMap->setIcon(icon8);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         centralWidget->setMinimumSize(QSize(1030, 620));
-        horizontalLayout_7 = new QHBoxLayout(centralWidget);
-        horizontalLayout_7->setSpacing(10);
-        horizontalLayout_7->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
-        horizontalLayout_7->setContentsMargins(10, 10, 10, 10);
+        horizontalLayout = new QHBoxLayout(centralWidget);
+        horizontalLayout->setSpacing(10);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(10, 0, 10, 0);
         graphicsView = new QGraphicsView(centralWidget);
         graphicsView->setObjectName(QStringLiteral("graphicsView"));
         graphicsView->setMinimumSize(QSize(700, 600));
 
-        horizontalLayout_7->addWidget(graphicsView);
+        horizontalLayout->addWidget(graphicsView);
 
-        verticalLayout1 = new QVBoxLayout();
-        verticalLayout1->setSpacing(6);
-        verticalLayout1->setObjectName(QStringLiteral("verticalLayout1"));
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setSpacing(6);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         labelAdd = new QLabel(centralWidget);
         labelAdd->setObjectName(QStringLiteral("labelAdd"));
         labelAdd->setMinimumSize(QSize(280, 30));
@@ -183,117 +176,23 @@ public:
         labelAdd->setFont(font);
         labelAdd->setTextFormat(Qt::AutoText);
 
-        verticalLayout1->addWidget(labelAdd);
+        verticalLayout_2->addWidget(labelAdd);
 
-        horizontalLayout1 = new QHBoxLayout();
-        horizontalLayout1->setSpacing(10);
-        horizontalLayout1->setObjectName(QStringLiteral("horizontalLayout1"));
-        pushButtonAddLine = new QPushButton(centralWidget);
-        pushButtonAddLine->setObjectName(QStringLiteral("pushButtonAddLine"));
-        pushButtonAddLine->setMinimumSize(QSize(80, 20));
-        pushButtonAddLine->setMaximumSize(QSize(70, 20));
+        labelTransferRoute_2 = new QLabel(centralWidget);
+        labelTransferRoute_2->setObjectName(QStringLiteral("labelTransferRoute_2"));
+        labelTransferRoute_2->setMinimumSize(QSize(280, 20));
         QFont font1;
         font1.setFamily(QStringLiteral("Consolas"));
-        pushButtonAddLine->setFont(font1);
+        font1.setPointSize(9);
+        font1.setBold(false);
+        font1.setWeight(50);
+        labelTransferRoute_2->setFont(font1);
 
-        horizontalLayout1->addWidget(pushButtonAddLine);
+        verticalLayout_2->addWidget(labelTransferRoute_2);
 
-        lineEditAddLine = new QLineEdit(centralWidget);
-        lineEditAddLine->setObjectName(QStringLiteral("lineEditAddLine"));
-        lineEditAddLine->setMinimumSize(QSize(90, 20));
-        lineEditAddLine->setMaximumSize(QSize(100, 20));
-        lineEditAddLine->setFont(font1);
+        verticalSpacer = new QSpacerItem(20, 50, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        horizontalLayout1->addWidget(lineEditAddLine);
-
-        horizontalSpacer = new QSpacerItem(100, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout1->addItem(horizontalSpacer);
-
-        horizontalLayout1->setStretch(0, 7);
-        horizontalLayout1->setStretch(1, 9);
-        horizontalLayout1->setStretch(2, 9);
-
-        verticalLayout1->addLayout(horizontalLayout1);
-
-        horizontalLayout2 = new QHBoxLayout();
-        horizontalLayout2->setSpacing(10);
-        horizontalLayout2->setObjectName(QStringLiteral("horizontalLayout2"));
-        pushButtonAddStation = new QPushButton(centralWidget);
-        pushButtonAddStation->setObjectName(QStringLiteral("pushButtonAddStation"));
-        pushButtonAddStation->setMinimumSize(QSize(70, 20));
-        pushButtonAddStation->setMaximumSize(QSize(80, 20));
-        pushButtonAddStation->setFont(font1);
-
-        horizontalLayout2->addWidget(pushButtonAddStation);
-
-        comboBoxAddLine = new QComboBox(centralWidget);
-        comboBoxAddLine->setObjectName(QStringLiteral("comboBoxAddLine"));
-        comboBoxAddLine->setMinimumSize(QSize(90, 20));
-        comboBoxAddLine->setMaximumSize(QSize(100, 20));
-        comboBoxAddLine->setFont(font1);
-
-        horizontalLayout2->addWidget(comboBoxAddLine);
-
-        lineEditAddStation = new QLineEdit(centralWidget);
-        lineEditAddStation->setObjectName(QStringLiteral("lineEditAddStation"));
-        lineEditAddStation->setMinimumSize(QSize(90, 20));
-        lineEditAddStation->setMaximumSize(QSize(100, 20));
-        lineEditAddStation->setFont(font1);
-
-        horizontalLayout2->addWidget(lineEditAddStation);
-
-        horizontalLayout2->setStretch(0, 7);
-        horizontalLayout2->setStretch(1, 9);
-        horizontalLayout2->setStretch(2, 9);
-
-        verticalLayout1->addLayout(horizontalLayout2);
-
-        horizontalLayout3 = new QHBoxLayout();
-        horizontalLayout3->setSpacing(10);
-        horizontalLayout3->setObjectName(QStringLiteral("horizontalLayout3"));
-        labelLatitude = new QLabel(centralWidget);
-        labelLatitude->setObjectName(QStringLiteral("labelLatitude"));
-        labelLatitude->setMinimumSize(QSize(35, 20));
-        labelLatitude->setFont(font1);
-
-        horizontalLayout3->addWidget(labelLatitude);
-
-        doubleSpinBoxLatitude = new QDoubleSpinBox(centralWidget);
-        doubleSpinBoxLatitude->setObjectName(QStringLiteral("doubleSpinBoxLatitude"));
-        doubleSpinBoxLatitude->setMinimumSize(QSize(85, 20));
-        doubleSpinBoxLatitude->setDecimals(7);
-        doubleSpinBoxLatitude->setMinimum(30);
-        doubleSpinBoxLatitude->setMaximum(40);
-        doubleSpinBoxLatitude->setSingleStep(0.1);
-        doubleSpinBoxLatitude->setValue(30);
-
-        horizontalLayout3->addWidget(doubleSpinBoxLatitude);
-
-        labelLongitude = new QLabel(centralWidget);
-        labelLongitude->setObjectName(QStringLiteral("labelLongitude"));
-        labelLongitude->setMinimumSize(QSize(35, 20));
-        labelLongitude->setFont(font1);
-
-        horizontalLayout3->addWidget(labelLongitude);
-
-        doubleSpinBoxLongitude = new QDoubleSpinBox(centralWidget);
-        doubleSpinBoxLongitude->setObjectName(QStringLiteral("doubleSpinBoxLongitude"));
-        doubleSpinBoxLongitude->setMinimumSize(QSize(85, 20));
-        doubleSpinBoxLongitude->setDecimals(7);
-        doubleSpinBoxLongitude->setMinimum(120);
-        doubleSpinBoxLongitude->setMaximum(130);
-        doubleSpinBoxLongitude->setSingleStep(0.1);
-        doubleSpinBoxLongitude->setValue(120);
-
-        horizontalLayout3->addWidget(doubleSpinBoxLongitude);
-
-        horizontalLayout3->setStretch(0, 35);
-        horizontalLayout3->setStretch(1, 85);
-        horizontalLayout3->setStretch(2, 35);
-        horizontalLayout3->setStretch(3, 85);
-
-        verticalLayout1->addLayout(horizontalLayout3);
+        verticalLayout_2->addItem(verticalSpacer);
 
         labelTransfer = new QLabel(centralWidget);
         labelTransfer->setObjectName(QStringLiteral("labelTransfer"));
@@ -305,7 +204,7 @@ public:
         font2.setWeight(75);
         labelTransfer->setFont(font2);
 
-        verticalLayout1->addWidget(labelTransfer);
+        verticalLayout_2->addWidget(labelTransfer);
 
         horizontalLayout4 = new QHBoxLayout();
         horizontalLayout4->setSpacing(10);
@@ -313,21 +212,23 @@ public:
         labelStart = new QLabel(centralWidget);
         labelStart->setObjectName(QStringLiteral("labelStart"));
         labelStart->setMinimumSize(QSize(70, 20));
-        labelStart->setFont(font1);
+        QFont font3;
+        font3.setFamily(QStringLiteral("Consolas"));
+        labelStart->setFont(font3);
 
         horizontalLayout4->addWidget(labelStart);
 
         comboBoxStartLine = new QComboBox(centralWidget);
         comboBoxStartLine->setObjectName(QStringLiteral("comboBoxStartLine"));
         comboBoxStartLine->setMinimumSize(QSize(90, 20));
-        comboBoxStartLine->setFont(font1);
+        comboBoxStartLine->setFont(font3);
 
         horizontalLayout4->addWidget(comboBoxStartLine);
 
         comboBoxStartStation = new QComboBox(centralWidget);
         comboBoxStartStation->setObjectName(QStringLiteral("comboBoxStartStation"));
         comboBoxStartStation->setMinimumSize(QSize(90, 20));
-        comboBoxStartStation->setFont(font1);
+        comboBoxStartStation->setFont(font3);
 
         horizontalLayout4->addWidget(comboBoxStartStation);
 
@@ -335,7 +236,7 @@ public:
         horizontalLayout4->setStretch(1, 9);
         horizontalLayout4->setStretch(2, 9);
 
-        verticalLayout1->addLayout(horizontalLayout4);
+        verticalLayout_2->addLayout(horizontalLayout4);
 
         horizontalLayout5 = new QHBoxLayout();
         horizontalLayout5->setSpacing(10);
@@ -343,21 +244,21 @@ public:
         labelDestination = new QLabel(centralWidget);
         labelDestination->setObjectName(QStringLiteral("labelDestination"));
         labelDestination->setMinimumSize(QSize(70, 20));
-        labelDestination->setFont(font1);
+        labelDestination->setFont(font3);
 
         horizontalLayout5->addWidget(labelDestination);
 
         comboBoxDstLine = new QComboBox(centralWidget);
         comboBoxDstLine->setObjectName(QStringLiteral("comboBoxDstLine"));
         comboBoxDstLine->setMinimumSize(QSize(90, 20));
-        comboBoxDstLine->setFont(font1);
+        comboBoxDstLine->setFont(font3);
 
         horizontalLayout5->addWidget(comboBoxDstLine);
 
         comboBoxDstStation = new QComboBox(centralWidget);
         comboBoxDstStation->setObjectName(QStringLiteral("comboBoxDstStation"));
         comboBoxDstStation->setMinimumSize(QSize(90, 20));
-        comboBoxDstStation->setFont(font1);
+        comboBoxDstStation->setFont(font3);
 
         horizontalLayout5->addWidget(comboBoxDstStation);
 
@@ -365,7 +266,7 @@ public:
         horizontalLayout5->setStretch(1, 9);
         horizontalLayout5->setStretch(2, 9);
 
-        verticalLayout1->addLayout(horizontalLayout5);
+        verticalLayout_2->addLayout(horizontalLayout5);
 
         horizontalLayout6 = new QHBoxLayout();
         horizontalLayout6->setSpacing(10);
@@ -373,7 +274,7 @@ public:
         pushButtonTransfer = new QPushButton(centralWidget);
         pushButtonTransfer->setObjectName(QStringLiteral("pushButtonTransfer"));
         pushButtonTransfer->setMinimumSize(QSize(70, 30));
-        pushButtonTransfer->setFont(font1);
+        pushButtonTransfer->setFont(font3);
 
         horizontalLayout6->addWidget(pushButtonTransfer);
 
@@ -388,14 +289,15 @@ public:
         radioButtonMinTransfer = new QRadioButton(groupBox);
         radioButtonMinTransfer->setObjectName(QStringLiteral("radioButtonMinTransfer"));
         radioButtonMinTransfer->setMinimumSize(QSize(100, 15));
-        radioButtonMinTransfer->setFont(font1);
+        radioButtonMinTransfer->setFont(font3);
 
         verticalLayout->addWidget(radioButtonMinTransfer);
 
         radioButtonMinTime = new QRadioButton(groupBox);
         radioButtonMinTime->setObjectName(QStringLiteral("radioButtonMinTime"));
         radioButtonMinTime->setMinimumSize(QSize(100, 15));
-        radioButtonMinTime->setFont(font1);
+        radioButtonMinTime->setFont(font3);
+        radioButtonMinTime->setChecked(true);
 
         verticalLayout->addWidget(radioButtonMinTime);
 
@@ -407,42 +309,41 @@ public:
         horizontalLayout6->setStretch(0, 7);
         horizontalLayout6->setStretch(1, 19);
 
-        verticalLayout1->addLayout(horizontalLayout6);
+        verticalLayout_2->addLayout(horizontalLayout6);
 
         labelTransferRoute = new QLabel(centralWidget);
         labelTransferRoute->setObjectName(QStringLiteral("labelTransferRoute"));
         labelTransferRoute->setMinimumSize(QSize(280, 20));
-        QFont font3;
-        font3.setFamily(QStringLiteral("Consolas"));
-        font3.setPointSize(10);
-        font3.setBold(true);
-        font3.setWeight(75);
-        labelTransferRoute->setFont(font3);
+        QFont font4;
+        font4.setFamily(QStringLiteral("Consolas"));
+        font4.setPointSize(10);
+        font4.setBold(true);
+        font4.setWeight(75);
+        labelTransferRoute->setFont(font4);
 
-        verticalLayout1->addWidget(labelTransferRoute);
+        verticalLayout_2->addWidget(labelTransferRoute);
 
         textBrowserRoute = new QTextBrowser(centralWidget);
         textBrowserRoute->setObjectName(QStringLiteral("textBrowserRoute"));
-        textBrowserRoute->setMinimumSize(QSize(300, 300));
-        textBrowserRoute->setFont(font1);
+        textBrowserRoute->setMinimumSize(QSize(300, 320));
+        textBrowserRoute->setFont(font3);
 
-        verticalLayout1->addWidget(textBrowserRoute);
+        verticalLayout_2->addWidget(textBrowserRoute);
 
-        verticalLayout1->setStretch(0, 3);
-        verticalLayout1->setStretch(1, 2);
-        verticalLayout1->setStretch(2, 2);
-        verticalLayout1->setStretch(3, 2);
-        verticalLayout1->setStretch(4, 3);
-        verticalLayout1->setStretch(5, 2);
-        verticalLayout1->setStretch(6, 2);
-        verticalLayout1->setStretch(7, 3);
-        verticalLayout1->setStretch(8, 2);
-        verticalLayout1->setStretch(9, 21);
+        verticalLayout_2->setStretch(0, 3);
+        verticalLayout_2->setStretch(1, 2);
+        verticalLayout_2->setStretch(2, 3);
+        verticalLayout_2->setStretch(3, 3);
+        verticalLayout_2->setStretch(4, 2);
+        verticalLayout_2->setStretch(5, 2);
+        verticalLayout_2->setStretch(6, 5);
+        verticalLayout_2->setStretch(7, 2);
+        verticalLayout_2->setStretch(8, 32);
 
-        horizontalLayout_7->addLayout(verticalLayout1);
+        horizontalLayout->addLayout(verticalLayout_2);
 
-        horizontalLayout_7->setStretch(0, 8);
-        horizontalLayout_7->setStretch(1, 2);
+        horizontalLayout->setStretch(0, 11);
+        horizontalLayout->setStretch(1, 3);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -456,9 +357,9 @@ public:
         menuTool->setObjectName(QStringLiteral("menuTool"));
         menuAdd = new QMenu(menuTool);
         menuAdd->setObjectName(QStringLiteral("menuAdd"));
-        QIcon icon8;
-        icon8.addFile(QStringLiteral(":/icon/icon/add.png"), QSize(), QIcon::Normal, QIcon::Off);
-        menuAdd->setIcon(icon8);
+        QIcon icon9;
+        icon9.addFile(QStringLiteral(":/icon/icon/add.png"), QSize(), QIcon::Normal, QIcon::Off);
+        menuAdd->setIcon(icon9);
         menuWatch = new QMenu(menuBar);
         menuWatch->setObjectName(QStringLiteral("menuWatch"));
         menuView = new QMenu(menuBar);
@@ -479,16 +380,14 @@ public:
         statusBar->setMinimumSize(QSize(0, 15));
         MainWindow->setStatusBar(statusBar);
 #ifndef QT_NO_SHORTCUT
-        labelLatitude->setBuddy(doubleSpinBoxLatitude);
-        labelLongitude->setBuddy(doubleSpinBoxLongitude);
         labelStart->setBuddy(comboBoxStartLine);
         labelDestination->setBuddy(comboBoxDstLine);
 #endif // QT_NO_SHORTCUT
 
         menuBar->addAction(menuHelp->menuAction());
         menuBar->addAction(menuTool->menuAction());
-        menuBar->addAction(menuWatch->menuAction());
         menuBar->addAction(menuView->menuAction());
+        menuBar->addAction(menuWatch->menuAction());
         menuBar->addAction(menu_H->menuAction());
         menuBar->addAction(menu_A->menuAction());
         menuHelp->addAction(actionOpen);
@@ -508,6 +407,7 @@ public:
         menuWatch->addAction(actionstatusBar);
         menuView->addAction(toolEnlarge);
         menuView->addAction(toolShrink);
+        menuView->addAction(actionLineMap);
         mainToolBar->addSeparator();
         mainToolBar->addAction(toolEnlarge);
         mainToolBar->addAction(toolShrink);
@@ -519,6 +419,7 @@ public:
         mainToolBar->addAction(actionAddByText);
         mainToolBar->addSeparator();
         mainToolBar->addAction(actionTransfer);
+        mainToolBar->addAction(actionLineMap);
 
         retranslateUi(MainWindow);
 
@@ -555,18 +456,12 @@ public:
         actionAddByText->setText(QApplication::translate("MainWindow", "\346\226\207\346\234\254\346\226\271\345\274\217(&T)", Q_NULLPTR));
         actiontoolBar->setText(QApplication::translate("MainWindow", "toolBar", Q_NULLPTR));
         actionstatusBar->setText(QApplication::translate("MainWindow", "statusBar", Q_NULLPTR));
+        actionLineMap->setText(QApplication::translate("MainWindow", "\347\272\277\350\267\257\345\233\276", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        actionLineMap->setToolTip(QApplication::translate("MainWindow", "\347\202\271\345\207\273\346\237\245\347\234\213\346\211\200\346\234\211\345\234\260\351\223\201\347\275\221\347\273\234\347\272\277\350\267\257\345\233\276", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
         labelAdd->setText(QApplication::translate("MainWindow", "\345\212\250\346\200\201\346\267\273\345\212\240", Q_NULLPTR));
-        pushButtonAddLine->setText(QApplication::translate("MainWindow", "\346\267\273\345\212\240\350\267\257\347\272\277", Q_NULLPTR));
-        lineEditAddLine->setPlaceholderText(QApplication::translate("MainWindow", "\346\267\273\345\212\240\350\267\257\347\272\277[1-99]", Q_NULLPTR));
-        pushButtonAddStation->setText(QApplication::translate("MainWindow", "\346\267\273\345\212\240\347\253\231\347\202\271", Q_NULLPTR));
-        comboBoxAddLine->clear();
-        comboBoxAddLine->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "\346\267\273\345\212\240\345\210\260\350\267\257\347\272\277", Q_NULLPTR)
-        );
-        lineEditAddStation->setText(QString());
-        lineEditAddStation->setPlaceholderText(QApplication::translate("MainWindow", "\346\267\273\345\212\240\347\253\231\347\202\271\345\220\215", Q_NULLPTR));
-        labelLatitude->setText(QApplication::translate("MainWindow", "\345\214\227\347\272\254&N", Q_NULLPTR));
-        labelLongitude->setText(QApplication::translate("MainWindow", "\344\270\234\347\273\217&E", Q_NULLPTR));
+        labelTransferRoute_2->setText(QApplication::translate("MainWindow", "\357\274\210\350\257\267\344\273\216\345\267\245\345\205\267\346\240\217\344\270\255\351\200\211\346\213\251\357\274\211", Q_NULLPTR));
         labelTransfer->setText(QApplication::translate("MainWindow", "\346\215\242\344\271\230\346\214\207\345\215\227", Q_NULLPTR));
         labelStart->setText(QApplication::translate("MainWindow", "\350\265\267\347\202\271\347\253\231(&S)\357\274\232", Q_NULLPTR));
         comboBoxStartLine->clear();
@@ -587,7 +482,7 @@ public:
          << QApplication::translate("MainWindow", "\351\200\211\346\213\251\347\253\231\347\202\271", Q_NULLPTR)
         );
         pushButtonTransfer->setText(QApplication::translate("MainWindow", "\346\215\242\344\271\230", Q_NULLPTR));
-        groupBox->setTitle(QString());
+        groupBox->setTitle(QApplication::translate("MainWindow", "\346\215\242\344\271\230\347\255\226\347\225\245", Q_NULLPTR));
         radioButtonMinTransfer->setText(QApplication::translate("MainWindow", "\346\215\242\344\271\230\346\254\241\346\225\260\346\234\200\345\260\221", Q_NULLPTR));
         radioButtonMinTime->setText(QApplication::translate("MainWindow", "\346\211\200\351\234\200\346\227\266\351\227\264\346\234\200\347\237\255", Q_NULLPTR));
         labelTransferRoute->setText(QApplication::translate("MainWindow", "\346\215\242\344\271\230\350\267\257\347\272\277\357\274\232", Q_NULLPTR));

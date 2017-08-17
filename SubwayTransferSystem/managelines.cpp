@@ -28,7 +28,7 @@ ManageLines::ManageLines(QWidget *parent) :
     tabTextVector.push_back("文本方式(&T)");
 
     QString demoText=tr("请参照以下demo（注意格式需完全一样）\n");
-    demoText+=tr("- - - - - - - - - - demo.txt- - - - - - - - - - \n");
+    demoText+=tr("- - - - - - - - - - demo.txt- - - - - - - - - - ");
 
     QFile file(":/data/data/demo.txt");
     if(!file.open(QIODevice::ReadOnly))
@@ -170,6 +170,10 @@ void ManageLines::on_listWidget_itemClicked(QListWidgetItem *item)
 
 void ManageLines::updateComboBox()
 {
+    ui->comboBoxConnectStation1->clear();
+    ui->comboBoxConnectStation2->clear();
+    ui->lineEditStationName->clear();
+
     for (auto &a: stationsNameList)
     {
         ui->comboBoxConnectStation1->addItem(a);

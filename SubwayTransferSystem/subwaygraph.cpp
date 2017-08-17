@@ -2,6 +2,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
+#include <queue>
 
 SubwayGraph::SubwayGraph()
 {
@@ -117,10 +118,13 @@ void SubwayGraph::clearData()
 
 void SubwayGraph::makeGraph()
 {
+    graph.clear();
     graph=QVector<QVector<Node>>(stations.size(), QVector<Node>());
     for (auto &a : edges)
     {
-        graph[a.first].push_back(Node(a.second, stations[a.first].distance(stations[a.second])));
+        double dist=stations[a.first].distance(stations[a.second]);
+        graph[a.first].push_back(Node(a.second, dist));
+        graph[a.second].push_back(Node(a.first, dist));
     }
 }
 
@@ -276,8 +280,13 @@ void SubwayGraph::addLine(QString lineName, QColor color)
 
 void SubwayGraph::addStation(Station s)
 {
-    stationsHash[s.name]=stations.size();
+    int hash=stations.size();
+    stationsHash[s.name]=hash;
     stations.push_back(s);
+    for (auto &a: s.linesInfo)
+    {
+        lines[a].stationsSet.insert(hash);
+    }
 }
 
 void SubwayGraph::addConnection(int s1, int s2, int l)
@@ -295,4 +304,61 @@ QList<QString> SubwayGraph::getLineStationsList(int l)
         stationsList.push_back(stations[a].name);
     }
     return stationsList;
+}
+
+void SubwayGraph::queryTransferMinTime(int s1, int s2, QList<int>&stationsList, QList<Edge>&edgesList)
+{
+#define INF 999999999
+    stationsList.clear();
+    edgesList.clear();
+    makeGraph();
+
+    std::vector<int> path(stations.size(), -1);
+    std::vector<double> dist(stations.size(), INF);
+    dist[s1]=0;
+    std::priority_queue<Node, std::vector<Node>, std::greater<Node>> priQ;
+    priQ.push(Node(s1, 0));
+    while(!priQ.empty())
+    {
+        Node top=priQ.top();
+        priQ.pop();
+        if(top.stationID==s2)
+        {
+            break ;
+        }
+
+        for (int i=0; i<graph[top.stationID].size(); ++i)
+        {
+            Node &adjNode=graph[top.stationID][i];
+            if(top.distance+adjNode.distance<dist[adjNode.stationID])
+            {
+                path[adjNode.stationID]=top.stationID;
+                dist[adjNode.stationID]=top.distance+adjNode.distance;
+                priQ.push(Node(adjNode.stationID, dist[adjNode.stationID]));
+            }
+        }
+    }
+
+    if(path[s2]==-1)
+    {
+        stationsList.push_back(s2);
+        stationsList.push_back(s1);
+        return ;
+    }
+    int p=s2;
+    while(path[p]!=-1)
+    {
+        stationsList.push_front(p);
+        edgesList.push_front(Edge(path[p],p));
+        p=path[p];
+    }
+    stationsList.push_back(s1);
+
+    qDebug()<<"s1="<<s1<<" s2="<<s2<<" size= "<<stationsList.size()<<" "<<edgesList.size()<<"\n";
+    return ;
+}
+
+void SubwayGraph::queryTransferMinTransfer(int s1, int s2, QList<int>&stationsList, QList<Edge>&edgesList)
+{
+
 }

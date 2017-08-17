@@ -39,7 +39,7 @@
     <enum>QTabWidget::Rounded</enum>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>0</number>
    </property>
    <property name="elideMode">
     <enum>Qt::ElideNone</enum>
@@ -116,6 +116,9 @@
      </property>
      <property name="text">
       <string>添加线路</string>
+     </property>
+     <property name="default">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLabel" name="label_8">
@@ -429,6 +432,9 @@
      <property name="text">
       <string>添加站点</string>
      </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLabel" name="label_11">
      <property name="geometry">
@@ -625,6 +631,9 @@
      <property name="text">
       <string>连接</string>
      </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLabel" name="label_7">
      <property name="geometry">
@@ -722,6 +731,9 @@
      </property>
      <property name="text">
       <string>添加</string>
+     </property>
+     <property name="default">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>

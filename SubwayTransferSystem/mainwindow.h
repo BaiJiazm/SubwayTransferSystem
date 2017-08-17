@@ -37,6 +37,8 @@ private slots:
 
     void on_actionAddByText_triggered();
 
+    void on_actionTransfer_triggered();
+
     void tabWidgetCurrentChanged(int index);
     void addLine();
     void addStation();
@@ -44,8 +46,7 @@ private slots:
     void addByText();
     void transferStartLineChanged(QString lineName);
     void transferDstLineChanged(QString lineNames);
-
-    void on_actionTransfer_triggered();
+    void transferQuery();
 
 protected:
     Ui::MainWindow *ui;

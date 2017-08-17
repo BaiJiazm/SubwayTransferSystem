@@ -16,6 +16,11 @@ public:
     Node(){};
     Node(int s, double dist) :stationID(s), distance(dist)
     {};
+
+    bool operator > (const Node& n) const
+    {
+        return this->distance>n.distance;
+    }
 };
 
 class SubwayGraph
@@ -48,12 +53,15 @@ public:
     int getStationHash(QString stationName);
     QList<QString> getStationsNameList();
 
-    void getGraph(QList<int>&stationsList, QList<Edge>&edgesList);
-
     void addLine(QString lineName, QColor color);
     void addStation(Station s);
     void addConnection(int s1, int s2, int l);
     bool insertEdge(int s1, int s2);
+
+    void getGraph(QList<int>&stationsList, QList<Edge>&edgesList);
+    void queryTransferMinTime(int s1, int s2, QList<int>&stationsList, QList<Edge>&edgesList);
+    void queryTransferMinTransfer(int s1, int s2, QList<int>&stationsList, QList<Edge>&edgesList);
+
     void debug();
 
 private:

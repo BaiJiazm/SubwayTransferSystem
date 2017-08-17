@@ -69,6 +69,8 @@ void MainWindow::myConnect()
             this, SLOT(transferStartLineChanged(QString)));
     connect(queryTransfer->ui->comboBoxDstLine, SIGNAL(currentIndexChanged(QString)),
             this, SLOT(transferDstLineChanged(QString)));
+    connect(queryTransfer->ui->pushButtonTransfer, SIGNAL(clicked()), this, SLOT(transferQuery()));
+//    connect(ui->pushButtonTransfer, SIGNAL(clicked()), this, SLOT(transferQuery()));
 }
 
 void MainWindow::test()
@@ -265,6 +267,8 @@ void MainWindow::on_actionTransfer_triggered()
     QComboBox* comboL1=queryTransfer->ui->comboBoxStartLine;
     QComboBox* comboL2=queryTransfer->ui->comboBoxDstLine;
 
+    comboL1->clear();
+    comboL2->clear();
     QList<QString> linesList=subwayGraph->getLinesNameList();
     for(auto &a:linesList)
     {
@@ -312,6 +316,39 @@ void MainWindow::transferDstLineChanged(QString lineName)
     }
 }
 
+void MainWindow::transferQuery()
+{
+    int s1=subwayGraph->getStationHash(queryTransfer->ui->comboBoxStartStation->currentText());
+    int s2=subwayGraph->getStationHash(queryTransfer->ui->comboBoxDstStation->currentText());
+    int way=queryTransfer->ui->radioButtonMinTime->isChecked()?1:2;
+
+    QList<int> stationsList;
+    QList<Edge> edgesList;
+    if(way==1)
+    {
+        subwayGraph->queryTransferMinTime(s1, s2, stationsList, edgesList);
+    }
+    else
+    {
+        subwayGraph->queryTransferMinTransfer(s1, s2, stationsList, edgesList);
+    }
+
+    scene->clear();
+
+    drawEdges(edgesList);
+    drawStations(stationsList);
+
+    QString text;
+    for(int i=0; i<stationsList.size(); ++i)
+    {
+        text+=subwayGraph->getStationName(stationsList[i]);
+        text+="\n";
+    }
+    QTextBrowser* browser=queryTransfer->ui->textBrowserRoute;
+    browser->clear();
+    browser->setText(text);
+}
+
 void MainWindow::tabWidgetCurrentChanged(int index)
 {
     QWidget* widget=manageLines->ui->tabWidget->currentWidget();
@@ -325,10 +362,10 @@ void MainWindow::tabWidgetCurrentChanged(int index)
     {
         manageLines->linesNameList=subwayGraph->getLinesNameList();
         manageLines->stationsNameList=subwayGraph->getStationsNameList();
-        manageLines->updateComboBox();
         manageLines->ui->comboBoxConnectStation1->setMaxCount(manageLines->stationsNameList.size());
         manageLines->ui->comboBoxConnectStation2->setMaxCount(manageLines->stationsNameList.size());
         manageLines->ui->comboBoxConnectLine->setMaxCount(manageLines->linesNameList.size());
+        manageLines->updateComboBox();
     }
 }
 
@@ -388,7 +425,7 @@ void MainWindow::addStation()
         else
         {
             Station s(manageLines->stationName, manageLines->longitude, manageLines->latitude,
-                      subwayGraph->getLinesHash(manageLines->linesNameList));
+                      subwayGraph->getLinesHash(manageLines->linesSelected));
             subwayGraph->addStation(s);
             box.setText(tr("站点：")+manageLines->stationName+tr(" 添加成功！"));
         }

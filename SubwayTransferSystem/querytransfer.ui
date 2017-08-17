@@ -88,6 +88,9 @@
    <property name="text">
     <string>换乘</string>
    </property>
+   <property name="default">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
@@ -129,6 +132,9 @@
     </property>
     <property name="text">
      <string>所需时间最短</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QRadioButton" name="radioButtonMinTransfer">

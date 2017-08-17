@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1030</width>
-    <height>695</height>
+    <height>699</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -35,7 +35,7 @@
      <height>620</height>
     </size>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="8,2">
+   <layout class="QHBoxLayout" name="horizontalLayout" stretch="11,3">
     <property name="spacing">
      <number>10</number>
     </property>
@@ -43,13 +43,13 @@
      <number>10</number>
     </property>
     <property name="topMargin">
-     <number>10</number>
+     <number>0</number>
     </property>
     <property name="rightMargin">
      <number>10</number>
     </property>
     <property name="bottomMargin">
-     <number>10</number>
+     <number>0</number>
     </property>
     <item>
      <widget class="QGraphicsView" name="graphicsView">
@@ -62,7 +62,10 @@
      </widget>
     </item>
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout1" stretch="3,2,2,2,3,2,2,3,2,21">
+     <layout class="QVBoxLayout" name="verticalLayout_2" stretch="3,2,3,3,2,2,5,2,32">
+      <property name="spacing">
+       <number>6</number>
+      </property>
       <item>
        <widget class="QLabel" name="labelAdd">
         <property name="minimumSize">
@@ -89,255 +92,38 @@
        </widget>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout1" stretch="7,9,9">
-        <property name="spacing">
-         <number>10</number>
+       <widget class="QLabel" name="labelTransferRoute_2">
+        <property name="minimumSize">
+         <size>
+          <width>280</width>
+          <height>20</height>
+         </size>
         </property>
-        <item>
-         <widget class="QPushButton" name="pushButtonAddLine">
-          <property name="minimumSize">
-           <size>
-            <width>80</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>70</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Consolas</family>
-           </font>
-          </property>
-          <property name="text">
-           <string>添加路线</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEditAddLine">
-          <property name="minimumSize">
-           <size>
-            <width>90</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Consolas</family>
-           </font>
-          </property>
-          <property name="placeholderText">
-           <string>添加路线[1-99]</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>100</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
+        <property name="font">
+         <font>
+          <family>Consolas</family>
+          <pointsize>9</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>（请从工具栏中选择）</string>
+        </property>
+       </widget>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout2" stretch="7,9,9">
-        <property name="spacing">
-         <number>10</number>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
         </property>
-        <item>
-         <widget class="QPushButton" name="pushButtonAddStation">
-          <property name="minimumSize">
-           <size>
-            <width>70</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>80</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Consolas</family>
-           </font>
-          </property>
-          <property name="text">
-           <string>添加站点</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="comboBoxAddLine">
-          <property name="minimumSize">
-           <size>
-            <width>90</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Consolas</family>
-           </font>
-          </property>
-          <item>
-           <property name="text">
-            <string>添加到路线</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEditAddStation">
-          <property name="minimumSize">
-           <size>
-            <width>90</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Consolas</family>
-           </font>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="placeholderText">
-           <string>添加站点名</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout3" stretch="35,85,35,85">
-        <property name="spacing">
-         <number>10</number>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>50</height>
+         </size>
         </property>
-        <item>
-         <widget class="QLabel" name="labelLatitude">
-          <property name="minimumSize">
-           <size>
-            <width>35</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Consolas</family>
-           </font>
-          </property>
-          <property name="text">
-           <string>北纬&amp;N</string>
-          </property>
-          <property name="buddy">
-           <cstring>doubleSpinBoxLatitude</cstring>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxLatitude">
-          <property name="minimumSize">
-           <size>
-            <width>85</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="decimals">
-           <number>7</number>
-          </property>
-          <property name="minimum">
-           <double>30.000000000000000</double>
-          </property>
-          <property name="maximum">
-           <double>40.000000000000000</double>
-          </property>
-          <property name="singleStep">
-           <double>0.100000000000000</double>
-          </property>
-          <property name="value">
-           <double>30.000000000000000</double>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="labelLongitude">
-          <property name="minimumSize">
-           <size>
-            <width>35</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Consolas</family>
-           </font>
-          </property>
-          <property name="text">
-           <string>东经&amp;E</string>
-          </property>
-          <property name="buddy">
-           <cstring>doubleSpinBoxLongitude</cstring>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QDoubleSpinBox" name="doubleSpinBoxLongitude">
-          <property name="minimumSize">
-           <size>
-            <width>85</width>
-            <height>20</height>
-           </size>
-          </property>
-          <property name="decimals">
-           <number>7</number>
-          </property>
-          <property name="minimum">
-           <double>120.000000000000000</double>
-          </property>
-          <property name="maximum">
-           <double>130.000000000000000</double>
-          </property>
-          <property name="singleStep">
-           <double>0.100000000000000</double>
-          </property>
-          <property name="value">
-           <double>120.000000000000000</double>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       </spacer>
       </item>
       <item>
        <widget class="QLabel" name="labelTransfer">
@@ -528,7 +314,7 @@
            </size>
           </property>
           <property name="title">
-           <string/>
+           <string>换乘策略</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1">
            <property name="spacing">
@@ -580,6 +366,9 @@
              <property name="text">
               <string>所需时间最短</string>
              </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
           </layout>
@@ -613,7 +402,7 @@
         <property name="minimumSize">
          <size>
           <width>300</width>
-          <height>300</height>
+          <height>320</height>
          </size>
         </property>
         <property name="font">
@@ -692,6 +481,7 @@
     </property>
     <addaction name="toolEnlarge"/>
     <addaction name="toolShrink"/>
+    <addaction name="actionLineMap"/>
    </widget>
    <widget class="QMenu" name="menu_H">
     <property name="title">
@@ -705,8 +495,8 @@
    </widget>
    <addaction name="menuHelp"/>
    <addaction name="menuTool"/>
-   <addaction name="menuWatch"/>
    <addaction name="menuView"/>
+   <addaction name="menuWatch"/>
    <addaction name="menu_H"/>
    <addaction name="menu_A"/>
   </widget>
@@ -743,6 +533,7 @@
    <addaction name="actionAddByText"/>
    <addaction name="separator"/>
    <addaction name="actionTransfer"/>
+   <addaction name="actionLineMap"/>
   </widget>
   <widget class="QStatusBar" name="statusBar">
    <property name="minimumSize">
@@ -860,6 +651,18 @@
   <action name="actionstatusBar">
    <property name="text">
     <string>statusBar</string>
+   </property>
+  </action>
+  <action name="actionLineMap">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icon/icon/map.png</normaloff>:/icon/icon/map.png</iconset>
+   </property>
+   <property name="text">
+    <string>线路图</string>
+   </property>
+   <property name="toolTip">
+    <string>点击查看所有地铁网络线路图</string>
    </property>
   </action>
  </widget>

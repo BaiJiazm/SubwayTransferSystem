@@ -266,8 +266,12 @@ public:
 
         retranslateUi(ManageLines);
 
-        tabWidget->setCurrentIndex(3);
+        tabWidget->setCurrentIndex(0);
+        pushButtonAddLine->setDefault(true);
+        pushButtonAddStation->setDefault(true);
         comboBoxConnectStation1->setCurrentIndex(-1);
+        pushButtonConnect->setDefault(true);
+        pushButtonAddByText->setDefault(true);
 
 
         QMetaObject::connectSlotsByName(ManageLines);

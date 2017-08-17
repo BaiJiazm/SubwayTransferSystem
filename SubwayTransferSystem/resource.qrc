@@ -9,6 +9,7 @@
         <file>icon/all.png</file>
         <file>icon/text.png</file>
         <file>icon/query.png</file>
+        <file>icon/map.png</file>
     </qresource>
     <qresource prefix="/images">
         <file>images/transfer.png</file>
