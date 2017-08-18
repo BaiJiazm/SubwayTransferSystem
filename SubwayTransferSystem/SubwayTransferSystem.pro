@@ -30,8 +30,7 @@ SOURCES += \
     station.cpp \
     line.cpp \
     subwaygraph.cpp \
-    managelines.cpp \
-    querytransfer.cpp
+    managelines.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -39,13 +38,11 @@ HEADERS += \
     station.h \
     line.h \
     subwaygraph.h \
-    managelines.h \
-    querytransfer.h
+    managelines.h
 
 FORMS += \
        mainwindow.ui \
-    managelines.ui \
-    querytransfer.ui
+    managelines.ui
 
 RESOURCES += \
     resource.qrc

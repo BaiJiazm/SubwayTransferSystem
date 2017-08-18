@@ -357,9 +357,9 @@ bool SubwayGraph::queryTransferMinTime(int s1, int s2, QList<int>&stationsList, 
         edgesList.push_front(Edge(path[p],p));
         p=path[p];
     }
-    stationsList.push_back(s1);
+    stationsList.push_front(s1);
 
-    qDebug()<<"s1="<<s1<<" s2="<<s2<<" size= "<<stationsList.size()<<" "<<edgesList.size()<<"\n";
+//    qDebug()<<"s1="<<s1<<" s2="<<s2<<" size= "<<stationsList.size()<<" "<<edgesList.size()<<"\n";
     return true;
 }
 

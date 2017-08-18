@@ -1,6 +1,5 @@
 #include "ui_mainwindow.h"
 #include "ui_managelines.h"
-#include "ui_querytransfer.h"
 #include "mainwindow.h"
 
 #include <QGraphicsItem>
@@ -25,7 +24,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     manageLines=new ManageLines;
     subwayGraph=new SubwayGraph;
-    queryTransfer=new QueryTransfer;
 
     bool flag = subwayGraph->readFileData(":/data/data/outLine.txt");
     if (!flag)
@@ -144,6 +142,7 @@ QColor MainWindow::getLinesColor(const QList<int>& linesList)
 QString MainWindow::getLinesName(const QList<int>& linesList)
 {
     QString str;
+    str+="\t";
     for (int i=0; i<linesList.size(); ++i)
     {
         str+=" ";
@@ -322,14 +321,19 @@ void MainWindow::transferQuery()
     int s2=subwayGraph->getStationHash(ui->comboBoxDstStation->currentText());
     int way=ui->radioButtonMinTime->isChecked()?1:2;
 
-    QMessageBox box;
-    box.setWindowTitle(tr("换乘查询"));
-    box.setWindowIcon(QIcon(":/icon/icon/query.png"));
 
     if(s1==-1||s2==-1)
     {
+        QMessageBox box;
+        box.setWindowTitle(tr("换乘查询"));
+        box.setWindowIcon(QIcon(":/icon/icon/query.png"));
         box.setIcon(QMessageBox::Warning);
         box.setText(tr("请选择有站点的线路"));
+        box.addButton(tr("确定"),QMessageBox::AcceptRole);
+        if(box.exec()==QMessageBox::Accepted)
+        {
+            box.close();
+        }
     }
     else
     {
@@ -353,8 +357,13 @@ void MainWindow::transferQuery()
             QString text;
             for(int i=0; i<stationsList.size(); ++i)
             {
+                if(i)
+                {
+                    text+="\n  ↓\n";
+                }
                 text+=subwayGraph->getStationName(stationsList[i]);
-                text+="\n";
+                QString linesStr=getLinesName(subwayGraph->getStationLinesInfo(stationsList[i]));
+                text+=linesStr;
             }
             QTextBrowser* browser=ui->textBrowserRoute;
             browser->clear();
@@ -362,15 +371,17 @@ void MainWindow::transferQuery()
         }
         else
         {
+            QMessageBox box;
+            box.setWindowTitle(tr("换乘查询"));
+            box.setWindowIcon(QIcon(":/icon/icon/query.png"));
             box.setIcon(QMessageBox::Warning);
             box.setText(tr("您选择的起始和终止站点暂时无法到达！"));
+            box.addButton(tr("确定"),QMessageBox::AcceptRole);
+            if(box.exec()==QMessageBox::Accepted)
+            {
+                box.close();
+            }
         }
-    }
-
-    box.addButton(tr("确定"),QMessageBox::AcceptRole);
-    if(box.exec()==QMessageBox::Accepted)
-    {
-        box.close();
     }
 }
 

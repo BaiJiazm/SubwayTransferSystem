@@ -4,7 +4,6 @@
 #include "graphics_view_zoom.h"
 #include "subwaygraph.h"
 #include "managelines.h"
-#include "querytransfer.h"
 
 #include <QMainWindow>
 #include <QGraphicsScene>
@@ -53,7 +52,6 @@ protected:
     QGraphicsScene *scene;
     SubwayGraph* subwayGraph;
     ManageLines* manageLines;
-    QueryTransfer* queryTransfer;
 
     void test();
     QColor getLinesColor(const QList<int>& linesList);
