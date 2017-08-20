@@ -365,5 +365,54 @@ bool SubwayGraph::queryTransferMinTime(int s1, int s2, QList<int>&stationsList, 
 
 bool SubwayGraph::queryTransferMinTransfer(int s1, int s2, QList<int>&stationsList, QList<Edge>&edgesList)
 {
-return true;
+    stationsList.clear();
+    edgesList.clear();
+
+    if(s1==s2)
+    {
+        stationsList.push_back(s2);
+        stationsList.push_back(s1);
+        return true;
+    }
+
+    std::vector<bool> linesVisted(lines.size(),false);
+    std::vector<int> path(stations.size(),-1);
+    path[s1]=-2;
+    std::queue<int> que;
+    que.push(s1);
+
+    while(!que.empty())
+    {
+        int top=que.front();
+        que.pop();
+        for (auto &l: stations[top].linesInfo)
+        {
+            if(!linesVisted[l])
+            {
+                linesVisted[l]=true;
+                for (auto &s: lines[l].stationsSet)
+                {
+                    if(path[s]==-1)
+                    {
+                        path[s]=top;
+                        que.push(s);
+                    }
+                }
+            }
+        }
+    }
+
+    if(path[s2]==-1)
+    {
+        return false;
+    }
+    int p=s2;
+    while(path[p]!=-2)
+    {
+        stationsList.push_front(p);
+        edgesList.push_front(Edge(path[p],p));
+        p=path[p];
+    }
+    stationsList.push_front(s1);
+    return true;
 }

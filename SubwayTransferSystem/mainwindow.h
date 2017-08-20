@@ -6,6 +6,7 @@
 #include "managelines.h"
 
 #include <QMainWindow>
+#include <QLabel>
 #include <QGraphicsScene>
 #include <QGraphicsView>
 
@@ -46,6 +47,17 @@ private slots:
     void transferDstLineChanged(QString lineNames);
     void transferQuery();
 
+    void on_actionLineMap_triggered();
+
+    void on_actionstatusBar_triggered(bool checked);
+
+    void on_actiontoolBar_triggered(bool checked);
+    void timerUpdate();
+
+    void on_actionQt_triggered();
+
+    void on_actionauthor_triggered();
+
 protected:
     Ui::MainWindow *ui;
     Graphics_view_zoom *myView;
@@ -60,9 +72,12 @@ protected:
     void drawEdges (const QList<Edge>& edgesList);
     void drawStations (const QList<int>& stationsList);
     void myConnect();
+
+    void initStatusBar();
+    QLabel* statusLabel1, *statusLabel2, *statusLabel3;
 };
 
-#define LINE_INFO_WIDTH 100
+#define LINE_INFO_WIDTH 0
 #define MARGIN 30
 #define NET_WIDTH 2000
 #define NET_HEIGHT 2000

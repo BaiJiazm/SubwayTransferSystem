@@ -10,17 +10,26 @@
     <x>0</x>
     <y>0</y>
     <width>1030</width>
-    <height>699</height>
+    <height>684</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>1030</width>
-    <height>695</height>
+    <height>680</height>
    </size>
   </property>
+  <property name="font">
+   <font>
+    <family>Consolas</family>
+   </font>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>地铁换乘指南</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/icon/icon/metro-shanghai.png</normaloff>:/icon/icon/metro-shanghai.png</iconset>
   </property>
   <property name="iconSize">
    <size>
@@ -32,7 +41,7 @@
    <property name="minimumSize">
     <size>
      <width>1030</width>
-     <height>620</height>
+     <height>600</height>
     </size>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout" stretch="11,3">
@@ -56,7 +65,7 @@
       <property name="minimumSize">
        <size>
         <width>700</width>
-        <height>600</height>
+        <height>580</height>
        </size>
       </property>
      </widget>
@@ -402,7 +411,7 @@
         <property name="minimumSize">
          <size>
           <width>300</width>
-          <height>320</height>
+          <height>300</height>
          </size>
         </property>
         <property name="font">
@@ -481,6 +490,8 @@
     </property>
     <addaction name="toolEnlarge"/>
     <addaction name="toolShrink"/>
+    <addaction name="actionWheel"/>
+    <addaction name="separator"/>
     <addaction name="actionLineMap"/>
    </widget>
    <widget class="QMenu" name="menu_H">
@@ -492,6 +503,8 @@
     <property name="title">
      <string>关于(&amp;A)</string>
     </property>
+    <addaction name="actionQt"/>
+    <addaction name="actionauthor"/>
    </widget>
    <addaction name="menuHelp"/>
    <addaction name="menuTool"/>
@@ -539,7 +552,7 @@
    <property name="minimumSize">
     <size>
      <width>0</width>
-     <height>15</height>
+     <height>20</height>
     </size>
    </property>
   </widget>
@@ -549,6 +562,11 @@
    </property>
    <property name="text">
     <string>打开</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Consolas</family>
+    </font>
    </property>
    <property name="shortcut">
     <string>Ctrl+O</string>
@@ -565,6 +583,11 @@
    <property name="toolTip">
     <string>点击放大</string>
    </property>
+   <property name="font">
+    <font>
+     <family>Consolas</family>
+    </font>
+   </property>
    <property name="shortcut">
     <string>Ctrl+L</string>
    </property>
@@ -580,6 +603,11 @@
    <property name="toolTip">
     <string>点击缩小</string>
    </property>
+   <property name="font">
+    <font>
+     <family>Consolas</family>
+    </font>
+   </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
    </property>
@@ -590,12 +618,22 @@
      <normaloff>:/icon/icon/query.png</normaloff>:/icon/icon/query.png</iconset>
    </property>
    <property name="text">
-    <string>换乘指南</string>
+    <string>换乘指南(右栏)</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Consolas</family>
+    </font>
    </property>
   </action>
   <action name="actionQueryInfo">
    <property name="text">
-    <string>信息查询</string>
+    <string>信息查询(预留)</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Consolas</family>
+    </font>
    </property>
   </action>
   <action name="actionAddAll">
@@ -606,6 +644,11 @@
    <property name="text">
     <string>所有(&amp;A)</string>
    </property>
+   <property name="font">
+    <font>
+     <family>Consolas</family>
+    </font>
+   </property>
   </action>
   <action name="actionAddLine">
    <property name="icon">
@@ -614,6 +657,11 @@
    </property>
    <property name="text">
     <string>线路(&amp;L)</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Consolas</family>
+    </font>
    </property>
   </action>
   <action name="actionAddStation">
@@ -624,6 +672,11 @@
    <property name="text">
     <string>站点(&amp;S)</string>
    </property>
+   <property name="font">
+    <font>
+     <family>Consolas</family>
+    </font>
+   </property>
   </action>
   <action name="actionAddConnect">
    <property name="icon">
@@ -632,6 +685,11 @@
    </property>
    <property name="text">
     <string>连接(&amp;C)</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Consolas</family>
+    </font>
    </property>
   </action>
   <action name="actionAddByText">
@@ -642,15 +700,42 @@
    <property name="text">
     <string>文本方式(&amp;T)</string>
    </property>
+   <property name="font">
+    <font>
+     <family>Consolas</family>
+    </font>
+   </property>
   </action>
   <action name="actiontoolBar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>toolBar</string>
    </property>
+   <property name="font">
+    <font>
+     <family>Consolas</family>
+    </font>
+   </property>
   </action>
   <action name="actionstatusBar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>statusBar</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Consolas</family>
+    </font>
    </property>
   </action>
   <action name="actionLineMap">
@@ -659,10 +744,50 @@
      <normaloff>:/icon/icon/map.png</normaloff>:/icon/icon/map.png</iconset>
    </property>
    <property name="text">
-    <string>线路图</string>
+    <string>地铁图</string>
    </property>
    <property name="toolTip">
-    <string>点击查看所有地铁网络线路图</string>
+    <string>地铁网络线路图</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Consolas</family>
+    </font>
+   </property>
+  </action>
+  <action name="actionWheel">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icon/icon/mouse.png</normaloff>:/icon/icon/mouse.png</iconset>
+   </property>
+   <property name="text">
+    <string>鼠标可缩放</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Consolas</family>
+    </font>
+   </property>
+  </action>
+  <action name="actionQt">
+   <property name="icon">
+    <iconset theme="Qt" resource="resource.qrc">
+     <normaloff>:/icon/icon/qt.png</normaloff>:/icon/icon/qt.png</iconset>
+   </property>
+   <property name="text">
+    <string>关于Qt</string>
+   </property>
+  </action>
+  <action name="actionauthor">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icon/icon/metro-shanghai.png</normaloff>:/icon/icon/metro-shanghai.png</iconset>
+   </property>
+   <property name="text">
+    <string>制作者</string>
    </property>
   </action>
  </widget>

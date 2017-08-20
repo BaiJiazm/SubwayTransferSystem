@@ -5,6 +5,8 @@
 #include <QGraphicsItem>
 #include <QMessageBox>
 #include <QColorDialog>
+#include <QTimer>
+#include <QDateTime>
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -21,6 +23,8 @@ MainWindow::MainWindow(QWidget *parent) :
     scene->setSceneRect(-LINE_INFO_WIDTH,0,SCENE_WIDTH,SCENE_HEIGHT);
     ui->graphicsView->setScene(scene);
     ui->graphicsView->setDragMode(QGraphicsView::ScrollHandDrag);
+
+    initStatusBar();
 
     manageLines=new ManageLines;
     subwayGraph=new SubwayGraph;
@@ -43,14 +47,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     updateTranserQueryInfo();
 
-    QList<int> stationsList;
-    QList<Edge> edgesList;
-    subwayGraph->getGraph(stationsList,edgesList);
+    on_actionLineMap_triggered();
 
-//    qDebug()<<"stations.size()="<<stationsList.size()<<" edges.size()="<<edgesList.size();
-
-    drawEdges(edgesList);
-    drawStations(stationsList);
 }
 
 MainWindow::~MainWindow()
@@ -70,59 +68,10 @@ void MainWindow::myConnect()
     connect(ui->comboBoxDstLine, SIGNAL(currentIndexChanged(QString)),
             this, SLOT(transferDstLineChanged(QString)));
     connect(ui->pushButtonTransfer, SIGNAL(clicked()), this, SLOT(transferQuery()));
-}
 
-void MainWindow::test()
-{
-    QGraphicsRectItem* rectItem=new QGraphicsRectItem;
-    rectItem->setRect(0,0,100,100);
-    scene->addItem(rectItem);
-    rectItem->setPos(0,0);
-
-
-//    QGraphicsRectItem* rectItem2=new QGraphicsRectItem;
-//    rectItem2->setRect(0,0,100,100);
-//    scene->addItem(rectItem2);
-//    rectItem2->setPos(100,100);
-
-    QGraphicsEllipseItem * ellipseItem=new QGraphicsEllipseItem;
-    ellipseItem->setRect(-5,-5,15,15);
-    scene->addItem(ellipseItem);
-    ellipseItem->setPos(100,100);
-    ellipseItem->setBrush(QBrush(QColor(QRgb(0xffffff))));
-    QPen pen(QRgb(0xaaaaaa));
-    pen.setWidth(2);
-    ellipseItem->setPen(pen);
-
-    QPen linePen(QRgb(123456));
-    linePen.setWidth(10);
-    QGraphicsLineItem *lineItem=new QGraphicsLineItem;
-    lineItem->setPen(linePen);
-    scene->addItem(lineItem);
-    lineItem->setPos(200, 200);
-    QLineF line(QPointF(0,0),QPointF(100,-100));
-    lineItem->setLine(line);
-    lineItem->setZValue(0);
-
-    QGraphicsEllipseItem * ellipseItem2=new QGraphicsEllipseItem;
-    ellipseItem2->setRect(-10,-10,50,50);
-    scene->addItem(ellipseItem2);
-    ellipseItem2->setPos(200,200);
-    QPixmap pixmap(":/images/images/transfer.png");
-    ellipseItem2->setBrush(Qt::red);
-    ellipseItem2->setToolTip("站点：虹桥\n经度：\n纬度：\n");
-    ellipseItem2->setCursor(Qt::PointingHandCursor);
-    ellipseItem2->setZValue(0);
-//    ellipseItem2->setPen(pen);
-
-    QGraphicsTextItem *textItem=new QGraphicsTextItem;
-    textItem->setPos(205,205);
-    textItem->setPlainText("123号线");
-    scene->addItem(textItem);
-
-    QList<QGraphicsItem*> itemList=textItem->collidingItems();
-
-    qDebug()<<itemList.size()<<"\n";
+    QTimer *timer = new QTimer(this);//新建定时器
+    connect(timer,SIGNAL(timeout()),this,SLOT(timerUpdate()));//关联定时器计满信号和相应的槽函数
+    timer->start(1000);//定时器开始计时，其中1000表示1000ms即1秒
 }
 
 QColor MainWindow::getLinesColor(const QList<int>& linesList)
@@ -203,15 +152,15 @@ void MainWindow::drawStations (const QList<int>& stationsList)
         stationItem->setCursor(Qt::PointingHandCursor);
         stationItem->setToolTip(tip);
 
-        if(linesList.size()>1)
-        {
-            QBrush brush(QColor(QRgb(0xbbbbbb)),QPixmap(":/images/images/transfer1.png"));
-            stationItem->setBrush(brush);
-        }
-        else
+        if(linesList.size()<=1)
         {
             stationItem->setBrush(QColor(QRgb(0xffffff)));
         }
+//        else
+//        {
+//            QBrush brush(QColor(QRgb(0xbbbbbb)),QPixmap(":/images/images/transfer1.png"));
+//            stationItem->setBrush(brush);
+//        }
         scene->addItem(stationItem);
 
         QGraphicsTextItem* textItem=new QGraphicsTextItem;
@@ -224,46 +173,54 @@ void MainWindow::drawStations (const QList<int>& stationsList)
 
 void MainWindow::on_toolEnlarge_triggered()
 {
+    statusLabel3->setText(tr("已放大"));
     ui->graphicsView->scale(1.5,1.5);
 }
 
 void MainWindow::on_toolShrink_triggered()
 {
+    statusLabel3->setText(tr("已缩小"));
     ui->graphicsView->scale(2.0/3,2.0/3);
 }
 
 void MainWindow::on_actionAddAll_triggered()
 {
+    statusLabel3->setText(tr("添加线路、站点、连接关系"));
     manageLines->setAllVisible();
     manageLines->show();
 }
 
 void MainWindow::on_actionAddLine_triggered()
 {
+    statusLabel3->setText(tr("添加线路"));
     manageLines->setAddLineVisible();
     manageLines->show();
 }
 
 void MainWindow::on_actionAddStation_triggered()
 {
+    statusLabel3->setText(tr("添加站点"));
     manageLines->setAddStationVisible();
     manageLines->show();
 }
 
 void MainWindow::on_actionAddConnect_triggered()
 {
+    statusLabel3->setText(tr("添加连接关系"));
     manageLines->setAddConnectionVisible();
     manageLines->show();
 }
 
 void MainWindow::on_actionAddByText_triggered()
 {
+    statusLabel3->setText(tr("文本方式简易添加"));
     manageLines->setAddByTextVisible();
     manageLines->show();
 }
 
 void MainWindow::updateTranserQueryInfo()
 {
+    statusLabel3->setText(tr("已更新数据"));
     QComboBox* comboL1=ui->comboBoxStartLine;
     QComboBox* comboL2=ui->comboBoxDstLine;
 
@@ -321,7 +278,6 @@ void MainWindow::transferQuery()
     int s2=subwayGraph->getStationHash(ui->comboBoxDstStation->currentText());
     int way=ui->radioButtonMinTime->isChecked()?1:2;
 
-
     if(s1==-1||s2==-1)
     {
         QMessageBox box;
@@ -351,10 +307,12 @@ void MainWindow::transferQuery()
 
         if(flag)
         {
+            statusLabel3->setText(tr("换乘查询成功！"));
             scene->clear();
             drawEdges(edgesList);
             drawStations(stationsList);
-            QString text;
+            QString text=way==1?("以下线路时间最短，共换乘"+QString::number(stationsList.size()-1)+"个站点\n\n"):
+                                ("以下线路换乘最少，共换乘"+QString::number(stationsList.size()-1)+"条线路\n\n");
             for(int i=0; i<stationsList.size(); ++i)
             {
                 if(i)
@@ -523,4 +481,93 @@ void MainWindow::addConnection()
 void MainWindow::addByText()
 {
 
+}
+
+void MainWindow::on_actionLineMap_triggered()
+{
+    statusLabel3->setText(tr("图示：上海地铁网络线路图"));
+    scene->clear();
+    QList<int> stationsList;
+    QList<Edge> edgesList;
+    subwayGraph->getGraph(stationsList,edgesList);
+    drawEdges(edgesList);
+    drawStations(stationsList);
+//    qDebug()<<"stations.size()="<<stationsList.size()<<" edges.size()="<<edgesList.size();
+}
+
+void MainWindow::on_actionstatusBar_triggered(bool checked)
+{
+    if(checked)
+    {
+        ui->statusBar->show();
+    }
+    else
+    {
+        ui->statusBar->hide();
+    }
+}
+
+void MainWindow::on_actiontoolBar_triggered(bool checked)
+{
+    if(checked)
+    {
+        ui->mainToolBar->show();
+    }
+    else
+    {
+        ui->mainToolBar->hide();
+    }
+}
+
+void MainWindow::initStatusBar()
+{
+    QStatusBar* bar = ui->statusBar;
+    statusLabel1 = new QLabel;
+    statusLabel1->setMinimumSize(200,15);
+    statusLabel1->setFrameShape(QFrame::Box);
+    statusLabel1->setFrameShadow(QFrame::Sunken);
+
+    statusLabel2 = new QLabel;
+    statusLabel2->setMinimumSize(200,15);
+    statusLabel2->setFrameShape(QFrame::Box);
+    statusLabel2->setFrameShadow(QFrame::Sunken);
+
+    statusLabel3 = new QLabel;
+    statusLabel3->setMinimumSize(200,15);
+    statusLabel3->setFrameShape(QFrame::Box);
+    statusLabel3->setFrameShadow(QFrame::Sunken);
+
+    bar->addWidget(statusLabel1);
+    bar->addWidget(statusLabel2);
+    bar->addWidget(statusLabel3);
+
+    statusLabel1->setText(tr("made by 1453381"));
+    statusLabel2->setText(tr("0000-00-00 00:00::00 星期 "));
+    statusLabel3->setText(tr("欢迎使用地铁换乘指南,详情帮助"));
+}
+
+void MainWindow::timerUpdate()
+{
+    QDateTime time = QDateTime::currentDateTime();
+    QString str = time.toString("yyyy-MM-dd hh:mm:ss dddd");
+    statusLabel2->setText(str);
+}
+
+void MainWindow::on_actionQt_triggered()
+{
+    QMessageBox::aboutQt(this,tr("关于Qt"));
+}
+
+void MainWindow::on_actionauthor_triggered()
+{
+    QMessageBox box;
+    box.setWindowTitle(tr("关于制作者"));
+    box.setIcon(QMessageBox::Information);
+    box.setText(tr("Author : 1453381 \n"
+                   "School : TJ \n"
+                   "Major : Computer Science \n"
+                   "Emai : 767089181@qq.com \n"));
+    box.addButton(tr("确定"),QMessageBox::AcceptRole);
+    if(box.exec() == QMessageBox::Accepted)
+        box.close();
 }
