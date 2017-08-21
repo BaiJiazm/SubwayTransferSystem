@@ -28,9 +28,9 @@ SOURCES += \
         mainwindow.cpp \
     graphics_view_zoom.cpp \
     station.cpp \
-    line.cpp \
     subwaygraph.cpp \
-    managelines.cpp
+    managelines.cpp \
+    apphelp.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -38,7 +38,8 @@ HEADERS += \
     station.h \
     line.h \
     subwaygraph.h \
-    managelines.h
+    managelines.h \
+    apphelp.h
 
 FORMS += \
        mainwindow.ui \

@@ -4,11 +4,13 @@
 #include <QDebug>
 #include <queue>
 
+//构造函数
 SubwayGraph::SubwayGraph()
 {
 
 }
 
+//从文件读取数据
 bool SubwayGraph::readFileData(QString fileName)
 {
     QFile file(fileName);
@@ -101,11 +103,11 @@ bool SubwayGraph::readFileData(QString fileName)
     file.close();
 
     updateMinMaxLongiLati();
-    makeGraph();
 
     return true;
 }
 
+//清空数据
 void SubwayGraph::clearData()
 {
     stations.clear();
@@ -116,6 +118,18 @@ void SubwayGraph::clearData()
     graph.clear();
 }
 
+//插入一条边
+bool SubwayGraph::insertEdge(int n1, int n2)
+{
+    if (edges.contains(Edge(n1, n2)) || edges.contains(Edge(n2, n1)))
+    {
+        return false;
+    }
+    edges.insert(Edge(n1, n2));
+    return true;
+}
+
+//生成图结构
 void SubwayGraph::makeGraph()
 {
     graph.clear();
@@ -128,6 +142,65 @@ void SubwayGraph::makeGraph()
     }
 }
 
+
+//获取线路颜色
+QColor SubwayGraph::getLineColor(int l)
+{
+    return lines[l].color;
+}
+
+//获取线路名
+QString SubwayGraph::getLineName(int l)
+{
+    return lines[l].name;
+}
+
+//获取线路hash值
+int SubwayGraph::getLineHash(QString lineName)
+{
+    if(linesHash.contains(lineName))
+    {
+        return linesHash[lineName];
+    }
+    return -1;
+}
+
+//获取线路集合hash值
+QList<int> SubwayGraph::getLinesHash(QList<QString> linesList)
+{
+    QList<int> hashList;
+    for (auto &a:linesList)
+    {
+        hashList.push_back(getLineHash(a));
+    }
+    return hashList;
+}
+
+//获取线路名集合
+QList<QString> SubwayGraph::getLinesNameList()
+{
+    QList<QString> linesNameList;
+    for (auto a:lines)
+    {
+        linesNameList.push_back(a.name);
+    }
+    return linesNameList;
+}
+
+//获取线路的所有包含站点
+QList<QString> SubwayGraph::getLineStationsList(int l)
+{
+    QList<QString> stationsList;
+    for (auto &a:lines[l].stationsSet)
+    {
+        stationsList.push_back(stations[a].name);
+    }
+    return stationsList;
+}
+
+
+
+//更新边界经纬度
 void SubwayGraph::updateMinMaxLongiLati()
 {
     double minLongitude=200, minLatitude=200;
@@ -149,47 +222,19 @@ void SubwayGraph::updateMinMaxLongiLati()
 //    qDebug("maxLon=%.10lf, maxLat=%.10lf\n", maxLongitude, maxLatitude);
 }
 
+ //获取站点最小坐标
 QPointF SubwayGraph::getMinCoord()
 {
     return QPointF(Station::minLongitude, Station::minLatitude);
 }
 
+//获取站点最大坐标
 QPointF SubwayGraph::getMaxCoord()
 {
     return QPointF(Station::maxLongitude, Station::maxLatitude);
 }
 
-void SubwayGraph::getGraph(QList<int>&stationsList, QList<Edge>&edgesList)
-{
-    stationsList.clear();
-    for (int i=0; i<stations.size(); ++i)
-    {
-        stationsList.push_back(i);
-    }
-    edgesList=edges.toList();
-    return ;
-}
-
-QList<QString> SubwayGraph::getLinesNameList()
-{
-    QList<QString> linesNameList;
-    for (auto a:lines)
-    {
-        linesNameList.push_back(a.name);
-    }
-    return linesNameList;
-}
-
-bool SubwayGraph::insertEdge(int n1, int n2)
-{
-    if (edges.contains(Edge(n1, n2)) || edges.contains(Edge(n2, n1)))
-    {
-        return false;
-    }
-    edges.insert(Edge(n1, n2));
-    return true;
-}
-
+//获取两个站点的公共所属线路
 QList<int> SubwayGraph::getCommonLines(int s1, int s2)
 {
     QList<int> linesList;
@@ -201,58 +246,25 @@ QList<int> SubwayGraph::getCommonLines(int s1, int s2)
     return linesList;
 }
 
-QColor SubwayGraph::getLineColor(int l)
-{
-    return lines[l].color;
-}
-
-QString SubwayGraph::getLineName(int l)
-{
-    return lines[l].name;
-}
-
-void SubwayGraph::debug()
-{
-    for (int i=0; i<stations.size(); ++i)
-    {
-        qDebug()<<stations[i].name<<" lon="<<stations[i].longitude<<" lat="<<stations[i].latitude<<" \n";
-    }
-}
-
+//获取站点名
 QString SubwayGraph::getStationName(int s)
 {
     return stations[s].name;
 }
 
+//获取站点地理坐标
 QPointF SubwayGraph::getStationCoord(int s)
 {
     return QPointF(stations[s].longitude, stations[s].latitude);
 }
 
+//获取站点所属线路信息
 QList<int> SubwayGraph::getStationLinesInfo(int s)
 {
     return stations[s].linesInfo.toList();
 }
 
-int SubwayGraph::getLineHash(QString lineName)
-{
-    if(linesHash.contains(lineName))
-    {
-        return linesHash[lineName];
-    }
-    return -1;
-}
-
-QList<int> SubwayGraph::getLinesHash(QList<QString> linesList)
-{
-    QList<int> hashList;
-    for (auto &a:linesList)
-    {
-        hashList.push_back(getLineHash(a));
-    }
-    return hashList;
-}
-
+//获取站点hash值
 int SubwayGraph::getStationHash(QString stationName)
 {
     if(stationsHash.contains(stationName))
@@ -262,6 +274,7 @@ int SubwayGraph::getStationHash(QString stationName)
     return -1;
 }
 
+//获取站点集合hash值
 QList<QString> SubwayGraph::getStationsNameList()
 {
     QList<QString> list;
@@ -272,12 +285,16 @@ QList<QString> SubwayGraph::getStationsNameList()
     return list;
 }
 
+
+
+//添加新线路
 void SubwayGraph::addLine(QString lineName, QColor color)
 {
     linesHash[lineName]=lines.size();
     lines.push_back(Line(lineName,color));
 }
 
+//添加新站点
 void SubwayGraph::addStation(Station s)
 {
     int hash=stations.size();
@@ -287,8 +304,10 @@ void SubwayGraph::addStation(Station s)
     {
         lines[a].stationsSet.insert(hash);
     }
+    updateMinMaxLongiLati();
 }
 
+//添加站点连接关系
 void SubwayGraph::addConnection(int s1, int s2, int l)
 {
     insertEdge(s1,s2);
@@ -296,16 +315,21 @@ void SubwayGraph::addConnection(int s1, int s2, int l)
     lines[l].edges.insert(Edge(s2,s1));
 }
 
-QList<QString> SubwayGraph::getLineStationsList(int l)
+
+
+//获取网络结构，用于前端显示
+void SubwayGraph::getGraph(QList<int>&stationsList, QList<Edge>&edgesList)
 {
-    QList<QString> stationsList;
-    for (auto &a:lines[l].stationsSet)
+    stationsList.clear();
+    for (int i=0; i<stations.size(); ++i)
     {
-        stationsList.push_back(stations[a].name);
+        stationsList.push_back(i);
     }
-    return stationsList;
+    edgesList=edges.toList();
+    return ;
 }
 
+//获取最少时间的线路
 bool SubwayGraph::queryTransferMinTime(int s1, int s2, QList<int>&stationsList, QList<Edge>&edgesList)
 {
 #define INF 999999999
@@ -363,6 +387,7 @@ bool SubwayGraph::queryTransferMinTime(int s1, int s2, QList<int>&stationsList, 
     return true;
 }
 
+//获取最少换乘的线路
 bool SubwayGraph::queryTransferMinTransfer(int s1, int s2, QList<int>&stationsList, QList<Edge>&edgesList)
 {
     stationsList.clear();

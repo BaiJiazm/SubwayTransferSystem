@@ -444,13 +444,7 @@
     <property name="title">
      <string>文件(&amp;F)</string>
     </property>
-    <widget class="QMenu" name="menu">
-     <property name="title">
-      <string>最近打开</string>
-     </property>
-    </widget>
-    <addaction name="actionOpen"/>
-    <addaction name="menu"/>
+    <addaction name="actionClose"/>
    </widget>
    <widget class="QMenu" name="menuTool">
     <property name="title">
@@ -498,13 +492,14 @@
     <property name="title">
      <string>帮助(&amp;H)</string>
     </property>
+    <addaction name="actionuseHelp"/>
    </widget>
    <widget class="QMenu" name="menu_A">
     <property name="title">
      <string>关于(&amp;A)</string>
     </property>
     <addaction name="actionQt"/>
-    <addaction name="actionauthor"/>
+    <addaction name="actionAuthor"/>
    </widget>
    <addaction name="menuHelp"/>
    <addaction name="menuTool"/>
@@ -556,12 +551,12 @@
     </size>
    </property>
   </widget>
-  <action name="actionOpen">
+  <action name="actionClose">
    <property name="checkable">
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>打开</string>
+    <string>退出</string>
    </property>
    <property name="font">
     <font>
@@ -569,7 +564,7 @@
     </font>
    </property>
    <property name="shortcut">
-    <string>Ctrl+O</string>
+    <string>Ctrl+E</string>
    </property>
   </action>
   <action name="toolEnlarge">
@@ -781,13 +776,27 @@
     <string>关于Qt</string>
    </property>
   </action>
-  <action name="actionauthor">
+  <action name="actionAuthor">
    <property name="icon">
     <iconset resource="resource.qrc">
      <normaloff>:/icon/icon/metro-shanghai.png</normaloff>:/icon/icon/metro-shanghai.png</iconset>
    </property>
    <property name="text">
     <string>制作者</string>
+   </property>
+  </action>
+  <action name="actionuseHelp">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icon/icon/help.png</normaloff>:/icon/icon/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>使用帮助</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Consolas</family>
+    </font>
    </property>
   </action>
  </widget>

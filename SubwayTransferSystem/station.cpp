@@ -28,17 +28,20 @@ double Station::minLatitude = 200;
 double Station::maxLongitude = 0;
 double Station::maxLatitude = 0;
 
+//构造函数
 Station::Station()
 {
 
 }
 
+//构造函数
 Station::Station(QString nameStr, double longi, double lati, QList<int> linesList):
     name(nameStr), longitude(longi), latitude(lati)
 {
     linesInfo=linesList.toSet();
 }
 
+//求取站点间实地直线距离
 int Station::distance(Station other)
 {
     return calcuDistance(latitude, longitude, other.latitude, other.longitude);

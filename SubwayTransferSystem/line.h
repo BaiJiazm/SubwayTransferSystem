@@ -7,6 +7,7 @@
 #include <QSet>
 #include <QVector>
 
+//定义边类型
 typedef QPair<int,int> Edge;
 
 class SubwayGraph;
@@ -15,18 +16,20 @@ class QTextStream;
 class Line
 {
 protected:
-    int id;
-    QString name;
-    QColor color;
-    QVector <QString> fromTo;
-    QSet<int> stationsSet;
-    QSet<Edge> edges;
+    int id;                     //线路ID
+    QString name;               //线路名称
+    QColor color;               //线路颜色
+    QVector <QString> fromTo;   //线路起始站点
+    QSet<int> stationsSet;      //线路站点集合
+    QSet<Edge> edges;           //线路站点连接关系
 
 public:
-    Line();
+    //构造函数
+    Line(){};
     Line(QString lineName, QColor lineColor):name(lineName), color(lineColor)
     {};
 
+    //声明友元
     friend class SubwayGraph;
     friend class QTextStream;
 };

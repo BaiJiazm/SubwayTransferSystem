@@ -14,9 +14,18 @@
         <file>icon/splash.png</file>
         <file>icon/mouse.png</file>
         <file>icon/qt.png</file>
+        <file>icon/help.png</file>
     </qresource>
     <qresource prefix="/data">
         <file>data/outLine.txt</file>
         <file>data/demo.txt</file>
+    </qresource>
+    <qresource prefix="/html">
+        <file>html/helpAddByText.html</file>
+        <file>html/helpAddConnection.html</file>
+        <file>html/helpAddLine.html</file>
+        <file>html/helpAddStation.html</file>
+        <file>html/helpTransfer.html</file>
+        <file>html/helpWatch.html</file>
     </qresource>
 </RCC>

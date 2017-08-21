@@ -44,7 +44,7 @@
     <enum>QTabWidget::Rounded</enum>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>1</number>
    </property>
    <property name="elideMode">
     <enum>Qt::ElideNone</enum>
@@ -236,16 +236,16 @@
       <number>7</number>
      </property>
      <property name="minimum">
-      <double>30.000000000000000</double>
+      <double>30.899999999999999</double>
      </property>
      <property name="maximum">
-      <double>32.000000000000000</double>
+      <double>31.449999999999999</double>
      </property>
      <property name="singleStep">
       <double>0.100000000000000</double>
      </property>
      <property name="value">
-      <double>30.000000000000000</double>
+      <double>30.899999999999999</double>
      </property>
     </widget>
     <widget class="QLabel" name="labelLatitude">
@@ -321,7 +321,7 @@
       <number>7</number>
      </property>
      <property name="minimum">
-      <double>120.000000000000000</double>
+      <double>121.000000000000000</double>
      </property>
      <property name="maximum">
       <double>122.000000000000000</double>
@@ -330,7 +330,7 @@
       <double>0.100000000000000</double>
      </property>
      <property name="value">
-      <double>120.000000000000000</double>
+      <double>121.000000000000000</double>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEditStationName">
@@ -500,7 +500,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;有效范围:&lt;/p&gt;&lt;p&gt;min [ 120.0 , 30.0 ]&lt;/p&gt;&lt;p&gt;max [ 122.0 , 32.0 ]&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;有效范围:&lt;/p&gt;&lt;p&gt;min [ 121.0 , 30.9 ]&lt;/p&gt;&lt;p&gt;max [ 122.0 , 31.5 ]&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
     <widget class="QListWidget" name="listWidget">

@@ -7,6 +7,8 @@
 #include <QColorDialog>
 #include <QTimer>
 #include <QDateTime>
+#include <QFile>
+#include <QTextStream>
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -26,8 +28,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
     initStatusBar();
 
-    manageLines=new ManageLines;
+    manageLines=new ManageLines(this);
     subwayGraph=new SubwayGraph;
+    appHelp=new AppHelp();
 
     bool flag = subwayGraph->readFileData(":/data/data/outLine.txt");
     if (!flag)
@@ -48,14 +51,19 @@ MainWindow::MainWindow(QWidget *parent) :
     updateTranserQueryInfo();
 
     on_actionLineMap_triggered();
-
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete myView;
+    delete scene;
+    delete subwayGraph;
+    delete manageLines;
+    delete appHelp;
 }
 
+//连接信号和槽函数
 void MainWindow::myConnect()
 {
     connect(manageLines->ui->tabWidget, SIGNAL(currentChanged(int)), this, SLOT(tabWidgetCurrentChanged(int)));
@@ -74,6 +82,43 @@ void MainWindow::myConnect()
     timer->start(1000);//定时器开始计时，其中1000表示1000ms即1秒
 }
 
+//时间更新槽函数
+void MainWindow::timerUpdate()
+{
+    QDateTime time = QDateTime::currentDateTime();
+    QString str = time.toString("yyyy-MM-dd hh:mm:ss dddd");
+    statusLabel2->setText(str);
+}
+
+//初始状态栏
+void MainWindow::initStatusBar()
+{
+    QStatusBar* bar = ui->statusBar;
+    statusLabel1 = new QLabel;
+    statusLabel1->setMinimumSize(200,15);
+    statusLabel1->setFrameShape(QFrame::Box);
+    statusLabel1->setFrameShadow(QFrame::Sunken);
+
+    statusLabel2 = new QLabel;
+    statusLabel2->setMinimumSize(200,15);
+    statusLabel2->setFrameShape(QFrame::Box);
+    statusLabel2->setFrameShadow(QFrame::Sunken);
+
+    statusLabel3 = new QLabel;
+    statusLabel3->setMinimumSize(200,15);
+    statusLabel3->setFrameShape(QFrame::Box);
+    statusLabel3->setFrameShadow(QFrame::Sunken);
+
+    bar->addWidget(statusLabel1);
+    bar->addWidget(statusLabel2);
+    bar->addWidget(statusLabel3);
+
+    statusLabel1->setText(tr("made by 1453381"));
+    statusLabel2->setText(tr("0000-00-00 00:00::00 星期 "));
+    statusLabel3->setText(tr("欢迎使用地铁换乘指南,详情帮助"));
+}
+
+//由线路表计算混合颜色
 QColor MainWindow::getLinesColor(const QList<int>& linesList)
 {
     QColor color1=QColor(255,255,255);
@@ -88,6 +133,7 @@ QColor MainWindow::getLinesColor(const QList<int>& linesList)
     return color1;
 }
 
+//获得线路表的名字集
 QString MainWindow::getLinesName(const QList<int>& linesList)
 {
     QString str;
@@ -101,6 +147,7 @@ QString MainWindow::getLinesName(const QList<int>& linesList)
     return str;
 }
 
+//将站点的经纬度地理坐标转为视图坐标
 QPointF MainWindow::transferCoord(QPointF coord)
 {
     QPointF minCoord=subwayGraph->getMinCoord();
@@ -110,6 +157,7 @@ QPointF MainWindow::transferCoord(QPointF coord)
     return QPointF(x,y);
 }
 
+//绘制网络图的边
 void MainWindow::drawEdges(const QList<Edge>& edgesList)
 {
     for(int i=0; i<edgesList.size(); ++i)
@@ -134,6 +182,7 @@ void MainWindow::drawEdges(const QList<Edge>& edgesList)
     }
 }
 
+//绘制网络图的站点节点
 void MainWindow::drawStations (const QList<int>& stationsList)
 {
     for (int i=0; i<stationsList.size(); ++i)
@@ -141,9 +190,13 @@ void MainWindow::drawStations (const QList<int>& stationsList)
         int s=stationsList[i];
         QString name=subwayGraph->getStationName(s);
         QList<int> linesList=subwayGraph->getStationLinesInfo(s);
-        QString tip="站名： "+name+"\n线路："+getLinesName(linesList);
         QColor color=getLinesColor(linesList);
-        QPointF coord=transferCoord(subwayGraph->getStationCoord(s));
+        QPointF longiLati=subwayGraph->getStationCoord(s);
+        QPointF coord=transferCoord(longiLati);
+        QString tip="站名：  "+name+"\n"+
+                "经度：  "+QString::number(longiLati.x(),'f',7)+"\n"+
+                "纬度：  "+QString::number(longiLati.y(),'f',7)+"\n"+
+                "线路："+getLinesName(linesList);
 
         QGraphicsEllipseItem* stationItem=new QGraphicsEllipseItem;
         stationItem->setRect(-NODE_HALF_WIDTH, -NODE_HALF_WIDTH, NODE_HALF_WIDTH<<1, NODE_HALF_WIDTH<<1);
@@ -156,11 +209,7 @@ void MainWindow::drawStations (const QList<int>& stationsList)
         {
             stationItem->setBrush(QColor(QRgb(0xffffff)));
         }
-//        else
-//        {
-//            QBrush brush(QColor(QRgb(0xbbbbbb)),QPixmap(":/images/images/transfer1.png"));
-//            stationItem->setBrush(brush);
-//        }
+
         scene->addItem(stationItem);
 
         QGraphicsTextItem* textItem=new QGraphicsTextItem;
@@ -171,53 +220,8 @@ void MainWindow::drawStations (const QList<int>& stationsList)
     }
 }
 
-void MainWindow::on_toolEnlarge_triggered()
-{
-    statusLabel3->setText(tr("已放大"));
-    ui->graphicsView->scale(1.5,1.5);
-}
 
-void MainWindow::on_toolShrink_triggered()
-{
-    statusLabel3->setText(tr("已缩小"));
-    ui->graphicsView->scale(2.0/3,2.0/3);
-}
-
-void MainWindow::on_actionAddAll_triggered()
-{
-    statusLabel3->setText(tr("添加线路、站点、连接关系"));
-    manageLines->setAllVisible();
-    manageLines->show();
-}
-
-void MainWindow::on_actionAddLine_triggered()
-{
-    statusLabel3->setText(tr("添加线路"));
-    manageLines->setAddLineVisible();
-    manageLines->show();
-}
-
-void MainWindow::on_actionAddStation_triggered()
-{
-    statusLabel3->setText(tr("添加站点"));
-    manageLines->setAddStationVisible();
-    manageLines->show();
-}
-
-void MainWindow::on_actionAddConnect_triggered()
-{
-    statusLabel3->setText(tr("添加连接关系"));
-    manageLines->setAddConnectionVisible();
-    manageLines->show();
-}
-
-void MainWindow::on_actionAddByText_triggered()
-{
-    statusLabel3->setText(tr("文本方式简易添加"));
-    manageLines->setAddByTextVisible();
-    manageLines->show();
-}
-
+//更新换乘选择信息
 void MainWindow::updateTranserQueryInfo()
 {
     statusLabel3->setText(tr("已更新数据"));
@@ -236,6 +240,7 @@ void MainWindow::updateTranserQueryInfo()
     transferDstLineChanged(comboL2->itemText(0));
 }
 
+//换乘出发线路改变槽函数
 void MainWindow::transferStartLineChanged(QString lineName)
 {
     QComboBox* comboS1=ui->comboBoxStartStation;
@@ -254,6 +259,7 @@ void MainWindow::transferStartLineChanged(QString lineName)
     }
 }
 
+//换乘目的线路改变槽函数
 void MainWindow::transferDstLineChanged(QString lineName)
 {
     QComboBox* comboS2=ui->comboBoxDstStation;
@@ -272,6 +278,7 @@ void MainWindow::transferDstLineChanged(QString lineName)
     }
 }
 
+//换乘查询槽函数
 void MainWindow::transferQuery()
 {
     int s1=subwayGraph->getStationHash(ui->comboBoxStartStation->currentText());
@@ -343,6 +350,7 @@ void MainWindow::transferQuery()
     }
 }
 
+//添加列表视图部件变化槽函数
 void MainWindow::tabWidgetCurrentChanged(int index)
 {
     QWidget* widget=manageLines->ui->tabWidget->currentWidget();
@@ -361,8 +369,10 @@ void MainWindow::tabWidgetCurrentChanged(int index)
         manageLines->ui->comboBoxConnectLine->setMaxCount(manageLines->linesNameList.size());
         manageLines->updateComboBox();
     }
+    Q_UNUSED(index);
 }
 
+//添加线路功能函数
 void MainWindow::addLine()
 {
     QMessageBox box;
@@ -392,8 +402,10 @@ void MainWindow::addLine()
     {
         box.close();
     }
+    updateTranserQueryInfo();
 }
 
+//添加站点功能函数
 void MainWindow::addStation()
 {
     QMessageBox box;
@@ -432,8 +444,11 @@ void MainWindow::addStation()
     {
         box.close();
     }
+    updateTranserQueryInfo();
+    on_actionLineMap_triggered();
 }
 
+//添加连接功能函数
 void MainWindow::addConnection()
 {
     QString station1=manageLines->ui->comboBoxConnectStation1->currentText();
@@ -476,13 +491,104 @@ void MainWindow::addConnection()
     {
         box.close();
     }
+    updateTranserQueryInfo();
+    on_actionLineMap_triggered();
 }
 
+//文本方式添加功能函数
 void MainWindow::addByText()
 {
+    QString writeFile="userAdd.txt";
+    QFile file(writeFile);
+    if(!file.open(QIODevice::WriteOnly|QIODevice::Text))
+    {
+        QMessageBox::critical(NULL, "提示", "无法创建添加文件");
+            return ;
+    }
+    QTextStream out(&file);
+    out<<manageLines->ui->textEdit->toPlainText();
+    file.close();
 
+    QMessageBox box;
+    box.setWindowTitle(tr("文本添加"));
+    box.setWindowIcon(QIcon(":/icon/icon/add.png"));
+
+    bool flag=subwayGraph->readFileData(writeFile);
+    if(flag)
+    {
+        box.setIcon(QMessageBox::Information);
+        box.setText(tr("添加成功"));
+    }
+    else
+    {
+        box.setIcon(QMessageBox::Critical);
+        box.setText(tr("添加失败，数据被擦除！"));
+    }
+    box.addButton(tr("确定"),QMessageBox::AcceptRole);
+    if(box.exec()==QMessageBox::Accepted)
+    {
+        box.close();
+    }
+    updateTranserQueryInfo();
+    on_actionLineMap_triggered();
+    return ;
 }
 
+//视图放大槽函数
+void MainWindow::on_toolEnlarge_triggered()
+{
+    statusLabel3->setText(tr("已放大"));
+    ui->graphicsView->scale(1.5,1.5);
+}
+
+//动作视图缩小槽函数
+void MainWindow::on_toolShrink_triggered()
+{
+    statusLabel3->setText(tr("已缩小"));
+    ui->graphicsView->scale(2.0/3,2.0/3);
+}
+
+//动作添加所有槽函数
+void MainWindow::on_actionAddAll_triggered()
+{
+    statusLabel3->setText(tr("添加线路、站点、连接关系"));
+    manageLines->setAllVisible();
+    manageLines->show();
+}
+
+//动作添加线路槽函数
+void MainWindow::on_actionAddLine_triggered()
+{
+    statusLabel3->setText(tr("添加线路"));
+    manageLines->setAddLineVisible();
+    manageLines->show();
+}
+
+//动作添加站点槽函数
+void MainWindow::on_actionAddStation_triggered()
+{
+    statusLabel3->setText(tr("添加站点"));
+    manageLines->setAddStationVisible();
+    manageLines->show();
+}
+
+//动作添加连接槽函数
+void MainWindow::on_actionAddConnect_triggered()
+{
+    statusLabel3->setText(tr("添加连接关系"));
+    manageLines->setAddConnectionVisible();
+    manageLines->show();
+}
+
+//动作文本方式添加槽函数
+void MainWindow::on_actionAddByText_triggered()
+{
+    statusLabel3->setText(tr("文本方式简易添加"));
+    manageLines->setAddByTextVisible();
+    manageLines->show();
+}
+
+//动作查看所有线路图槽函数
 void MainWindow::on_actionLineMap_triggered()
 {
     statusLabel3->setText(tr("图示：上海地铁网络线路图"));
@@ -495,6 +601,7 @@ void MainWindow::on_actionLineMap_triggered()
 //    qDebug()<<"stations.size()="<<stationsList.size()<<" edges.size()="<<edgesList.size();
 }
 
+//动作是否显示状态栏槽函数
 void MainWindow::on_actionstatusBar_triggered(bool checked)
 {
     if(checked)
@@ -507,6 +614,7 @@ void MainWindow::on_actionstatusBar_triggered(bool checked)
     }
 }
 
+//动作是否显示工具栏槽函数
 void MainWindow::on_actiontoolBar_triggered(bool checked)
 {
     if(checked)
@@ -519,46 +627,14 @@ void MainWindow::on_actiontoolBar_triggered(bool checked)
     }
 }
 
-void MainWindow::initStatusBar()
-{
-    QStatusBar* bar = ui->statusBar;
-    statusLabel1 = new QLabel;
-    statusLabel1->setMinimumSize(200,15);
-    statusLabel1->setFrameShape(QFrame::Box);
-    statusLabel1->setFrameShadow(QFrame::Sunken);
-
-    statusLabel2 = new QLabel;
-    statusLabel2->setMinimumSize(200,15);
-    statusLabel2->setFrameShape(QFrame::Box);
-    statusLabel2->setFrameShadow(QFrame::Sunken);
-
-    statusLabel3 = new QLabel;
-    statusLabel3->setMinimumSize(200,15);
-    statusLabel3->setFrameShape(QFrame::Box);
-    statusLabel3->setFrameShadow(QFrame::Sunken);
-
-    bar->addWidget(statusLabel1);
-    bar->addWidget(statusLabel2);
-    bar->addWidget(statusLabel3);
-
-    statusLabel1->setText(tr("made by 1453381"));
-    statusLabel2->setText(tr("0000-00-00 00:00::00 星期 "));
-    statusLabel3->setText(tr("欢迎使用地铁换乘指南,详情帮助"));
-}
-
-void MainWindow::timerUpdate()
-{
-    QDateTime time = QDateTime::currentDateTime();
-    QString str = time.toString("yyyy-MM-dd hh:mm:ss dddd");
-    statusLabel2->setText(str);
-}
-
+//动作关于Qt槽函数
 void MainWindow::on_actionQt_triggered()
 {
     QMessageBox::aboutQt(this,tr("关于Qt"));
 }
 
-void MainWindow::on_actionauthor_triggered()
+//动作关于作者槽函数
+void MainWindow::on_actionAuthor_triggered()
 {
     QMessageBox box;
     box.setWindowTitle(tr("关于制作者"));
@@ -570,4 +646,16 @@ void MainWindow::on_actionauthor_triggered()
     box.addButton(tr("确定"),QMessageBox::AcceptRole);
     if(box.exec() == QMessageBox::Accepted)
         box.close();
+}
+
+//动作帮助菜单槽函数
+void MainWindow::on_actionuseHelp_triggered()
+{
+    appHelp->show();
+}
+
+//动作关闭程序槽函数
+void MainWindow::on_actionClose_triggered()
+{
+    close();
 }
