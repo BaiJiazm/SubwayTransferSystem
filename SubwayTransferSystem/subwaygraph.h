@@ -81,9 +81,13 @@ public:
     //获取网络结构，用于前端显示
     void getGraph(QList<int>&stationsList, QList<Edge>&edgesList);
     //获取最少时间的线路
-    bool queryTransferMinTime(int s1, int s2, QList<int>&stationsList, QList<Edge>&edgesList);
+    bool queryTransferMinTime(int s1, int s2,
+                              QList<int>&stationsList,
+                              QList<Edge>&edgesList);
     //获取最少换乘的线路
-    bool queryTransferMinTransfer(int s1, int s2, QList<int>&stationsList, QList<Edge>&edgesList);
+    bool queryTransferMinTransfer(int s1, int s2,
+                                  QList<int>&stationsList,
+                                  QList<Edge>&edgesList);
     //从文件读取数据
     bool readFileData(QString fileName);
 

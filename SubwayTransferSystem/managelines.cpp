@@ -122,7 +122,7 @@ void ManageLines::updateComboBox()
 {
     ui->comboBoxConnectStation1->clear();
     ui->comboBoxConnectStation2->clear();
-    ui->lineEditStationName->clear();
+    ui->comboBoxConnectLine->clear();
 
     for (auto &a: stationsNameList)
     {
@@ -186,6 +186,7 @@ void ManageLines::on_doubleSpinBoxLongitude_valueChanged(double arg1)
 //列表部件选择项改变
 void ManageLines::on_listWidget_itemClicked(QListWidgetItem *item)
 {
+    Q_UNUSED(item);
     QString str;
     linesSelected.clear();
 

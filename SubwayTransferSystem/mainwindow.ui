@@ -644,6 +644,9 @@
      <family>Consolas</family>
     </font>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
   </action>
   <action name="actionAddLine">
    <property name="icon">
@@ -657,6 +660,9 @@
     <font>
      <family>Consolas</family>
     </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+L</string>
    </property>
   </action>
   <action name="actionAddStation">
@@ -672,6 +678,9 @@
      <family>Consolas</family>
     </font>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
   </action>
   <action name="actionAddConnect">
    <property name="icon">
@@ -686,6 +695,9 @@
      <family>Consolas</family>
     </font>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+C</string>
+   </property>
   </action>
   <action name="actionAddByText">
    <property name="icon">
@@ -699,6 +711,9 @@
     <font>
      <family>Consolas</family>
     </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+T</string>
    </property>
   </action>
   <action name="actiontoolBar">
@@ -749,6 +764,9 @@
      <family>Consolas</family>
     </font>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
   </action>
   <action name="actionWheel">
    <property name="enabled">
@@ -775,6 +793,9 @@
    <property name="text">
     <string>关于Qt</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
   </action>
   <action name="actionAuthor">
    <property name="icon">
@@ -797,6 +818,9 @@
     <font>
      <family>Consolas</family>
     </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
    </property>
   </action>
  </widget>

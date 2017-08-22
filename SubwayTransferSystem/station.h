@@ -8,6 +8,7 @@
 class SubwayGraph;
 class QTextStream;
 
+//地铁站点类定义
 class Station
 {
 protected:

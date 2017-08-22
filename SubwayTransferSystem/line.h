@@ -13,6 +13,7 @@ typedef QPair<int,int> Edge;
 class SubwayGraph;
 class QTextStream;
 
+//线路类
 class Line
 {
 protected:
