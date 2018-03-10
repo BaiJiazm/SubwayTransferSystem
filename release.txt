@@ -1,1 +1,0 @@
-D:\software\Qt\5.9.1\mingw53_32\bin\windeployqt.exe subwaytransfersystem.exe
