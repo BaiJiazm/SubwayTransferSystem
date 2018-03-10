@@ -1,0 +1,1385 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="Osmosis 0.45">
+  <bounds minlon="120.69850" minlat="30.55520" maxlon="123.48910" maxlat="31.98250" origin="Overpass API"/>
+  <relation id="196737" version="57" timestamp="2016-11-25T11:42:19Z" uid="672536" user="xmd5a" changeset="43942332">
+    <member type="way" ref="27471989" role=""/>
+    <member type="node" ref="301638499" role=""/>
+    <member type="node" ref="301638468" role=""/>
+    <member type="node" ref="301638476" role="stop"/>
+    <member type="node" ref="301638467" role="backward_stop"/>
+    <member type="node" ref="301638471" role=""/>
+    <member type="node" ref="301638494" role=""/>
+    <member type="node" ref="301638504" role=""/>
+    <member type="node" ref="301638544" role=""/>
+    <member type="node" ref="301638516" role=""/>
+    <member type="node" ref="301638539" role=""/>
+    <member type="node" ref="301638561" role=""/>
+    <member type="node" ref="472368139" role=""/>
+    <member type="node" ref="301639398" role=""/>
+    <member type="node" ref="301639413" role=""/>
+    <member type="node" ref="700176212" role=""/>
+    <member type="node" ref="485240631" role=""/>
+    <member type="node" ref="301638523" role=""/>
+    <member type="node" ref="301638480" role="stop"/>
+    <member type="node" ref="301638528" role=""/>
+    <member type="node" ref="478773874" role=""/>
+    <member type="node" ref="478768049" role=""/>
+    <member type="node" ref="621906397" role=""/>
+    <member type="way" ref="169044394" role=""/>
+    <member type="way" ref="169043149" role=""/>
+    <member type="way" ref="169043150" role=""/>
+    <member type="way" ref="169039066" role=""/>
+    <member type="node" ref="478768611" role=""/>
+    <member type="node" ref="621907265" role=""/>
+    <member type="way" ref="68572394" role=""/>
+    <member type="way" ref="177323459" role=""/>
+    <member type="way" ref="177323460" role=""/>
+    <member type="way" ref="177323458" role=""/>
+    <member type="way" ref="169026097" role=""/>
+    <member type="way" ref="169026109" role=""/>
+    <member type="way" ref="169036651" role=""/>
+    <member type="way" ref="412498798" role=""/>
+    <member type="way" ref="169036646" role=""/>
+    <member type="way" ref="169036649" role=""/>
+    <member type="way" ref="412498802" role=""/>
+    <member type="way" ref="169036640" role=""/>
+    <member type="way" ref="169036649" role=""/>
+    <member type="way" ref="412498802" role=""/>
+    <member type="way" ref="169039078" role=""/>
+    <member type="way" ref="169044408" role=""/>
+    <member type="way" ref="412498805" role=""/>
+    <member type="node" ref="1877760043" role="forward_stop"/>
+    <member type="node" ref="1879882248" role="stop"/>
+    <tag k="colour" v="#0000FF"/>
+    <tag k="name" v="上海轨道交通8号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 8"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="ref" v="M8"/>
+    <tag k="route" v="subway"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="196738" version="71" timestamp="2017-04-29T07:38:39Z" uid="83557" user="Esperanza36" changeset="48248003">
+    <member type="way" ref="97560780" role=""/>
+    <member type="way" ref="97566873" role=""/>
+    <member type="way" ref="97568802" role=""/>
+    <member type="way" ref="461504362" role=""/>
+    <member type="way" ref="461504364" role=""/>
+    <member type="way" ref="406402426" role=""/>
+    <member type="way" ref="406402424" role=""/>
+    <member type="way" ref="406402423" role=""/>
+    <member type="way" ref="406402421" role=""/>
+    <member type="way" ref="406402422" role=""/>
+    <member type="way" ref="97666228" role=""/>
+    <member type="way" ref="39067562" role=""/>
+    <member type="way" ref="144554238" role=""/>
+    <member type="way" ref="97550427" role=""/>
+    <member type="way" ref="49026399" role=""/>
+    <member type="way" ref="97546587" role=""/>
+    <member type="way" ref="49026481" role=""/>
+    <member type="way" ref="39067559" role=""/>
+    <member type="node" ref="4569868066" role="stop"/>
+    <member type="node" ref="4569868069" role="stop"/>
+    <member type="node" ref="1130521366" role="stop"/>
+    <member type="node" ref="4569868293" role="stop"/>
+    <member type="node" ref="4569868318" role="stop"/>
+    <member type="node" ref="4569868398" role="stop"/>
+    <member type="node" ref="4084890971" role="stop"/>
+    <member type="node" ref="4569813684" role="stop"/>
+    <member type="node" ref="4569814489" role="stop"/>
+    <member type="node" ref="4569814490" role="stop"/>
+    <member type="node" ref="4569814492" role="stop"/>
+    <member type="node" ref="4569798797" role="stop"/>
+    <member type="node" ref="1130808922" role="stop"/>
+    <member type="node" ref="4569798799" role="stop"/>
+    <member type="node" ref="4569795759" role="stop"/>
+    <member type="node" ref="4569795762" role="stop"/>
+    <member type="node" ref="1129387315" role="stop"/>
+    <member type="node" ref="4569795765" role="stop"/>
+    <member type="node" ref="1129239840" role="stop"/>
+    <member type="node" ref="4569783541" role="stop"/>
+    <member type="node" ref="4569783543" role="stop"/>
+    <member type="node" ref="3800386197" role="stop"/>
+    <member type="node" ref="4569783546" role="stop"/>
+    <member type="node" ref="4569783551" role="stop"/>
+    <member type="node" ref="4569783552" role="stop"/>
+    <member type="node" ref="4569783554" role="stop"/>
+    <member type="node" ref="4569783556" role="stop"/>
+    <member type="node" ref="4569783559" role="stop"/>
+    <member type="node" ref="3279344919" role="stop"/>
+    <tag k="colour" v="#FFD100"/>
+    <tag k="from" v="江杨北路"/>
+    <tag k="from:en" v="North Jiangyang Road"/>
+    <tag k="name" v="上海轨道交通3号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 3"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="3"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="上海南站"/>
+    <tag k="to:en" v="Shanghai South Railway Station"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="196854" version="62" timestamp="2017-03-22T12:01:46Z" uid="3836466" user="Koalberry" changeset="47066207">
+    <member type="node" ref="266073071" role=""/>
+    <member type="way" ref="97550426" role=""/>
+    <member type="way" ref="97546596" role=""/>
+    <member type="way" ref="97533050" role=""/>
+    <member type="way" ref="71799648" role=""/>
+    <member type="way" ref="71799665" role=""/>
+    <member type="way" ref="71799643" role=""/>
+    <member type="way" ref="71799657" role=""/>
+    <member type="way" ref="71799655" role=""/>
+    <member type="way" ref="71799641" role=""/>
+    <member type="node" ref="266072852" role=""/>
+    <member type="node" ref="267197155" role=""/>
+    <member type="node" ref="472140647" role=""/>
+    <member type="node" ref="267197152" role=""/>
+    <member type="node" ref="267197150" role=""/>
+    <member type="node" ref="472137933" role=""/>
+    <member type="node" ref="472140982" role=""/>
+    <member type="node" ref="472137910" role=""/>
+    <member type="node" ref="471985357" role=""/>
+    <member type="node" ref="301639413" role=""/>
+    <member type="node" ref="485353650" role=""/>
+    <member type="node" ref="471986560" role=""/>
+    <member type="node" ref="471986555" role=""/>
+    <member type="node" ref="471986612" role=""/>
+    <member type="way" ref="49026397" role=""/>
+    <member type="way" ref="49026398" role=""/>
+    <member type="way" ref="49026399" role=""/>
+    <member type="way" ref="97546587" role=""/>
+    <member type="way" ref="95098484" role=""/>
+    <member type="way" ref="49026392" role=""/>
+    <member type="way" ref="49026393" role=""/>
+    <member type="way" ref="49026394" role=""/>
+    <member type="way" ref="49026395" role=""/>
+    <member type="node" ref="471986551" role=""/>
+    <member type="way" ref="49026991" role=""/>
+    <member type="way" ref="97550421" role=""/>
+    <member type="way" ref="97550428" role=""/>
+    <member type="way" ref="97550425" role=""/>
+    <member type="way" ref="97550424" role=""/>
+    <member type="way" ref="49026994" role=""/>
+    <member type="way" ref="175759819" role=""/>
+    <member type="way" ref="144987339" role=""/>
+    <member type="way" ref="49026995" role=""/>
+    <member type="way" ref="47097098" role=""/>
+    <member type="way" ref="49027840" role=""/>
+    <member type="way" ref="97550427" role=""/>
+    <member type="node" ref="804474524" role=""/>
+    <member type="node" ref="4571430311" role="stop"/>
+    <tag k="colour" v="#471E86"/>
+    <tag k="name" v="上海轨道交通4号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 4"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="ref" v="M4"/>
+    <tag k="route" v="subway"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="199189" version="39" timestamp="2016-11-25T12:34:50Z" uid="672536" user="xmd5a" changeset="43943204">
+    <member type="node" ref="1865258670" role="stop"/>
+    <member type="node" ref="810762677" role="stop"/>
+    <member type="node" ref="1879882295" role="stop"/>
+    <member type="way" ref="39152902" role=""/>
+    <member type="way" ref="136752712" role=""/>
+    <member type="way" ref="177572349" role=""/>
+    <member type="way" ref="177572348" role=""/>
+    <member type="way" ref="136752697" role=""/>
+    <member type="way" ref="145928725" role=""/>
+    <member type="node" ref="472368078" role="stop"/>
+    <member type="node" ref="1500382256" role="stop"/>
+    <member type="node" ref="804465143" role="stop"/>
+    <member type="node" ref="469774464" role="stop"/>
+    <member type="node" ref="468748469" role="stop"/>
+    <member type="node" ref="468749842" role="stop"/>
+    <member type="node" ref="1871683943" role="stop"/>
+    <member type="node" ref="468747600" role="stop"/>
+    <member type="node" ref="469778116" role="stop"/>
+    <member type="node" ref="1865258671" role="stop"/>
+    <member type="node" ref="472368139" role="stop"/>
+    <member type="node" ref="601661256" role="stop"/>
+    <member type="node" ref="804465180" role="stop"/>
+    <member type="node" ref="804474514" role="stop"/>
+    <member type="node" ref="804474531" role="stop"/>
+    <member type="node" ref="804474544" role="stop"/>
+    <member type="node" ref="804474558" role="stop"/>
+    <member type="node" ref="804474570" role="stop"/>
+    <member type="node" ref="804485337" role="stop"/>
+    <member type="node" ref="804485311" role="stop"/>
+    <member type="node" ref="804485332" role="stop"/>
+    <member type="node" ref="804485478" role="stop"/>
+    <member type="node" ref="810762676" role="stop"/>
+    <member type="node" ref="845389048" role="stop"/>
+    <member type="node" ref="804474524" role="stop"/>
+    <member type="node" ref="1542037120" role="stop"/>
+    <member type="node" ref="4460193672" role="stop"/>
+    <tag k="colour" v="#C7AFD3"/>
+    <tag k="name" v="上海轨道交通10号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 10"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="ref" v="10"/>
+    <tag k="route" v="subway"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="199200" version="66" timestamp="2017-01-01T12:38:03Z" uid="2328491" user="Alex_on_the_map" changeset="44821830">
+    <member type="way" ref="39216555" role=""/>
+    <member type="way" ref="441452859" role=""/>
+    <member type="way" ref="441452860" role=""/>
+    <member type="way" ref="91819153" role=""/>
+    <member type="way" ref="91818423" role=""/>
+    <member type="way" ref="91545514" role=""/>
+    <member type="way" ref="91545513" role=""/>
+    <member type="way" ref="91977745" role=""/>
+    <member type="way" ref="93878002" role=""/>
+    <member type="way" ref="460289578" role=""/>
+    <member type="way" ref="460289577" role=""/>
+    <member type="way" ref="460289576" role=""/>
+    <member type="way" ref="376655901" role=""/>
+    <member type="way" ref="376655902" role=""/>
+    <member type="way" ref="252410618" role=""/>
+    <member type="node" ref="2584702105" role="stop"/>
+    <member type="node" ref="3800583782" role="stop"/>
+    <member type="node" ref="3800583780" role="stop"/>
+    <member type="node" ref="3800583781" role="stop"/>
+    <member type="node" ref="3800583785" role="stop"/>
+    <member type="node" ref="4559664372" role="stop"/>
+    <member type="node" ref="4559664374" role="stop"/>
+    <member type="node" ref="4559664009" role="stop"/>
+    <member type="node" ref="4559664016" role="stop"/>
+    <member type="node" ref="4559664017" role="stop"/>
+    <member type="node" ref="4559664024" role="stop"/>
+    <member type="node" ref="4559664491" role="stop"/>
+    <member type="node" ref="4559578257" role="stop"/>
+    <member type="node" ref="4559664399" role="stop"/>
+    <member type="node" ref="4559664404" role="stop"/>
+    <member type="node" ref="3800386157" role="stop"/>
+    <member type="node" ref="4559578270" role="stop"/>
+    <member type="node" ref="4559578275" role="stop"/>
+    <member type="node" ref="4559664568" role="stop"/>
+    <member type="node" ref="4559664576" role="stop"/>
+    <member type="node" ref="4559578285" role="stop"/>
+    <member type="node" ref="4559664579" role="stop"/>
+    <member type="node" ref="4559664585" role="stop"/>
+    <member type="node" ref="4559665792" role="stop"/>
+    <member type="node" ref="471013199" role="stop"/>
+    <member type="node" ref="471012844" role="stop"/>
+    <member type="node" ref="471012636" role="stop"/>
+    <member type="node" ref="470626733" role="stop"/>
+    <member type="node" ref="4571430228" role=""/>
+    <tag k="colour" v="#E70012"/>
+    <tag k="from" v="富锦路"/>
+    <tag k="from:en" v="Fujin Road"/>
+    <tag k="name" v="上海轨道交通1号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 1"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="1"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="莘庄"/>
+    <tag k="to:en" v="Xinzhuang"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="214629" version="48" timestamp="2016-11-25T11:42:20Z" uid="672536" user="xmd5a" changeset="43942332">
+    <member type="node" ref="849493057" role="stop"/>
+    <member type="node" ref="621901822" role="stop"/>
+    <member type="node" ref="621901825" role="stop"/>
+    <member type="node" ref="621901826" role="stop"/>
+    <member type="node" ref="608703668" role="stop"/>
+    <member type="node" ref="600504933" role="stop"/>
+    <member type="node" ref="608700745" role="stop"/>
+    <member type="node" ref="471988294" role="stop"/>
+    <member type="node" ref="608700783" role="stop"/>
+    <member type="node" ref="608700785" role="stop"/>
+    <member type="node" ref="471988316" role="stop"/>
+    <member type="node" ref="485350360" role="stop"/>
+    <member type="node" ref="471988309" role="stop"/>
+    <member type="node" ref="472226807" role="stop"/>
+    <member type="node" ref="472226771" role="stop"/>
+    <member type="node" ref="471988271" role="stop"/>
+    <member type="node" ref="472225791" role="stop"/>
+    <member type="node" ref="472225785" role="stop"/>
+    <member type="node" ref="472226277" role="stop"/>
+    <member type="node" ref="472226244" role="stop"/>
+    <member type="node" ref="472225762" role="stop"/>
+    <member type="node" ref="471988293" role="stop"/>
+    <member type="way" ref="420321700" role="stop"/>
+    <member type="way" ref="255862026" role="stop"/>
+    <member type="way" ref="107039362" role="stop"/>
+    <member type="way" ref="107039361" role="stop"/>
+    <member type="way" ref="107039368" role="stop"/>
+    <member type="way" ref="107039359" role="stop"/>
+    <member type="way" ref="48998866" role=""/>
+    <member type="way" ref="107039360" role=""/>
+    <member type="way" ref="48998867" role=""/>
+    <member type="way" ref="93888652" role=""/>
+    <member type="way" ref="93888663" role=""/>
+    <member type="way" ref="50409882" role=""/>
+    <member type="way" ref="425713803" role=""/>
+    <member type="way" ref="49026134" role=""/>
+    <member type="way" ref="48998868" role=""/>
+    <member type="node" ref="4250052747" role="stop"/>
+    <member type="node" ref="4250052755" role="stop"/>
+    <member type="node" ref="4250052754" role="stop"/>
+    <member type="node" ref="4250052753" role="stop"/>
+    <member type="node" ref="4250052752" role="stop"/>
+    <member type="node" ref="4250052751" role="stop"/>
+    <member type="node" ref="4250052750" role="stop"/>
+    <member type="node" ref="4250052749" role="stop"/>
+    <member type="node" ref="4250052748" role="stop"/>
+    <tag k="colour" v="#7ac8ee"/>
+    <tag k="name" v="上海轨道交通9号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 9"/>
+    <tag k="network" v="Shanghai Metro"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="ref" v="9"/>
+    <tag k="route" v="subway"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="214631" version="17" timestamp="2016-11-25T11:42:00Z" uid="672536" user="xmd5a" changeset="43942332">
+    <member type="way" ref="181000526" role=""/>
+    <member type="node" ref="1914416025" role=""/>
+    <member type="node" ref="1914416023" role=""/>
+    <member type="node" ref="1914416019" role=""/>
+    <member type="node" ref="1914416022" role=""/>
+    <member type="node" ref="1914416021" role=""/>
+    <member type="node" ref="1914416020" role=""/>
+    <member type="node" ref="1914416024" role=""/>
+    <member type="way" ref="318987668" role=""/>
+    <member type="way" ref="425762389" role=""/>
+    <member type="node" ref="622194085" role=""/>
+    <member type="node" ref="2356329719" role=""/>
+    <member type="node" ref="485250315" role=""/>
+    <member type="node" ref="2356329715" role=""/>
+    <member type="node" ref="2356329714" role=""/>
+    <member type="node" ref="2356329717" role=""/>
+    <member type="node" ref="2356329718" role=""/>
+    <member type="node" ref="2356329716" role=""/>
+    <member type="node" ref="601661256" role=""/>
+    <member type="node" ref="471988293" role=""/>
+    <member type="node" ref="485353633" role="stop"/>
+    <member type="node" ref="485353627" role=""/>
+    <member type="node" ref="4250719409" role="stop"/>
+    <member type="node" ref="4250720232" role="stop"/>
+    <member type="node" ref="4250720233" role="stop"/>
+    <member type="node" ref="4250720234" role="stop"/>
+    <member type="node" ref="4250720235" role="stop"/>
+    <member type="node" ref="4250720239" role="stop"/>
+    <member type="node" ref="4250720238" role="stop"/>
+    <member type="node" ref="4250720237" role="stop"/>
+    <member type="node" ref="4250720236" role="stop"/>
+    <member type="node" ref="4266353366" role="stop"/>
+    <member type="node" ref="4266353367" role="stop"/>
+    <member type="node" ref="4266353369" role="stop"/>
+    <tag k="colour" v="#E77DAD"/>
+    <tag k="name" v="上海轨道交通13号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 13"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="ref" v="M13"/>
+    <tag k="route" v="subway"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="214736" version="45" timestamp="2017-02-02T17:40:05Z" uid="5248074" user="wanou" changeset="45754343">
+    <member type="way" ref="74991518" role=""/>
+    <member type="way" ref="146701636" role=""/>
+    <member type="way" ref="47344412" role=""/>
+    <member type="way" ref="321205028" role=""/>
+    <member type="way" ref="146701244" role=""/>
+    <member type="way" ref="146701288" role=""/>
+    <member type="way" ref="146701242" role=""/>
+    <member type="way" ref="146701243" role=""/>
+    <member type="way" ref="146701289" role=""/>
+    <member type="way" ref="146701287" role=""/>
+    <member type="way" ref="146701290" role=""/>
+    <member type="way" ref="146701286" role=""/>
+    <member type="way" ref="136084475" role=""/>
+    <member type="node" ref="478774137" role=""/>
+    <member type="node" ref="478774109" role=""/>
+    <member type="node" ref="478773874" role=""/>
+    <member type="node" ref="478774706" role=""/>
+    <member type="node" ref="478774805" role=""/>
+    <member type="node" ref="472139673" role=""/>
+    <member type="node" ref="472139055" role=""/>
+    <member type="node" ref="602749130" role=""/>
+    <member type="node" ref="472139052" role=""/>
+    <member type="node" ref="472139047" role=""/>
+    <member type="node" ref="478772242" role=""/>
+    <member type="node" ref="621912244" role=""/>
+    <member type="node" ref="472139046" role=""/>
+    <member type="node" ref="472139059" role=""/>
+    <member type="node" ref="621913770" role=""/>
+    <member type="node" ref="621914110" role=""/>
+    <member type="node" ref="621914221" role=""/>
+    <member type="node" ref="621914289" role=""/>
+    <member type="node" ref="621914488" role=""/>
+    <member type="way" ref="471549632" role=""/>
+    <tag k="colour" v="#D7006C"/>
+    <tag k="from" v="东方体育中心"/>
+    <tag k="from:en" v="Oriental Sports Center"/>
+    <tag k="name" v="上海轨道交通6号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 6 (to Gangcheng Road)"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="ref" v="M6"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="港城路"/>
+    <tag k="to:en" v="Gangcheng Road"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="214779" version="30" timestamp="2016-12-20T15:16:31Z" uid="110639" user="aighes" changeset="44543486">
+    <member type="way" ref="424525843" role=""/>
+    <member type="way" ref="424525840" role=""/>
+    <member type="node" ref="4563678318" role="stop"/>
+    <member type="way" ref="424525813" role="platform"/>
+    <member type="node" ref="4563677253" role="stop"/>
+    <member type="way" ref="424525832" role="platform"/>
+    <member type="node" ref="4563678309" role="stop"/>
+    <member type="way" ref="424525821" role="platform"/>
+    <member type="node" ref="4563678307" role="stop"/>
+    <member type="way" ref="424525806" role="platform"/>
+    <member type="node" ref="4563678304" role="stop"/>
+    <member type="way" ref="424525805" role="platform"/>
+    <member type="node" ref="4563678301" role="stop"/>
+    <member type="way" ref="424525819" role="platform"/>
+    <member type="node" ref="4563677262" role="stop"/>
+    <member type="way" ref="424525811" role="platform"/>
+    <member type="node" ref="4563677260" role="stop"/>
+    <member type="way" ref="424525835" role="platform"/>
+    <member type="node" ref="4563677258" role="stop"/>
+    <member type="way" ref="424525817" role="platform"/>
+    <member type="node" ref="4563677256" role="stop"/>
+    <member type="way" ref="424525804" role="platform"/>
+    <member type="node" ref="4559664168" role="stop"/>
+    <tag k="colour" v="#9253B2"/>
+    <tag k="from" v="闵行开发区"/>
+    <tag k="from:en" v="Minhang Development Zone"/>
+    <tag k="name" v="上海轨道交通5号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 5"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="5"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="莘庄"/>
+    <tag k="to:en" v="Xinzhuang"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="5178631" version="11" timestamp="2016-12-19T18:44:14Z" uid="110639" user="aighes" changeset="44522680">
+    <member type="way" ref="245469230" role=""/>
+    <member type="way" ref="425957293" role=""/>
+    <member type="way" ref="428368118" role=""/>
+    <member type="way" ref="428368117" role=""/>
+    <member type="way" ref="428368110" role=""/>
+    <member type="way" ref="318121602" role=""/>
+    <member type="way" ref="318980334" role=""/>
+    <member type="way" ref="318984852" role=""/>
+    <member type="node" ref="4562133848" role="stop"/>
+    <member type="node" ref="2526592353" role="stop"/>
+    <member type="node" ref="2526598119" role="stop"/>
+    <member type="node" ref="4562133836" role="stop"/>
+    <member type="node" ref="4274772979" role="stop"/>
+    <member type="node" ref="4562133805" role="stop"/>
+    <member type="node" ref="4562198893" role="stop"/>
+    <member type="node" ref="4562198783" role="stop"/>
+    <member type="node" ref="4274772541" role="stop"/>
+    <member type="node" ref="4274772511" role="stop"/>
+    <member type="node" ref="4562193619" role="stop"/>
+    <member type="node" ref="4562193606" role="stop"/>
+    <member type="node" ref="3800385644" role="stop"/>
+    <tag k="colour" v="#89CFBD"/>
+    <tag k="from" v="滴水湖"/>
+    <tag k="from:en" v="Dishui Lake"/>
+    <tag k="name" v="上海轨道交通16号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 16"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="16"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="龙阳路"/>
+    <tag k="to:en" v="Longyang Road"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="5454537" version="2" timestamp="2017-08-01T14:50:22Z" uid="4816761" user="Austin Zhu" changeset="50755218">
+    <member type="way" ref="266066643" role=""/>
+    <member type="way" ref="512071975" role=""/>
+    <tag k="name" v="苏州地铁1号线"/>
+    <tag k="ref" v="1"/>
+    <tag k="route" v="subway"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="5498699" version="9" timestamp="2016-11-25T12:34:51Z" uid="672536" user="xmd5a" changeset="43943204">
+    <member type="node" ref="2625435872" role=""/>
+    <member type="node" ref="2625435876" role=""/>
+    <member type="node" ref="2625436347" role=""/>
+    <member type="node" ref="2625436356" role=""/>
+    <member type="node" ref="2625436354" role=""/>
+    <member type="node" ref="2625436368" role=""/>
+    <member type="node" ref="2625436358" role=""/>
+    <member type="node" ref="2625436349" role=""/>
+    <member type="node" ref="2625436627" role=""/>
+    <member type="node" ref="2625436622" role=""/>
+    <member type="node" ref="2625436620" role=""/>
+    <member type="node" ref="2625436615" role=""/>
+    <member type="node" ref="2625439389" role=""/>
+    <member type="node" ref="2625439387" role=""/>
+    <member type="node" ref="2625439374" role=""/>
+    <member type="node" ref="2863456545" role=""/>
+    <member type="node" ref="4072082530" role=""/>
+    <member type="node" ref="2863452032" role=""/>
+    <member type="node" ref="2863452046" role=""/>
+    <member type="node" ref="2863458944" role=""/>
+    <member type="node" ref="2863458946" role=""/>
+    <member type="node" ref="2863458960" role=""/>
+    <member type="node" ref="2863458947" role=""/>
+    <member type="node" ref="2863458958" role=""/>
+    <member type="node" ref="4072082529" role=""/>
+    <member type="node" ref="4072082531" role=""/>
+    <member type="node" ref="4072082528" role=""/>
+    <member type="node" ref="4072082533" role=""/>
+    <member type="node" ref="4072082534" role=""/>
+    <member type="way" ref="437239483" role=""/>
+    <member type="way" ref="321205031" role=""/>
+    <member type="way" ref="404968092" role=""/>
+    <member type="node" ref="4250719423" role="stop"/>
+    <member type="node" ref="4127292550" role="stop"/>
+    <member type="node" ref="4127292551" role="stop"/>
+    <tag k="colour" v="#057B69"/>
+    <tag k="name" v="上海轨道交通12号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 12"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="M12"/>
+    <tag k="route" v="subway"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="5611108" version="6" timestamp="2016-12-24T03:43:09Z" uid="110639" user="aighes" changeset="44638083">
+    <member type="way" ref="411063502" role="forward"/>
+    <member type="way" ref="414035316" role="forward"/>
+    <member type="way" ref="411264061" role="forward"/>
+    <member type="way" ref="411264073" role="forward"/>
+    <member type="way" ref="299283040" role="forward"/>
+    <member type="way" ref="318121570" role="forward"/>
+    <member type="way" ref="321205019" role="forward"/>
+    <member type="way" ref="236863859" role="forward"/>
+    <member type="way" ref="376618223" role="forward"/>
+    <member type="way" ref="49069612" role="forward"/>
+    <member type="way" ref="49069613" role="forward"/>
+    <member type="way" ref="376618226" role="forward"/>
+    <member type="way" ref="321205022" role="forward"/>
+    <member type="node" ref="3800185678" role=""/>
+    <member type="node" ref="3800185710" role=""/>
+    <member type="node" ref="3800185686" role=""/>
+    <member type="node" ref="3800185056" role=""/>
+    <member type="node" ref="3800185690" role=""/>
+    <member type="node" ref="3800185684" role=""/>
+    <member type="node" ref="3800185676" role=""/>
+    <member type="node" ref="3800185708" role=""/>
+    <member type="node" ref="3800185674" role=""/>
+    <member type="node" ref="3800185696" role=""/>
+    <member type="node" ref="3800185704" role=""/>
+    <member type="node" ref="3800185706" role=""/>
+    <member type="node" ref="3800185668" role=""/>
+    <member type="node" ref="3800185672" role=""/>
+    <member type="node" ref="3800185052" role=""/>
+    <member type="node" ref="3800185658" role=""/>
+    <member type="node" ref="3800185714" role=""/>
+    <member type="node" ref="3800185698" role=""/>
+    <member type="node" ref="3800185670" role=""/>
+    <member type="node" ref="3800185688" role=""/>
+    <member type="node" ref="3800185702" role=""/>
+    <member type="node" ref="3800185700" role=""/>
+    <member type="node" ref="3800185682" role=""/>
+    <member type="node" ref="3800185679" role=""/>
+    <member type="node" ref="3800185666" role=""/>
+    <member type="node" ref="3800185050" role=""/>
+    <member type="node" ref="3279344921" role=""/>
+    <member type="node" ref="3279344926" role=""/>
+    <member type="node" ref="4269627924" role="stop"/>
+    <member type="node" ref="2914198802" role="stop"/>
+    <member type="node" ref="4269627975" role="stop"/>
+    <member type="node" ref="2448270642" role="stop"/>
+    <member type="node" ref="2448270637" role="stop"/>
+    <member type="node" ref="2448270625" role="stop"/>
+    <member type="node" ref="2448270609" role="stop"/>
+    <member type="node" ref="2448270629" role="stop"/>
+    <member type="node" ref="478773874" role="stop"/>
+    <member type="node" ref="2448270617" role="stop"/>
+    <member type="node" ref="2448270639" role="stop"/>
+    <member type="node" ref="2448270613" role="stop"/>
+    <member type="node" ref="2448270633" role="stop"/>
+    <member type="node" ref="2448270636" role="stop"/>
+    <member type="node" ref="804474514" role="stop"/>
+    <member type="node" ref="622193942" role="stop"/>
+    <member type="node" ref="622194085" role="stop"/>
+    <member type="node" ref="622194147" role="stop"/>
+    <member type="node" ref="622194318" role="stop"/>
+    <member type="node" ref="4272855243" role="stop"/>
+    <member type="node" ref="622196171" role="stop"/>
+    <member type="node" ref="622196229" role="stop"/>
+    <member type="node" ref="622196496" role="stop"/>
+    <member type="node" ref="622580357" role="stop"/>
+    <member type="way" ref="101892341" role="stop"/>
+    <member type="way" ref="101892338" role="stop"/>
+    <member type="way" ref="102787029" role="stop"/>
+    <member type="way" ref="102787027" role="stop"/>
+    <tag k="colour" v="#841C21"/>
+    <tag k="from" v="迪士尼"/>
+    <tag k="from:en" v="Disney Resort"/>
+    <tag k="name" v="上海轨道交通11号线下行 (迪士尼-嘉定北)"/>
+    <tag k="name:en" v="Shanghai Metro Line 11 Backward (Disney Resort - North Jiading)"/>
+    <tag k="name:zh" v="上海轨道交通11号线下行 (迪士尼-嘉定北)"/>
+    <tag k="network" v="Shanghai Metro"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="11"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="嘉定北"/>
+    <tag k="to:en" v="North Jiading"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="5611109" version="6" timestamp="2016-12-24T03:43:09Z" uid="110639" user="aighes" changeset="44638083">
+    <member type="way" ref="101892382" role="forward"/>
+    <member type="way" ref="321205017" role="forward"/>
+    <member type="way" ref="376618225" role="forward"/>
+    <member type="way" ref="321205016" role="forward"/>
+    <member type="way" ref="101892376" role="forward"/>
+    <member type="way" ref="376618209" role="forward"/>
+    <member type="way" ref="318121572" role="forward"/>
+    <member type="way" ref="318121571" role="forward"/>
+    <member type="way" ref="321205015" role="forward"/>
+    <member type="way" ref="427782945" role="forward"/>
+    <member type="way" ref="427782946" role="forward"/>
+    <member type="way" ref="427782947" role="forward"/>
+    <member type="way" ref="427782948" role="forward"/>
+    <member type="way" ref="427782949" role="forward"/>
+    <member type="node" ref="3279344927" role=""/>
+    <member type="node" ref="3279344920" role=""/>
+    <member type="node" ref="3800185049" role=""/>
+    <member type="node" ref="3800185665" role=""/>
+    <member type="node" ref="3800185680" role=""/>
+    <member type="node" ref="3800185681" role=""/>
+    <member type="node" ref="3800185699" role=""/>
+    <member type="node" ref="3800185701" role=""/>
+    <member type="node" ref="3800185687" role=""/>
+    <member type="node" ref="3800185669" role=""/>
+    <member type="node" ref="3800185697" role=""/>
+    <member type="node" ref="3800185713" role=""/>
+    <member type="node" ref="3800185657" role=""/>
+    <member type="node" ref="3800185051" role=""/>
+    <member type="node" ref="3800185671" role=""/>
+    <member type="node" ref="3800185667" role=""/>
+    <member type="node" ref="3800185705" role=""/>
+    <member type="node" ref="3800185703" role=""/>
+    <member type="node" ref="3800185695" role=""/>
+    <member type="node" ref="3800185673" role=""/>
+    <member type="node" ref="3800185707" role=""/>
+    <member type="node" ref="3800185675" role=""/>
+    <member type="node" ref="3800185683" role=""/>
+    <member type="node" ref="3800185689" role=""/>
+    <member type="node" ref="3800185055" role=""/>
+    <member type="node" ref="3800185685" role=""/>
+    <member type="node" ref="3800185709" role=""/>
+    <member type="node" ref="3800185677" role=""/>
+    <member type="node" ref="2914198802" role="stop"/>
+    <member type="node" ref="4269627924" role="stop"/>
+    <member type="node" ref="4269627975" role="stop"/>
+    <member type="node" ref="2448270642" role="stop"/>
+    <member type="node" ref="2448270637" role="stop"/>
+    <member type="node" ref="2448270625" role="stop"/>
+    <member type="node" ref="2448270609" role="stop"/>
+    <member type="node" ref="2448270629" role="stop"/>
+    <member type="node" ref="478773874" role="stop"/>
+    <member type="node" ref="2448270617" role="stop"/>
+    <member type="node" ref="2448270639" role="stop"/>
+    <member type="node" ref="2448270613" role="stop"/>
+    <member type="node" ref="2448270633" role="stop"/>
+    <member type="node" ref="2448270636" role="stop"/>
+    <member type="node" ref="804474514" role="stop"/>
+    <member type="node" ref="622193942" role="stop"/>
+    <member type="node" ref="622194085" role="stop"/>
+    <member type="node" ref="622194147" role="stop"/>
+    <member type="node" ref="622194318" role="stop"/>
+    <member type="node" ref="4272855243" role="stop"/>
+    <member type="node" ref="622196171" role="stop"/>
+    <member type="node" ref="622196229" role="stop"/>
+    <member type="node" ref="622196496" role="stop"/>
+    <member type="node" ref="622580357" role="stop"/>
+    <member type="way" ref="101892341" role="stop"/>
+    <member type="way" ref="101892338" role="stop"/>
+    <member type="way" ref="102787029" role="stop"/>
+    <member type="way" ref="102787027" role="stop"/>
+    <tag k="colour" v="#841C21"/>
+    <tag k="from" v="嘉定北"/>
+    <tag k="from:en" v="North Jiading"/>
+    <tag k="name" v="上海轨道交通11号线上行 (嘉定北-迪士尼)"/>
+    <tag k="name:en" v="Shanghai Metro Line 11 Forward (North Jiading - Disney Resort)"/>
+    <tag k="name:zh" v="上海轨道交通11号线上行 (嘉定北-迪士尼)"/>
+    <tag k="network" v="Shanghai Metro"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="11"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="迪士尼"/>
+    <tag k="to:en" v="Disney Resort"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="5611110" version="6" timestamp="2016-12-19T18:44:18Z" uid="110639" user="aighes" changeset="44522680">
+    <member type="way" ref="411063502" role="forward"/>
+    <member type="way" ref="414035316" role="forward"/>
+    <member type="way" ref="411264061" role="forward"/>
+    <member type="way" ref="411264073" role="forward"/>
+    <member type="way" ref="299283040" role="forward"/>
+    <member type="way" ref="318121570" role="forward"/>
+    <member type="way" ref="321205019" role="forward"/>
+    <member type="way" ref="236863859" role="forward"/>
+    <member type="way" ref="376618223" role="forward"/>
+    <member type="way" ref="49069612" role="forward"/>
+    <member type="way" ref="49069613" role="forward"/>
+    <member type="way" ref="68578445" role="forward"/>
+    <member type="way" ref="68578446" role="forward"/>
+    <member type="way" ref="376618205" role="forward"/>
+    <member type="way" ref="68578440" role="forward"/>
+    <member type="way" ref="68578444" role="forward"/>
+    <member type="way" ref="40968614" role="forward"/>
+    <member type="way" ref="343970794" role="forward"/>
+    <member type="way" ref="182222827" role="forward"/>
+    <member type="node" ref="3800185678" role=""/>
+    <member type="node" ref="3800185710" role=""/>
+    <member type="node" ref="3800185686" role=""/>
+    <member type="node" ref="3800185056" role=""/>
+    <member type="node" ref="3800185690" role=""/>
+    <member type="node" ref="3800185684" role=""/>
+    <member type="node" ref="3800185676" role=""/>
+    <member type="node" ref="3800185708" role=""/>
+    <member type="node" ref="3800185674" role=""/>
+    <member type="node" ref="3800185696" role=""/>
+    <member type="node" ref="3800185704" role=""/>
+    <member type="node" ref="3800185706" role=""/>
+    <member type="node" ref="3800185668" role=""/>
+    <member type="node" ref="3800185672" role=""/>
+    <member type="node" ref="3800185052" role=""/>
+    <member type="node" ref="3800185658" role=""/>
+    <member type="node" ref="3800185714" role=""/>
+    <member type="node" ref="3800185698" role=""/>
+    <member type="node" ref="3800185670" role=""/>
+    <member type="node" ref="3800185688" role=""/>
+    <member type="node" ref="3800185702" role=""/>
+    <member type="node" ref="3800185700" role=""/>
+    <member type="node" ref="3800185682" role=""/>
+    <member type="node" ref="3800185679" role=""/>
+    <member type="node" ref="3800185666" role=""/>
+    <member type="node" ref="3800185694" role=""/>
+    <member type="node" ref="3800185053" role=""/>
+    <member type="node" ref="3800185692" role=""/>
+    <member type="node" ref="3800185048" role=""/>
+    <member type="node" ref="3800185712" role=""/>
+    <member type="node" ref="3800185660" role=""/>
+    <member type="node" ref="3800185663" role=""/>
+    <member type="node" ref="4269627924" role="stop"/>
+    <member type="node" ref="2914198802" role="stop"/>
+    <member type="node" ref="4269627975" role="stop"/>
+    <member type="way" ref="101892349" role="stop"/>
+    <member type="way" ref="101892359" role="stop"/>
+    <member type="way" ref="101892341" role="stop"/>
+    <member type="way" ref="121047531" role="stop"/>
+    <member type="way" ref="102774611" role="stop"/>
+    <member type="way" ref="102774617" role="stop"/>
+    <member type="way" ref="102774610" role="stop"/>
+    <member type="node" ref="3506766920" role="stop"/>
+    <member type="node" ref="3506766921" role="stop"/>
+    <member type="node" ref="3506766919" role="stop"/>
+    <tag k="colour" v="#841C21"/>
+    <tag k="from" v="迪士尼"/>
+    <tag k="from:en" v="Disney Resort"/>
+    <tag k="name" v="上海轨道交通11号线下行 (迪士尼-花桥)"/>
+    <tag k="name:en" v="Shanghai Metro Line 11 Backward (Disney Resort - Huaqiao)"/>
+    <tag k="name:zh" v="上海轨道交通11号线下行 (迪士尼-花桥)"/>
+    <tag k="network" v="Shanghai Metro"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="11"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="花桥"/>
+    <tag k="to:en" v="Huaqiao"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="5611111" version="5" timestamp="2016-12-19T18:44:19Z" uid="110639" user="aighes" changeset="44522680">
+    <member type="way" ref="343970796" role="forward"/>
+    <member type="way" ref="343970795" role="forward"/>
+    <member type="way" ref="311690545" role="forward"/>
+    <member type="way" ref="102774612" role="forward"/>
+    <member type="way" ref="68578439" role="forward"/>
+    <member type="way" ref="376618202" role="forward"/>
+    <member type="way" ref="101892378" role="forward"/>
+    <member type="way" ref="101892383" role="forward"/>
+    <member type="way" ref="321205016" role="forward"/>
+    <member type="way" ref="101892376" role="forward"/>
+    <member type="way" ref="376618209" role="forward"/>
+    <member type="way" ref="318121572" role="forward"/>
+    <member type="way" ref="318121571" role="forward"/>
+    <member type="way" ref="321205015" role="forward"/>
+    <member type="way" ref="427782945" role="forward"/>
+    <member type="way" ref="427782946" role="forward"/>
+    <member type="way" ref="427782947" role="forward"/>
+    <member type="way" ref="427782948" role="forward"/>
+    <member type="way" ref="427782949" role="forward"/>
+    <member type="node" ref="3800185662" role=""/>
+    <member type="node" ref="3800185659" role=""/>
+    <member type="node" ref="3800185711" role=""/>
+    <member type="node" ref="3800185047" role=""/>
+    <member type="node" ref="3800185691" role=""/>
+    <member type="node" ref="3800185054" role=""/>
+    <member type="node" ref="3800185693" role=""/>
+    <member type="node" ref="3800185664" role=""/>
+    <member type="node" ref="3800185680" role=""/>
+    <member type="node" ref="3800185681" role=""/>
+    <member type="node" ref="3800185699" role=""/>
+    <member type="node" ref="3800185701" role=""/>
+    <member type="node" ref="3800185687" role=""/>
+    <member type="node" ref="3800185669" role=""/>
+    <member type="node" ref="3800185697" role=""/>
+    <member type="node" ref="3800185713" role=""/>
+    <member type="node" ref="3800185657" role=""/>
+    <member type="node" ref="3800185051" role=""/>
+    <member type="node" ref="3800185671" role=""/>
+    <member type="node" ref="3800185667" role=""/>
+    <member type="node" ref="3800185705" role=""/>
+    <member type="node" ref="3800185703" role=""/>
+    <member type="node" ref="3800185695" role=""/>
+    <member type="node" ref="3800185673" role=""/>
+    <member type="node" ref="3800185707" role=""/>
+    <member type="node" ref="3800185675" role=""/>
+    <member type="node" ref="3800185683" role=""/>
+    <member type="node" ref="3800185689" role=""/>
+    <member type="node" ref="3800185055" role=""/>
+    <member type="node" ref="3800185685" role=""/>
+    <member type="node" ref="3800185709" role=""/>
+    <member type="node" ref="3800185677" role=""/>
+    <member type="node" ref="2914198802" role="stop"/>
+    <member type="node" ref="4269627924" role="stop"/>
+    <member type="node" ref="4269627975" role="stop"/>
+    <member type="way" ref="101892349" role="stop"/>
+    <member type="way" ref="101892359" role="stop"/>
+    <member type="way" ref="101892341" role="stop"/>
+    <member type="way" ref="121047531" role="stop"/>
+    <member type="way" ref="102774611" role="stop"/>
+    <member type="way" ref="102774617" role="stop"/>
+    <member type="way" ref="102774610" role="stop"/>
+    <member type="node" ref="3506766920" role="stop"/>
+    <member type="node" ref="3506766921" role="stop"/>
+    <member type="node" ref="3506766919" role="stop"/>
+    <tag k="colour" v="#841C21"/>
+    <tag k="from" v="花桥"/>
+    <tag k="from:en" v="Huaqiao"/>
+    <tag k="name" v="上海轨道交通11号线上行 (花桥-迪士尼)"/>
+    <tag k="name:en" v="Shanghai Metro Line 11 Forward (Huaqiao - Disney Resort)"/>
+    <tag k="name:zh" v="上海轨道交通11号线上行 (花桥-迪士尼)"/>
+    <tag k="network" v="Shanghai Metro"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="11"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="迪士尼"/>
+    <tag k="to:en" v="Disney Resort"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="5611325" version="9" timestamp="2016-12-19T18:44:20Z" uid="110639" user="aighes" changeset="44522680">
+    <member type="way" ref="230069190" role="forward"/>
+    <member type="way" ref="230069189" role="forward"/>
+    <member type="way" ref="89348624" role="forward"/>
+    <member type="way" ref="376634462" role="forward"/>
+    <member type="way" ref="50176912" role="forward"/>
+    <member type="way" ref="120944644" role="forward"/>
+    <member type="way" ref="376634460" role="forward"/>
+    <member type="way" ref="376634458" role="forward"/>
+    <member type="way" ref="230069192" role="stop"/>
+    <member type="node" ref="3800386162" role="stop"/>
+    <member type="way" ref="108731268" role="stop"/>
+    <member type="node" ref="3800385625" role="stop"/>
+    <member type="way" ref="108731265" role="stop"/>
+    <member type="node" ref="3800386194" role="stop"/>
+    <member type="node" ref="605037023" role="stop"/>
+    <member type="node" ref="3800385642" role="stop"/>
+    <member type="node" ref="605032163" role="stop"/>
+    <member type="node" ref="3800385614" role="stop"/>
+    <member type="node" ref="605037513" role="stop"/>
+    <member type="node" ref="3800385618" role="stop"/>
+    <member type="node" ref="605027658" role="stop"/>
+    <member type="node" ref="3800385654" role="stop"/>
+    <member type="node" ref="605027433" role="stop"/>
+    <member type="node" ref="3800386180" role="stop"/>
+    <member type="node" ref="605025081" role="stop"/>
+    <member type="node" ref="3800385623" role="stop"/>
+    <member type="node" ref="605024325" role="stop"/>
+    <member type="node" ref="3800385640" role="stop"/>
+    <member type="node" ref="470637744" role="stop"/>
+    <member type="node" ref="3800386196" role="stop"/>
+    <member type="way" ref="230069195" role="stop"/>
+    <member type="node" ref="3800385648" role="stop"/>
+    <member type="node" ref="471016943" role="stop"/>
+    <member type="node" ref="3800386170" role="stop"/>
+    <member type="node" ref="3800385608" role="stop"/>
+    <member type="way" ref="264602662" role="stop"/>
+    <member type="node" ref="3800385616" role="stop"/>
+    <member type="way" ref="264721081" role="stop"/>
+    <member type="node" ref="3800385652" role="stop"/>
+    <member type="node" ref="468916502" role="stop"/>
+    <member type="node" ref="3800385620" role="stop"/>
+    <member type="node" ref="469787957" role="stop"/>
+    <member type="node" ref="3800386160" role="stop"/>
+    <member type="node" ref="471088265" role="stop"/>
+    <member type="node" ref="3800386184" role="stop"/>
+    <member type="node" ref="4241260093" role="stop"/>
+    <member type="node" ref="3800385638" role="stop"/>
+    <member type="node" ref="622193942" role="stop"/>
+    <member type="node" ref="3800385636" role="stop"/>
+    <member type="node" ref="4520492425" role="stop"/>
+    <member type="node" ref="3800386199" role="stop"/>
+    <member type="node" ref="471088787" role="stop"/>
+    <member type="node" ref="3800385650" role="stop"/>
+    <member type="node" ref="4520492882" role="stop"/>
+    <member type="node" ref="3800386182" role="stop"/>
+    <member type="node" ref="471091952" role="stop"/>
+    <member type="node" ref="3800385604" role="stop"/>
+    <member type="node" ref="471092256" role="stop"/>
+    <member type="node" ref="3800386174" role="stop"/>
+    <member type="node" ref="605019372" role="stop"/>
+    <member type="node" ref="3800385631" role="stop"/>
+    <member type="node" ref="4460193672" role="stop"/>
+    <member type="node" ref="3800385633" role="stop"/>
+    <tag k="colour" v="#008000"/>
+    <tag k="from" v="浦东国际机场"/>
+    <tag k="from:en" v="Pudong International Airport"/>
+    <tag k="name" v="上海轨道交通2号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 2"/>
+    <tag k="network" v="Shanghai Metro"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="2"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="徐泾东"/>
+    <tag k="to:en" v="Xujing East"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="5611326" version="13" timestamp="2017-04-17T17:02:24Z" uid="5687012" user="菜根谭" changeset="47878501">
+    <member type="way" ref="376634457" role="forward"/>
+    <member type="way" ref="461881036" role="forward"/>
+    <member type="way" ref="376634459" role="forward"/>
+    <member type="way" ref="120944643" role="forward"/>
+    <member type="way" ref="120944645" role="forward"/>
+    <member type="way" ref="376634461" role="forward"/>
+    <member type="way" ref="108731289" role="forward"/>
+    <member type="way" ref="108731285" role="forward"/>
+    <member type="way" ref="230069191" role="forward"/>
+    <member type="node" ref="605019347" role="stop"/>
+    <member type="node" ref="3800386189" role="stop"/>
+    <member type="node" ref="4460193672" role="stop"/>
+    <member type="node" ref="3800385632" role="stop"/>
+    <member type="node" ref="605019372" role="stop"/>
+    <member type="node" ref="3800385630" role="stop"/>
+    <member type="node" ref="471092256" role="stop"/>
+    <member type="node" ref="3800386173" role="stop"/>
+    <member type="node" ref="471091952" role="stop"/>
+    <member type="node" ref="3800385603" role="stop"/>
+    <member type="node" ref="4520492882" role="stop"/>
+    <member type="node" ref="3800386181" role="stop"/>
+    <member type="node" ref="471088787" role="stop"/>
+    <member type="node" ref="3800385649" role="stop"/>
+    <member type="node" ref="4520492425" role="stop"/>
+    <member type="node" ref="3800386198" role="stop"/>
+    <member type="node" ref="622193942" role="stop"/>
+    <member type="node" ref="3800385635" role="stop"/>
+    <member type="node" ref="4241260093" role="stop"/>
+    <member type="node" ref="3800385637" role="stop"/>
+    <member type="node" ref="471088265" role="stop"/>
+    <member type="node" ref="3800386183" role="stop"/>
+    <member type="node" ref="469787957" role="stop"/>
+    <member type="node" ref="3800386159" role="stop"/>
+    <member type="node" ref="468916502" role="stop"/>
+    <member type="node" ref="3800385619" role="stop"/>
+    <member type="way" ref="264721081" role="stop"/>
+    <member type="node" ref="3800385651" role="stop"/>
+    <member type="way" ref="264602662" role="stop"/>
+    <member type="node" ref="3800385615" role="stop"/>
+    <member type="node" ref="3800385607" role="stop"/>
+    <member type="node" ref="471016943" role="stop"/>
+    <member type="node" ref="3800386169" role="stop"/>
+    <member type="node" ref="471016988" role="stop"/>
+    <member type="node" ref="3800385609" role="stop"/>
+    <member type="way" ref="230069195" role="stop"/>
+    <member type="node" ref="470637744" role="stop"/>
+    <member type="node" ref="3800386195" role="stop"/>
+    <member type="node" ref="605024325" role="stop"/>
+    <member type="node" ref="3800385639" role="stop"/>
+    <member type="node" ref="605025081" role="stop"/>
+    <member type="node" ref="3800385622" role="stop"/>
+    <member type="node" ref="3800386179" role="stop"/>
+    <member type="node" ref="605027433" role="stop"/>
+    <member type="node" ref="3800385653" role="stop"/>
+    <member type="node" ref="605037513" role="stop"/>
+    <member type="node" ref="3800385617" role="stop"/>
+    <member type="node" ref="605032163" role="stop"/>
+    <member type="node" ref="3800385613" role="stop"/>
+    <member type="node" ref="605037023" role="stop"/>
+    <member type="node" ref="3800385641" role="stop"/>
+    <member type="way" ref="108731265" role="stop"/>
+    <member type="node" ref="3800386193" role="stop"/>
+    <member type="way" ref="108731268" role="stop"/>
+    <member type="node" ref="3800385624" role="stop"/>
+    <member type="way" ref="230069192" role="stop"/>
+    <member type="node" ref="3800386161" role="stop"/>
+    <member type="node" ref="4799322721" role="华夏东路地铁站（East Huaxia Road）"/>
+    <tag k="colour" v="#008000"/>
+    <tag k="from" v="徐泾东"/>
+    <tag k="from:en" v="Xujing East"/>
+    <tag k="name" v="上海轨道交通2号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 2"/>
+    <tag k="network" v="Shanghai Metro"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="2"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="浦东国际机场"/>
+    <tag k="to:en" v="Pudong International Airport"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="6325787" version="3" timestamp="2016-11-25T11:42:02Z" uid="672536" user="xmd5a" changeset="43942332">
+    <member type="way" ref="342246645" role="forward"/>
+    <member type="way" ref="425707155" role="forward"/>
+    <member type="way" ref="425707154" role="forward"/>
+    <member type="way" ref="425707152" role="forward"/>
+    <member type="way" ref="425707153" role="forward"/>
+    <member type="way" ref="425707151" role="forward"/>
+    <member type="way" ref="425707150" role="forward"/>
+    <member type="node" ref="4249995828" role="stop"/>
+    <member type="node" ref="4249995830" role="stop"/>
+    <member type="node" ref="4249995832" role="stop"/>
+    <member type="node" ref="4249995831" role="stop"/>
+    <member type="node" ref="4249995847" role="stop"/>
+    <member type="node" ref="4249995888" role="stop"/>
+    <member type="node" ref="4249996945" role="stop"/>
+    <member type="node" ref="4249997016" role="stop"/>
+    <member type="node" ref="4249997015" role="stop"/>
+    <member type="node" ref="4249996913" role="stop"/>
+    <member type="node" ref="4249996891" role="stop"/>
+    <member type="node" ref="4249995871" role="stop"/>
+    <member type="node" ref="4460193671" role="stop"/>
+    <member type="node" ref="4460193672" role="stop"/>
+    <tag k="name" v="上海轨道交通17号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 17"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="route" v="subway"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="6800210" version="5" timestamp="2017-01-01T12:38:03Z" uid="2328491" user="Alex_on_the_map" changeset="44821830">
+    <member type="way" ref="460289573" role=""/>
+    <member type="way" ref="460289572" role=""/>
+    <member type="way" ref="460289571" role=""/>
+    <member type="way" ref="460289570" role=""/>
+    <member type="way" ref="460289569" role=""/>
+    <member type="way" ref="460289568" role=""/>
+    <member type="way" ref="460289567" role=""/>
+    <member type="way" ref="460289566" role=""/>
+    <member type="way" ref="93862314" role=""/>
+    <member type="way" ref="376634452" role=""/>
+    <member type="way" ref="48997554" role=""/>
+    <member type="way" ref="163764005" role=""/>
+    <member type="way" ref="376634456" role=""/>
+    <member type="way" ref="346571431" role=""/>
+    <member type="way" ref="346571430" role=""/>
+    <member type="node" ref="4559664344" role="stop"/>
+    <member type="node" ref="4559664174" role="stop"/>
+    <member type="node" ref="4559664171" role="stop"/>
+    <member type="node" ref="4559664183" role="stop"/>
+    <member type="node" ref="3800386171" role="stop"/>
+    <member type="node" ref="3800385605" role="stop"/>
+    <member type="node" ref="3800386165" role="stop"/>
+    <member type="node" ref="3800386187" role="stop"/>
+    <member type="node" ref="3800385628" role="stop"/>
+    <member type="node" ref="3800385611" role="stop"/>
+    <member type="node" ref="3800386177" role="stop"/>
+    <member type="node" ref="3800386175" role="stop"/>
+    <member type="node" ref="3800386158" role="stop"/>
+    <member type="node" ref="3800386186" role="stop"/>
+    <member type="node" ref="3800385627" role="stop"/>
+    <member type="node" ref="3800386167" role="stop"/>
+    <member type="node" ref="3800385656" role="stop"/>
+    <member type="node" ref="3800386192" role="stop"/>
+    <member type="node" ref="3800386164" role="stop"/>
+    <member type="node" ref="470079357" role="stop"/>
+    <member type="node" ref="469788048" role="stop"/>
+    <member type="node" ref="470079710" role="stop"/>
+    <member type="node" ref="469788063" role="stop"/>
+    <member type="node" ref="470080016" role="stop"/>
+    <member type="node" ref="469790630" role="stop"/>
+    <member type="node" ref="469790632" role="stop"/>
+    <member type="node" ref="469790634" role="stop"/>
+    <member type="node" ref="2584697480" role="stop"/>
+    <member type="node" ref="471015395" role=""/>
+    <member type="node" ref="471014085" role=""/>
+    <member type="node" ref="4571430228" role=""/>
+    <tag k="colour" v="#E70012"/>
+    <tag k="from" v="莘庄"/>
+    <tag k="from:en" v="Xinzhuang"/>
+    <tag k="name" v="上海轨道交通1号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 1"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="1"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="富锦路"/>
+    <tag k="to:en" v="Fujin Road"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="6803856" version="1" timestamp="2016-12-19T18:44:05Z" uid="110639" user="aighes" changeset="44522680">
+    <member type="way" ref="318984853" role=""/>
+    <member type="way" ref="299283077" role=""/>
+    <member type="way" ref="299283078" role=""/>
+    <member type="way" ref="425957294" role=""/>
+    <member type="way" ref="299283080" role=""/>
+    <member type="way" ref="245566977" role=""/>
+    <member type="way" ref="245469863" role=""/>
+    <member type="way" ref="245469865" role=""/>
+    <member type="way" ref="460584080" role=""/>
+    <member type="node" ref="3800385643" role="stop"/>
+    <member type="node" ref="4562193605" role="stop"/>
+    <member type="node" ref="4562193620" role="stop"/>
+    <member type="node" ref="2527456982" role="stop"/>
+    <member type="node" ref="2527457199" role="stop"/>
+    <member type="node" ref="4562198782" role="stop"/>
+    <member type="node" ref="4562198892" role="stop"/>
+    <member type="node" ref="4562133804" role="stop"/>
+    <member type="node" ref="2526604070" role="stop"/>
+    <member type="node" ref="4562133837" role="stop"/>
+    <member type="node" ref="4562133842" role="stop"/>
+    <member type="node" ref="4562133999" role="stop"/>
+    <member type="node" ref="4562133918" role="stop"/>
+    <tag k="colour" v="#89CFBD"/>
+    <tag k="from" v="龙阳路"/>
+    <tag k="from:en" v="Longyang Road"/>
+    <tag k="name" v="上海轨道交通16号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 16"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="16"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="滴水湖"/>
+    <tag k="to:en" v="Dishui Lake"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="6806163" version="1" timestamp="2016-12-20T15:16:29Z" uid="110639" user="aighes" changeset="44543486">
+    <member type="way" ref="39414140" role=""/>
+    <member type="way" ref="424525850" role=""/>
+    <member type="node" ref="4559664167" role="stop"/>
+    <member type="node" ref="4563677255" role="stop"/>
+    <member type="way" ref="424525825" role="platform"/>
+    <member type="node" ref="4563677257" role="stop"/>
+    <member type="way" ref="424525807" role="platform"/>
+    <member type="node" ref="4563677259" role="stop"/>
+    <member type="way" ref="424525812" role="platform"/>
+    <member type="node" ref="4563677261" role="stop"/>
+    <member type="way" ref="424525830" role="platform"/>
+    <member type="node" ref="4563678300" role="stop"/>
+    <member type="way" ref="424525815" role="platform"/>
+    <member type="node" ref="4563678305" role="stop"/>
+    <member type="way" ref="424525809" role="platform"/>
+    <member type="node" ref="4563678306" role="stop"/>
+    <member type="way" ref="424525827" role="platform"/>
+    <member type="node" ref="4563678308" role="stop"/>
+    <member type="way" ref="424525823" role="platform"/>
+    <member type="node" ref="4563677254" role="stop"/>
+    <member type="way" ref="424525837" role="platform"/>
+    <member type="node" ref="4563678319" role="stop"/>
+    <member type="way" ref="424525814" role="platform"/>
+    <tag k="colour" v="#9253B2"/>
+    <tag k="from" v="莘庄"/>
+    <tag k="from:en" v="Xinzhuang"/>
+    <tag k="name" v="上海轨道交通5号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 5"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="5"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="闵行开发区"/>
+    <tag k="to:en" v="Minhang Development Zone"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="6817178" version="3" timestamp="2017-04-29T07:38:39Z" uid="83557" user="Esperanza36" changeset="48248003">
+    <member type="way" ref="93881218" role=""/>
+    <member type="way" ref="321205032" role=""/>
+    <member type="way" ref="93881217" role=""/>
+    <member type="way" ref="95098484" role=""/>
+    <member type="way" ref="47097098" role=""/>
+    <member type="way" ref="49027840" role=""/>
+    <member type="way" ref="97550422" role=""/>
+    <member type="way" ref="47096751" role=""/>
+    <member type="way" ref="47098637" role=""/>
+    <member type="way" ref="71531818" role=""/>
+    <member type="way" ref="71531800" role=""/>
+    <member type="way" ref="168481725" role=""/>
+    <member type="way" ref="168481746" role=""/>
+    <member type="way" ref="71261293" role=""/>
+    <member type="way" ref="461504365" role=""/>
+    <member type="way" ref="461504363" role=""/>
+    <member type="way" ref="71261294" role=""/>
+    <member type="way" ref="49733592" role=""/>
+    <member type="way" ref="49733595" role=""/>
+    <member type="node" ref="3279344918" role="stop"/>
+    <member type="node" ref="4569783558" role="stop"/>
+    <member type="node" ref="4569783557" role="stop"/>
+    <member type="node" ref="4569783555" role="stop"/>
+    <member type="node" ref="4569783553" role="stop"/>
+    <member type="node" ref="4569783687" role="stop"/>
+    <member type="node" ref="4569783545" role="stop"/>
+    <member type="node" ref="3800386200" role="stop"/>
+    <member type="node" ref="4569783544" role="stop"/>
+    <member type="node" ref="4569783542" role="stop"/>
+    <member type="node" ref="1129239782" role="stop"/>
+    <member type="node" ref="4569795766" role="stop"/>
+    <member type="node" ref="4569795763" role="stop"/>
+    <member type="node" ref="4569795761" role="stop"/>
+    <member type="node" ref="4569795760" role="stop"/>
+    <member type="node" ref="4569798800" role="stop"/>
+    <member type="node" ref="4569798798" role="stop"/>
+    <member type="node" ref="4569798796" role="stop"/>
+    <member type="node" ref="4569814493" role="stop"/>
+    <member type="node" ref="4569814491" role="stop"/>
+    <member type="node" ref="4569813688" role="stop"/>
+    <member type="node" ref="4569813687" role="stop"/>
+    <member type="node" ref="604687569" role="stop"/>
+    <member type="node" ref="1797441774" role="stop"/>
+    <member type="node" ref="4569868153" role="stop"/>
+    <member type="node" ref="4569868292" role="stop"/>
+    <member type="node" ref="4569866343" role="stop"/>
+    <member type="node" ref="4569868068" role="stop"/>
+    <member type="node" ref="4569868067" role="stop"/>
+    <tag k="colour" v="#FFD100"/>
+    <tag k="from" v="上海南站"/>
+    <tag k="from:en" v="Shanghai South Railway Station"/>
+    <tag k="name" v="上海轨道交通3号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 3"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="3"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="江杨北路"/>
+    <tag k="to:en" v="North Jiangyang Road"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="6819599" version="4" timestamp="2017-03-22T12:05:31Z" uid="3836466" user="Koalberry" changeset="47066311">
+    <member type="way" ref="106060227" role=""/>
+    <member type="way" ref="106060206" role=""/>
+    <member type="way" ref="461654540" role=""/>
+    <member type="node" ref="1221258068" role="stop"/>
+    <member type="node" ref="4571267424" role="stop"/>
+    <member type="node" ref="4571267309" role="stop"/>
+    <member type="node" ref="4571267089" role="stop"/>
+    <member type="node" ref="4571267212" role="stop"/>
+    <member type="node" ref="4571267320" role="stop"/>
+    <member type="node" ref="4571266995" role="stop"/>
+    <member type="node" ref="4571267332" role="stop"/>
+    <member type="node" ref="4571266994" role="stop"/>
+    <member type="node" ref="4571266991" role="stop"/>
+    <member type="node" ref="4571267239" role="stop"/>
+    <member type="node" ref="4571267345" role="stop"/>
+    <member type="node" ref="4571266894" role="stop"/>
+    <member type="node" ref="4571267241" role="stop"/>
+    <member type="node" ref="4571266891" role="stop"/>
+    <member type="node" ref="4571267359" role="stop"/>
+    <member type="node" ref="4571267253" role="stop"/>
+    <member type="node" ref="4571267257" role="stop"/>
+    <member type="node" ref="4571267366" role="stop"/>
+    <member type="node" ref="4571267369" role="stop"/>
+    <member type="node" ref="4571267265" role="stop"/>
+    <member type="node" ref="4571267270" role="stop"/>
+    <member type="node" ref="4571267377" role="stop"/>
+    <member type="node" ref="4571267272" role="stop"/>
+    <member type="node" ref="4571267279" role="stop"/>
+    <member type="node" ref="4571267385" role="stop"/>
+    <member type="node" ref="4571267388" role="stop"/>
+    <member type="node" ref="4571267393" role="stop"/>
+    <member type="node" ref="4571267401" role="stop"/>
+    <member type="node" ref="4571267283" role="stop"/>
+    <member type="node" ref="4571266931" role="stop"/>
+    <member type="node" ref="4571267595" role="stop"/>
+    <member type="node" ref="4571267423" role="stop"/>
+    <tag k="colour" v="#FF7F00"/>
+    <tag k="from" v="美兰湖"/>
+    <tag k="from:en" v="Meilan Lake"/>
+    <tag k="name" v="Subway Line 7: 美兰湖 =&gt; 花木路"/>
+    <tag k="name:en" v="Subway Line 7: Meilan Lake =&gt; Huamu Road"/>
+    <tag k="name:zh" v="Subway Line 7: 美兰湖 =&gt; 花木路"/>
+    <tag k="network" v="上海地铁"/>
+    <tag k="operator" v="上海地铁第三运营有限公司"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="7"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="花木路"/>
+    <tag k="to:en" v="Huamu Road"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="6819600" version="4" timestamp="2017-03-22T12:05:31Z" uid="3836466" user="Koalberry" changeset="47066311">
+    <member type="way" ref="461654539" role=""/>
+    <member type="way" ref="48981624" role=""/>
+    <member type="way" ref="48981629" role=""/>
+    <member type="node" ref="4571267207" role="stop"/>
+    <member type="node" ref="4571266922" role="stop"/>
+    <member type="node" ref="4571267191" role="stop"/>
+    <member type="node" ref="4571266910" role="stop"/>
+    <member type="node" ref="4571267187" role="stop"/>
+    <member type="node" ref="4571267073" role="stop"/>
+    <member type="node" ref="4571267068" role="stop"/>
+    <member type="node" ref="4571267065" role="stop"/>
+    <member type="node" ref="4571267178" role="stop"/>
+    <member type="node" ref="4571267171" role="stop"/>
+    <member type="node" ref="4571266901" role="stop"/>
+    <member type="node" ref="4571267169" role="stop"/>
+    <member type="node" ref="4571267164" role="stop"/>
+    <member type="node" ref="4571267054" role="stop"/>
+    <member type="node" ref="4571267051" role="stop"/>
+    <member type="node" ref="4571267156" role="stop"/>
+    <member type="node" ref="4571266890" role="stop"/>
+    <member type="node" ref="4571267044" role="stop"/>
+    <member type="node" ref="4571267142" role="stop"/>
+    <member type="node" ref="4571267039" role="stop"/>
+    <member type="node" ref="4571266895" role="stop"/>
+    <member type="node" ref="4571267030" role="stop"/>
+    <member type="node" ref="4571267137" role="stop"/>
+    <member type="node" ref="4571267029" role="stop"/>
+    <member type="node" ref="4571267130" role="stop"/>
+    <member type="node" ref="4571267017" role="stop"/>
+    <member type="node" ref="4571266996" role="stop"/>
+    <member type="node" ref="4571267114" role="stop"/>
+    <member type="node" ref="4571267000" role="stop"/>
+    <member type="node" ref="4571267090" role="stop"/>
+    <member type="node" ref="4571267103" role="stop"/>
+    <member type="node" ref="4571267425" role="stop"/>
+    <member type="node" ref="621505674" role="stop"/>
+    <tag k="colour" v="#FF7F00"/>
+    <tag k="from" v="花木路"/>
+    <tag k="from:en" v="Huamu Road"/>
+    <tag k="name" v="Subway Line 7: 花木路 =&gt; 美兰湖"/>
+    <tag k="name:en" v="Subway Line 7: Huamu Road =&gt; Meilan Lake"/>
+    <tag k="name:zh" v="Subway Line 7: 花木路 =&gt; 美兰湖"/>
+    <tag k="network" v="上海地铁"/>
+    <tag k="operator" v="上海地铁第三运营有限公司"/>
+    <tag k="public_transport:version" v="2"/>
+    <tag k="ref" v="7"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="美兰湖"/>
+    <tag k="to:en" v="Meilan Lake"/>
+    <tag k="type" v="route"/>
+  </relation>
+  <relation id="6840915" version="3" timestamp="2017-01-02T08:53:20Z" uid="2328491" user="Alex_on_the_map" changeset="44839736">
+    <member type="way" ref="136084473" role=""/>
+    <member type="way" ref="321205029" role=""/>
+    <member type="way" ref="47344411" role=""/>
+    <member type="way" ref="461671790" role=""/>
+    <tag k="colour" v="#D7006C"/>
+    <tag k="from" v="港城路"/>
+    <tag k="from:en" v="Gangcheng Road"/>
+    <tag k="name" v="上海轨道交通6号线"/>
+    <tag k="name:en" v="Shanghai Metro Line 6 (to Oriental Sports Center)"/>
+    <tag k="operator" v="Shanghai Shentong Metro Group"/>
+    <tag k="ref" v="M6"/>
+    <tag k="route" v="subway"/>
+    <tag k="to" v="东方体育中心"/>
+    <tag k="to:en" v="Oriental Sports Center"/>
+    <tag k="type" v="route"/>
+  </relation>
+</osm>
