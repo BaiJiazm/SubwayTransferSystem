@@ -14,7 +14,7 @@ OSM是一款由网络大众共同打造的免费开源、可编辑的地图服�
 
 #### 结果示例
 
-提取的完整数据在 SubwayTransferSystem/data/subwayLine.txt文件中
+提取的完整数据在 [SubwayTransferSystem/data/subwayLine.txt](https://github.com/BaiJiazm/SubwayTransferSystem/tree/master/SubwayTransferSystem/data/subwayLine.txt)文件中
 
 示例如下：
 ```

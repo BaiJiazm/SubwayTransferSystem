@@ -1,6 +1,6 @@
 ### 获取数据模块
 
-本程序将线路数据进行规整，以便SubwayTransferSystem中使用，结果在outLine.txt文件中，最终文件在SubwayTransferSystem/data/outLine.txt中。
+本程序将线路数据进行规整，以便SubwayTransferSystem中使用，结果在outLine.txt文件中，最终文件在[SubwayTransferSystem/data/outLine.txt](https://github.com/BaiJiazm/SubwayTransferSystem/tree/master/SubwayTransferSystem/data/outLine.txt)中。
 
 #### 数据来源
 
@@ -8,7 +8,7 @@ line.txt是从网页上复制黏贴的地铁线路数据。
 
 #### 结果示例
 
-提取的完整数据在 SubwayTransferSystem/data/outLine.txt文件中
+提取的完整数据在 [SubwayTransferSystem/data/outLine.txt](https://github.com/BaiJiazm/SubwayTransferSystem/tree/master/SubwayTransferSystem/data/outLine.txt)文件中
 
 示例如下：
 ```
