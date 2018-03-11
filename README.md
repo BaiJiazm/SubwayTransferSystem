@@ -1,7 +1,9 @@
 ## 上海地铁换乘指南系统(SubwayTransferSystem)
 
 #### 简介
-本项目是在2017年暑期所写的上海地铁换乘指南系统。个人觉得还是非常用心的，是一个不错的小项目。如果你有兴趣想借鉴学习或者觉得还不错的话，可以Star一下哦。
+本项目是在2017年暑期所写的上海地铁换乘指南系统，是从零学QT，在两周左右无借鉴任何相同或相似程序全部由自己一人完成的小项目。
+
+个人觉得还是非常用心的，是一个不错的小项目。如果你有兴趣想借鉴学习或者觉得还不错的话，可以Star一下哦。
 
 如果程序本身有任何Issue或者你在其中有什么问题，欢迎在[Issue](https://github.com/BaiJiazm/SubwayTransferSystem/issues)部分下提出或者联系[b110011@qq.com](http://mailto:b110011@qq.com)
 
@@ -102,7 +104,19 @@
 ![鼠标悬停2](https://i.imgur.com/lKIhLhr.png)
 
 #### 项目结构
-
+```
+---/SubwayTransferSystem
+     ---/功能源码
+   /build-SubwayTransferSystem-Desktop_Qt_5_9_1_MinGW_32bit-Release
+     ---/release文件
+   /dealData
+     ---/数据处理模块
+   /osmXmlParser
+     ---/数据处理模块
+   /SubwayTransferSystem_boxed.exe
+   /README.md
+   /设计说明书.docx
+```
 
 #### 更多
 了解项目的更多信息，请查看文档[设计说明书](https://github.com/BaiJiazm/SubwayTransferSystem/blob/queryByMinwindow/%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6.docx)
