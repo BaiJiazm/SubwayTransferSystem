@@ -49,6 +49,21 @@
 	* 可在上述集成环境下运行；
 	* 通过windeployqt.exe及Enigma Virtual Box进行整合压缩为发布为了一个LinkListVisualizer.exe文件，可在普通windows机型下运行。
 
+#### 项目结构
+```
+---/SubwayTransferSystem
+     ---/功能源码
+   /build-SubwayTransferSystem-Desktop_Qt_5_9_1_MinGW_32bit-Release
+     ---/release文件
+   /dealData
+     ---/数据处理模块
+   /osmXmlParser
+     ---/数据处理模块
+   /SubwayTransferSystem_boxed.exe
+   /README.md
+   /设计说明书.docx
+```
+
 ### 主要功能预览
 
 ##### 总览图
@@ -102,21 +117,6 @@
 * 将鼠标悬停在线路上，会提示线路的详细信息，如悬停在“曹杨路”站和“镇坪路”之间线路上，会有线路的详细信息；
 
 ![鼠标悬停2](https://i.imgur.com/lKIhLhr.png)
-
-#### 项目结构
-```
----/SubwayTransferSystem
-     ---/功能源码
-   /build-SubwayTransferSystem-Desktop_Qt_5_9_1_MinGW_32bit-Release
-     ---/release文件
-   /dealData
-     ---/数据处理模块
-   /osmXmlParser
-     ---/数据处理模块
-   /SubwayTransferSystem_boxed.exe
-   /README.md
-   /设计说明书.docx
-```
 
 #### 更多
 了解项目的更多信息，请查看文档[设计说明书](https://github.com/BaiJiazm/SubwayTransferSystem/blob/queryByMinwindow/%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6.docx)
